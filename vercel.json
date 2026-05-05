@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/inicio", "destination": "/index.html" },
+    { "source": "/curso-gestalt-terapia-fundamentos-e-tecnicas", "destination": "/lp-formacao.html" },
+    { "source": "/curso-imgt-gratuito", "destination": "/lp-curso-gratuito.html" }
+  ]
+}
