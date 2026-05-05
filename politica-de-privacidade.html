@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade | IMGT — Instituto Mineiro de Gestalt-Terapia</title>
+<meta name="description" content="Política de privacidade do Instituto Mineiro de Gestalt-Terapia: como coletamos, usamos e protegemos seus dados ao navegar e se cadastrar em nossos cursos e atendimentos.">
+<meta name="robots" content="noindex, nofollow">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Zilla Slab';
+    src: url('GFonts/Zilla_Slab/ZillaSlab-Light.ttf') format('truetype');
+    font-weight: 300; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Zilla Slab';
+    src: url('GFonts/Zilla_Slab/ZillaSlab-Regular.ttf') format('truetype');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Zilla Slab';
+    src: url('GFonts/Zilla_Slab/ZillaSlab-Medium.ttf') format('truetype');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Zilla Slab';
+    src: url('GFonts/Zilla_Slab/ZillaSlab-SemiBold.ttf') format('truetype');
+    font-weight: 600; font-style: normal; font-display: swap;
+  }
+
+  :root {
+    --bg: #0d1019;
+    --bg-dark: #0d1019;
+    --bg-dark-elevated: #1e193a;
+    --bg-dark-deeper: #1c1924;
+    --text: #F5F4F0;
+    --text-secondary: #F5F4F0;
+    --text-muted: #f7f4f0;
+    --text-on-dark: #F5F4F0;
+    --text-secondary-on-dark: #F5F4F0;
+    --text-muted-on-dark: #918D88;
+    --accent: #8752ef;
+    --accent-soft: #7440d6;
+    --accent-mid: #5d2eb5;
+    --accent-glow: rgba(135, 82, 239, 0.35);
+    --line-on-dark: rgba(245, 244, 240, 0.10);
+  }
+
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html {
+    scroll-behavior: smooth;
+    background-color: #0d1019;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(135, 82, 239, 0.08) 0px, rgba(135, 82, 239, 0.08) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(90deg, rgba(135, 82, 239, 0.08) 0px, rgba(135, 82, 239, 0.08) 1px, transparent 1px, transparent 80px);
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .h-display { font-family: 'Zilla Slab', Georgia, serif; letter-spacing: -0.03em; line-height: 1.02; font-weight: 500; }
+  .body-text-dark { line-height: 1.7; color: var(--text-secondary-on-dark); }
+
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    z-index: 1;
+  }
+
+  /* ============== PAGE HERO (compact) ============== */
+  .page-hero {
+    position: relative;
+    isolation: isolate;
+    padding: 9rem 1.25rem 4rem;
+    background:
+      radial-gradient(ellipse 70% 60% at 12% 20%, rgba(135, 82, 239, 0.32) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 100% 100%, rgba(93, 46, 181, 0.30) 0%, transparent 60%),
+      var(--bg-dark);
+    overflow: hidden;
+  }
+  @media (min-width: 768px) { .page-hero { padding: 11rem 2rem 5rem; } }
+  @media (min-width: 1024px) { .page-hero { padding: 12rem 2.5rem 6rem; } }
+
+  .page-hero__inner { max-width: 920px; margin: 0 auto; position: relative; z-index: 2; }
+  .page-hero__eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+  .page-hero__eyebrow::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .page-hero__title {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.04;
+    color: var(--text-on-dark);
+    font-size: clamp(2.2rem, 5.6vw, 4.2rem);
+    margin: 0 0 1.25rem;
+  }
+  .page-hero__sub {
+    color: var(--text-secondary-on-dark);
+    line-height: 1.6;
+    font-size: clamp(1rem, 1.15vw, 1.1rem);
+    max-width: 56ch;
+  }
+  .page-hero__meta {
+    margin-top: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 1rem;
+    background: rgba(135, 82, 239, 0.08);
+    border: 1px solid rgba(135, 82, 239, 0.22);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    color: var(--text-secondary-on-dark);
+  }
+  .page-hero__meta strong { color: var(--text-on-dark); font-weight: 500; }
+
+  /* ============== ARTICLE ============== */
+  .legal-article {
+    position: relative;
+    padding: 4rem 1.25rem 6rem;
+    background: var(--bg-dark);
+  }
+  @media (min-width: 768px) { .legal-article { padding: 5rem 2rem 7rem; } }
+  @media (min-width: 1024px) { .legal-article { padding: 6rem 2.5rem 8rem; } }
+
+  .legal-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  @media (min-width: 1024px) {
+    .legal-grid { grid-template-columns: 240px 1fr; gap: 4rem; }
+  }
+
+  .legal-toc {
+    position: relative;
+  }
+  @media (min-width: 1024px) {
+    .legal-toc { position: sticky; top: 6rem; align-self: start; }
+  }
+  .legal-toc h2 {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1rem;
+  }
+  .legal-toc ol {
+    list-style: none;
+    counter-reset: toc;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .legal-toc li { counter-increment: toc; }
+  .legal-toc a {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.55rem 0.7rem;
+    color: var(--text-secondary-on-dark);
+    font-size: 0.92rem;
+    line-height: 1.4;
+    border-radius: 8px;
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease;
+  }
+  .legal-toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    color: var(--text-muted-on-dark);
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+  }
+  .legal-toc a:hover {
+    color: var(--text-on-dark);
+    background: rgba(135, 82, 239, 0.08);
+    border-left-color: var(--accent);
+  }
+  .legal-toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .legal-prose {
+    color: var(--text-secondary-on-dark);
+    max-width: 70ch;
+    font-size: 1.02rem;
+    line-height: 1.75;
+  }
+  .legal-prose section + section { margin-top: 3rem; }
+  .legal-prose h2 {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    color: var(--text-on-dark);
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    margin: 0 0 1rem;
+    scroll-margin-top: 6rem;
+  }
+  .legal-prose h2 .num {
+    display: inline-block;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 400;
+    font-size: 0.7em;
+    color: var(--accent);
+    margin-right: 0.6rem;
+    letter-spacing: 0.04em;
+  }
+  .legal-prose p { margin: 0 0 1.1rem; }
+  .legal-prose p:last-child { margin-bottom: 0; }
+  .legal-prose strong { color: var(--text-on-dark); font-weight: 500; }
+  .legal-prose blockquote {
+    margin: 1.5rem 0;
+    padding: 1.2rem 1.4rem;
+    border-left: 3px solid var(--accent);
+    background: rgba(135, 82, 239, 0.06);
+    border-radius: 0 12px 12px 0;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 300;
+    font-size: 1.18rem;
+    line-height: 1.45;
+    color: var(--text-on-dark);
+    letter-spacing: -0.01em;
+  }
+  .legal-prose blockquote::before {
+    content: '“';
+    display: block;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+    font-family: Georgia, serif;
+  }
+
+  .legal-cta {
+    margin-top: 4rem;
+    padding: 2rem 1.5rem;
+    border: 1px solid rgba(135, 82, 239, 0.22);
+    background: linear-gradient(135deg, rgba(135, 82, 239, 0.10), rgba(135, 82, 239, 0.02));
+    border-radius: 20px;
+  }
+  @media (min-width: 768px) { .legal-cta { padding: 2.5rem 2.25rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; } }
+  .legal-cta__title {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    color: var(--text-on-dark);
+    letter-spacing: -0.02em;
+    margin: 0 0 0.4rem;
+  }
+  .legal-cta__sub { color: var(--text-secondary-on-dark); font-size: 0.95rem; margin: 0; }
+  .legal-cta__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.25rem;
+    padding: 0.85rem 1.4rem;
+    background: var(--accent-soft);
+    color: var(--text-on-dark);
+    border-radius: 999px;
+    font-weight: 500;
+    font-size: 0.92rem;
+    text-decoration: none;
+    box-shadow: 0 8px 24px var(--accent-glow);
+    transition: transform 220ms ease, background-color 220ms ease;
+    flex-shrink: 0;
+  }
+  @media (min-width: 768px) { .legal-cta__btn { margin-top: 0; } }
+  .legal-cta__btn:hover { transform: translateY(-2px); }
+  .legal-cta__btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* ============== SITE HEADER (transparent → glass on scroll) ============== */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 60;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background-color 320ms ease, border-color 320ms ease, backdrop-filter 320ms ease;
+  }
+  .site-header.is-scrolled {
+    background: rgba(13, 16, 25, 0.62);
+    border-bottom-color: rgba(245, 244, 240, 0.08);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+  .site-header__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  @media (min-width: 640px) { .site-header__inner { padding: 1.2rem 1.5rem; } }
+  @media (min-width: 1024px) { .site-header__inner { padding: 1.4rem 2rem; } }
+
+  .site-logo {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    color: var(--text-on-dark);
+    text-decoration: none;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+  .site-logo img { width: 36px; height: 36px; display: block; }
+  .site-logo__word { line-height: 1; }
+  .site-logo__word small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted-on-dark);
+    margin-top: 2px;
+  }
+
+  .nav-link {
+    color: var(--text-secondary-on-dark);
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+  }
+  .nav-link:hover { color: var(--text-on-dark); background: rgba(245,244,240,0.06); }
+
+  .site-nav { display: none; align-items: center; gap: 0.15rem; }
+  @media (min-width: 1024px) { .site-nav { display: flex; } }
+  .site-nav .nav-link {
+    position: relative;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 220ms ease, background-color 220ms ease;
+  }
+  .site-nav .nav-link[aria-current="page"] { color: var(--text-on-dark); }
+  .site-nav .nav-link[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    left: 1rem; right: 1rem; bottom: 0.35rem;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .nav-item-has-sub { position: relative; }
+  .nav-toggle { display: inline-flex; align-items: center; gap: 0.35rem; background: none; border: 0; cursor: pointer; font: inherit; }
+  .nav-toggle svg { transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .nav-item-has-sub:hover .nav-toggle svg,
+  .nav-item-has-sub:focus-within .nav-toggle svg { transform: rotate(180deg); }
+  .nav-submenu {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    min-width: 320px;
+    padding: 0.6rem;
+    background: rgba(20, 17, 32, 0.92);
+    border: 1px solid rgba(245, 244, 240, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.45), 0 8px 24px rgba(0,0,0,0.30);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 220ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1), visibility 220ms;
+  }
+  .nav-item-has-sub:hover .nav-submenu,
+  .nav-item-has-sub:focus-within .nav-submenu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-submenu a {
+    display: block;
+    padding: 0.65rem 0.85rem;
+    color: var(--text-secondary-on-dark);
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+  .nav-submenu a:hover, .nav-submenu a:focus-visible { background: rgba(135, 82, 239, 0.14); color: var(--text-on-dark); outline: none; }
+  .nav-submenu a strong { display: block; font-weight: 500; color: var(--text-on-dark); }
+
+  .header-cta { display: none; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+  @media (min-width: 1024px) { .header-cta { display: inline-flex; } }
+  .header-cta .btn-pill {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: var(--accent-soft);
+    color: var(--text-on-dark);
+    text-decoration: none;
+    box-shadow: 0 8px 24px var(--accent-glow), 0 1px 0 rgba(255,255,255,0.12) inset;
+    transition: transform 220ms ease, background-color 220ms ease, box-shadow 280ms ease;
+  }
+  .header-cta .btn-pill:hover { transform: translateY(-2px); }
+  .header-cta .btn-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 999px;
+    background: rgba(245,244,240,0.06);
+    border: 1px solid rgba(245,244,240,0.14);
+    color: var(--text-on-dark);
+    cursor: pointer;
+    transition: background-color 220ms ease, border-color 220ms ease;
+  }
+  .menu-toggle:hover { background: rgba(245,244,240,0.10); border-color: rgba(245,244,240,0.24); }
+  .menu-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (min-width: 1024px) { .menu-toggle { display: none; } }
+  .menu-toggle__bars { width: 18px; height: 12px; position: relative; }
+  .menu-toggle__bars::before, .menu-toggle__bars::after {
+    content: ''; position: absolute; left: 0; right: 0;
+    height: 1.5px; background: currentColor; border-radius: 2px;
+    transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), top 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .menu-toggle__bars::before { top: 0; }
+  .menu-toggle__bars::after { top: 10px; }
+  .menu-toggle[aria-expanded="true"] .menu-toggle__bars::before { top: 5px; transform: rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] .menu-toggle__bars::after  { top: 5px; transform: rotate(-45deg); }
+
+  .mobile-drawer {
+    position: fixed; inset: 0; z-index: 55;
+    background: rgba(13, 16, 25, 0.96);
+    backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    padding: 96px 1.5rem 2.5rem;
+    overflow-y: auto;
+    opacity: 0; visibility: hidden;
+    transition: opacity 320ms ease, visibility 320ms;
+  }
+  .mobile-drawer.is-open { opacity: 1; visibility: visible; }
+  .mobile-drawer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+  .mobile-drawer a {
+    display: block;
+    padding: 0.95rem 1rem;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-on-dark);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245,244,240,0.08);
+  }
+  .mobile-drawer a:hover { color: var(--accent); }
+  .mobile-drawer .m-has-sub { border-bottom: 1px solid rgba(245,244,240,0.08); }
+  .mobile-drawer .m-row { display: flex; align-items: stretch; justify-content: space-between; }
+  .mobile-drawer .m-row > a { flex: 1; border-bottom: 0; }
+  .mobile-drawer .m-sub-toggle {
+    flex-shrink: 0; width: 56px;
+    background: transparent; border: 0;
+    border-left: 1px solid rgba(245,244,240,0.08);
+    color: var(--text-secondary-on-dark);
+    cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: color 220ms ease, background-color 220ms ease;
+  }
+  .mobile-drawer .m-sub-toggle:hover { color: var(--text-on-dark); background: rgba(245,244,240,0.04); }
+  .mobile-drawer .m-sub-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+  .mobile-drawer .m-sub-toggle svg { transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .mobile-drawer .m-sub-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .mobile-drawer .m-sub { list-style: none; padding: 0.25rem 0 0.5rem; margin: 0; background: rgba(245,244,240,0.02); }
+  .mobile-drawer .m-sub a {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-size: 1rem; font-weight: 400;
+    letter-spacing: -0.01em; text-transform: none;
+    padding: 0.6rem 1.25rem;
+    color: var(--text-secondary-on-dark);
+    border: 0;
+  }
+  .mobile-drawer__cta {
+    margin-top: 1.5rem;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 1rem 1.5rem;
+    background: var(--accent);
+    color: var(--text-on-dark) !important;
+    border-radius: 999px;
+    font-family: 'Zilla Slab', Georgia, serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 0 !important;
+    box-shadow: 0 8px 24px var(--accent-glow);
+  }
+  body.menu-open { overflow: hidden; }
+
+  /* ============== SITE FOOTER ============== */
+  .site-footer {
+    position: relative;
+    background: var(--bg-dark);
+    border-top: 1px solid rgba(245, 244, 240, 0.10);
+    color: var(--text-secondary-on-dark);
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .site-footer::before {
+    content: '';
+    position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(ellipse 70% 60% at 12% 0%, rgba(135, 82, 239, 0.16) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(93, 46, 181, 0.18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .site-footer__inner {
+    max-width: 1440px; margin: 0 auto;
+    padding: 1.5rem 1.25rem 2rem;
+  }
+  @media (min-width: 768px) { .site-footer__inner { padding: 1.75rem 2rem 2.25rem; } }
+  @media (min-width: 1024px) { .site-footer__inner { padding: 2rem 2.5rem 2.5rem; } }
+
+  .site-footer__top {
+    display: flex; flex-direction: column; gap: 1.25rem;
+    align-items: flex-start; justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(245, 244, 240, 0.08);
+  }
+  @media (min-width: 768px) { .site-footer__top { flex-direction: row; align-items: center; gap: 2.5rem; } }
+  .footer-brand { display: flex; align-items: center; gap: 1rem; }
+  .footer-brand img { width: 64px; height: 64px; flex-shrink: 0; }
+  .footer-brand__word {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 400; font-size: 1.15rem; line-height: 1.15;
+    color: var(--text-on-dark);
+    letter-spacing: -0.015em;
+    max-width: 18ch;
+  }
+  .footer-brand__word strong { display: block; font-weight: 600; }
+  .footer-social { display: inline-flex; align-items: center; gap: 0.6rem; }
+  .footer-social a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 999px;
+    background: rgba(245, 244, 240, 0.05);
+    border: 1px solid rgba(245, 244, 240, 0.10);
+    color: var(--text-secondary-on-dark);
+    transition: background-color 220ms ease, color 220ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease;
+  }
+  .footer-social a:hover { background: var(--accent); color: var(--text-on-dark); border-color: var(--accent); transform: translateY(-2px); }
+  .footer-social a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .site-footer__cols {
+    display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+    padding: 3.5rem 0;
+  }
+  @media (min-width: 640px)  { .site-footer__cols { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .site-footer__cols { grid-template-columns: 1.4fr 1fr 1fr 1.5fr; gap: 3rem; } }
+
+  .footer-col h3 {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500; font-size: 0.78rem;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1.25rem;
+  }
+  .footer-col__tagline {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 300; font-size: 1.4rem; line-height: 1.25;
+    letter-spacing: -0.02em; color: var(--text-on-dark);
+    margin: 0 0 1.5rem; max-width: 22ch;
+  }
+  .footer-col__meta { font-size: 0.85rem; line-height: 1.7; color: var(--text-muted-on-dark); margin: 0; }
+  .footer-col__meta strong { color: var(--text-secondary-on-dark); font-weight: 500; }
+
+  .footer-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+  .footer-links a {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    color: var(--text-secondary-on-dark); font-size: 0.95rem; text-decoration: none;
+    transition: color 220ms ease, gap 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .footer-links a::before {
+    content: ''; width: 6px; height: 6px; border-radius: 999px;
+    background: var(--accent); opacity: 0.5;
+    transition: opacity 220ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+  }
+  .footer-links a:hover { color: var(--text-on-dark); gap: 0.85rem; }
+  .footer-links a:hover::before { opacity: 1; transform: scale(1.4); }
+  .footer-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .footer-contact { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .footer-contact a {
+    display: inline-flex; align-items: flex-start; gap: 0.75rem;
+    color: var(--text-secondary-on-dark); font-size: 0.95rem; text-decoration: none;
+    transition: color 220ms ease;
+  }
+  .footer-contact a:hover { color: var(--text-on-dark); }
+  .footer-contact a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .footer-contact .icon {
+    flex-shrink: 0; width: 36px; height: 36px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 10px;
+    background: rgba(135, 82, 239, 0.12);
+    color: var(--accent);
+    border: 1px solid rgba(135, 82, 239, 0.20);
+  }
+  .footer-contact .label { display: flex; flex-direction: column; line-height: 1.35; }
+  .footer-contact .label small {
+    font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted-on-dark); margin-bottom: 2px;
+  }
+
+  .site-footer__bottom {
+    padding-top: 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    align-items: flex-start; justify-content: space-between;
+    border-top: 1px solid rgba(245, 244, 240, 0.08);
+    color: var(--text-muted-on-dark);
+    font-size: 0.82rem; line-height: 1.55;
+  }
+  @media (min-width: 768px) { .site-footer__bottom { flex-direction: row; align-items: center; } }
+  .site-footer__legal { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center; }
+  .site-footer__legal a {
+    color: var(--text-muted-on-dark);
+    text-decoration: none;
+    transition: color 220ms ease;
+  }
+  .site-footer__legal a:hover { color: var(--text-on-dark); }
+  .site-footer__legal a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .site-footer__legal a[aria-current="page"] { color: var(--accent); }
+  .site-footer__legal .sep { opacity: 0.4; }
+
+  .site-footer__credit {
+    color: var(--text-muted-on-dark);
+    font-size: 0.78rem;
+    margin-top: 1rem; padding-top: 1rem;
+    border-top: 1px solid rgba(245, 244, 240, 0.05);
+  }
+  .site-footer__credit a {
+    color: var(--text-secondary-on-dark);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(245, 244, 240, 0.25);
+    transition: color 220ms ease, border-color 220ms ease;
+  }
+  .site-footer__credit a:hover { color: var(--accent); border-color: var(--accent); }
+</style>
+</head>
+<body class="relative">
+
+<!-- ============== SITE HEADER ============== -->
+<header class="site-header" id="siteHeader" role="banner">
+  <div class="site-header__inner">
+    <a href="/inicio" class="site-logo" aria-label="IMGT — Instituto Mineiro de Gestalt-Terapia, página inicial">
+      <img src="Gbrand_assets/gestaltlogo.svg" alt="" aria-hidden="true">
+      <span class="site-logo__word">
+        IMGT
+        <small>Gestalt-Terapia</small>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="/inicio" class="nav-link">Início</a>
+      <a href="/sobre" class="nav-link">Sobre</a>
+
+      <div class="nav-item-has-sub">
+        <a href="/cursos" class="nav-link nav-toggle" aria-haspopup="true">
+          Cursos
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="nav-submenu" role="menu">
+          <a href="/curso-gestalt-terapia-fundamentos-e-tecnicas" role="menuitem">
+            <strong>Curso de Formação</strong>
+            Gestalt-Terapia: Fundamentos e Técnicas
+          </a>
+          <a href="/curso-imgt-gratuito" role="menuitem">
+            <strong>Curso IMGT Gratuito</strong>
+          </a>
+          <a href="/lp-ciclo-de-contato.html" role="menuitem">Minicurso · Ciclo de Contato</a>
+          <a href="/lp-vicios.html" role="menuitem">Minicurso · Vícios Contemporâneos</a>
+          <a href="/lp-fenomenologia.html" role="menuitem">Minicurso · Fenomenologia e Psicoterapia</a>
+          <a href="/lp-depressao.html" role="menuitem">Minicurso · Depressão</a>
+          <a href="/lp-ansiedade.html" role="menuitem">Minicurso · Ansiedade</a>
+          <a href="/lp-teoria-do-self.html" role="menuitem">Minicurso · Teoria do Self</a>
+          <a href="/lp-tdah.html" role="menuitem">Minicurso · TDAH na Clínica</a>
+        </div>
+      </div>
+
+      <a href="/atendimento" class="nav-link">Atendimento</a>
+      <a href="/supervisao" class="nav-link">Supervisão</a>
+      <a href="/palestras" class="nav-link">Palestras</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="/contato" class="btn-pill">
+        Contato
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <button type="button" class="menu-toggle" id="menuToggle" aria-controls="mobileDrawer" aria-expanded="false" aria-label="Abrir menu">
+      <span class="menu-toggle__bars" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <ul>
+    <li><a href="/inicio">Início</a></li>
+    <li><a href="/sobre">Sobre</a></li>
+    <li class="m-has-sub">
+      <div class="m-row">
+        <a href="/cursos">Cursos</a>
+        <button type="button" class="m-sub-toggle" aria-controls="mCursosSub" aria-expanded="false" aria-label="Mostrar cursos">
+          <svg width="16" height="16" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <ul id="mCursosSub" class="m-sub" hidden>
+        <li><a href="/curso-gestalt-terapia-fundamentos-e-tecnicas">Curso de Formação</a></li>
+        <li><a href="/curso-imgt-gratuito">Curso IMGT Gratuito</a></li>
+        <li><a href="/lp-ciclo-de-contato.html">Ciclo de Contato</a></li>
+        <li><a href="/lp-vicios.html">Vícios Contemporâneos</a></li>
+        <li><a href="/lp-fenomenologia.html">Fenomenologia e Psicoterapia</a></li>
+        <li><a href="/lp-depressao.html">Depressão</a></li>
+        <li><a href="/lp-ansiedade.html">Ansiedade</a></li>
+        <li><a href="/lp-teoria-do-self.html">Teoria do Self</a></li>
+        <li><a href="/lp-tdah.html">TDAH na Clínica</a></li>
+      </ul>
+    </li>
+    <li><a href="/atendimento">Atendimento</a></li>
+    <li><a href="/supervisao">Supervisão</a></li>
+    <li><a href="/palestras">Palestras</a></li>
+    <li><a href="/contato" class="mobile-drawer__cta">Contato</a></li>
+  </ul>
+</div>
+
+<!-- ============== PAGE HERO ============== -->
+<section class="page-hero grain" aria-labelledby="page-title">
+  <div class="page-hero__inner">
+    <p class="page-hero__eyebrow">Documento legal</p>
+    <h1 id="page-title" class="page-hero__title">Política de Privacidade</h1>
+    <p class="page-hero__sub">
+      Como o Instituto Mineiro de Gestalt-Terapia coleta, utiliza e protege as informações dos clientes que navegam pelo site, se inscrevem em cursos e contratam atendimentos.
+    </p>
+    <p class="page-hero__meta">
+      <strong>Última atualização:</strong> 03 de maio de 2026
+    </p>
+  </div>
+</section>
+
+<!-- ============== ARTICLE ============== -->
+<section class="legal-article">
+  <div class="legal-grid">
+
+    <aside class="legal-toc" aria-label="Sumário">
+      <h2>Sumário</h2>
+      <ol>
+        <li><a href="#introducao">Introdução</a></li>
+        <li><a href="#coleta">Coleta de dados</a></li>
+        <li><a href="#outras-info">Outras informações coletadas</a></li>
+        <li><a href="#emails">Envio de e-mails</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#seguranca">Segurança das informações</a></li>
+        <li><a href="#observacoes">Observações gerais</a></li>
+      </ol>
+    </aside>
+
+    <article class="legal-prose">
+      <section id="introducao">
+        <h2><span class="num">01</span>Introdução</h2>
+        <p>
+          O <strong>Instituto Mineiro de Gestalt-Terapia</strong> apresenta sua política de privacidade para esclarecer o uso das informações coletadas de clientes. Ao visitar este site, você aceita as práticas descritas nesta política.
+        </p>
+      </section>
+
+      <section id="coleta">
+        <h2><span class="num">02</span>Política de coleta de dados</h2>
+        <p>
+          Para melhorar continuamente a experiência de navegação e aprimorar produtos e serviços, o instituto coleta informações importantes. Durante o cadastro, coletam-se <strong>nome, e-mail, telefone de contato</strong> e outros dados necessários ao processo solicitado.
+        </p>
+      </section>
+
+      <section id="outras-info">
+        <h2><span class="num">03</span>Outras informações coletadas</h2>
+        <p>
+          O instituto envia e-mails para melhorar a relevância da comunicação. Também armazena informações coletadas automaticamente quando clientes interagem com o site, incluindo <strong>Internet Protocol (IP)</strong>, tipo de navegador e páginas visualizadas, através de cookies.
+        </p>
+        <p>
+          Cookies reconhecem usuários em futuras navegações, proporcionando melhor experiência no site.
+        </p>
+      </section>
+
+      <section id="emails">
+        <h2><span class="num">04</span>Envio de e-mails</h2>
+        <blockquote>
+          O envio de mensagens eletrônicas se dará somente com o consentimento do cliente.
+        </blockquote>
+        <p>
+          O recebimento pode ser desativado a qualquer momento solicitando descadastramento por meio dos canais oficiais de contato.
+        </p>
+      </section>
+
+      <section id="cookies">
+        <h2><span class="num">05</span>Cookies</h2>
+        <p>
+          Os navegadores permitem ao cliente gerenciar cookies. A recomendação é manter o salvamento ativado para melhor experiência, mas é possível desabilitar conforme preferência nas configurações do seu navegador.
+        </p>
+      </section>
+
+      <section id="seguranca">
+        <h2><span class="num">06</span>Segurança das informações</h2>
+        <p>
+          Transações de pagamento são executadas pela <strong>Plataforma Hotmart</strong>, que assume responsabilidade pela segurança das informações fornecidas durante o processo de compra.
+        </p>
+      </section>
+
+      <section id="observacoes">
+        <h2><span class="num">07</span>Observações gerais</h2>
+        <p>
+          A atualização correta dos dados durante o cadastro é responsabilidade do cliente. O instituto reserva-se o direito de alterar esta política a qualquer momento mediante publicação atualizada no site.
+        </p>
+      </section>
+
+      <div class="legal-cta">
+        <div>
+          <p class="legal-cta__title">Dúvidas sobre seus dados?</p>
+          <p class="legal-cta__sub">Entre em contato com nossa equipe — respondemos em até 48h úteis.</p>
+        </div>
+        <a href="/contato" class="legal-cta__btn">
+          Falar com o IMGT
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============== SITE FOOTER ============== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+
+    <div class="site-footer__top">
+      <a href="/inicio" class="footer-brand" aria-label="IMGT — Instituto Mineiro de Gestalt-Terapia">
+        <img src="Gbrand_assets/gestaltlogo.svg" alt="" aria-hidden="true">
+        <span class="footer-brand__word">
+          <strong>Instituto Mineiro</strong>
+          de Gestalt-Terapia
+        </span>
+      </a>
+
+      <div class="footer-social" aria-label="Redes sociais">
+        <a href="https://wa.me/5531996143891" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/institutomineirodegestalt" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@institutomineirodegestalt" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="site-footer__cols">
+
+      <div class="footer-col">
+        <p class="footer-col__tagline">Formação, clínica e supervisão em Gestalt-Terapia.</p>
+        <p class="footer-col__meta">
+          <strong>Belo Horizonte · MG</strong><br>
+          Atendimento presencial e online<br>
+          <strong>CRP 04/PJ-2830</strong> · Desde 2016
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Nossos serviços</h3>
+        <ul class="footer-links">
+          <li><a href="/cursos">Cursos</a></li>
+          <li><a href="/atendimento">Psicoterapia</a></li>
+          <li><a href="/supervisao">Supervisão</a></li>
+          <li><a href="/palestras">Palestras</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Links rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="/inicio">Início</a></li>
+          <li><a href="/sobre">Sobre o IMGT</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <ul class="footer-contact">
+          <li>
+            <a href="https://wa.me/5531996143891" target="_blank" rel="noopener noreferrer">
+              <span class="icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+              </span>
+              <span class="label">
+                <small>WhatsApp</small>
+                +55 (31) 9 9614-3891
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:institutomineirodegestalt@gmail.com">
+              <span class="icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <path d="M3 7l9 6 9-6"/>
+                </svg>
+              </span>
+              <span class="label">
+                <small>E-mail</small>
+                institutomineirodegestalt@gmail.com
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© 2026 Instituto Mineiro de Gestalt-Terapia LTDA · CNPJ 42.667.490/0001-24</p>
+      <div class="site-footer__legal">
+        <a href="/politica-de-privacidade" aria-current="page">Política de Privacidade</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/termos">Termos e Condições</a>
+      </div>
+    </div>
+
+    <p class="site-footer__credit">
+      webdesign <a href="https://possbranding.com.br" target="_blank" rel="noopener noreferrer">Poss Branding</a>
+    </p>
+
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    var drawer = document.getElementById('mobileDrawer');
+
+    var onScroll = function () {
+      if (window.scrollY > 24) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        document.body.classList.toggle('menu-open', open);
+      });
+      drawer.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          drawer.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('menu-open');
+        }
+      });
+      drawer.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var sub = document.getElementById(btn.getAttribute('aria-controls'));
+          if (!sub) return;
+          var open = sub.hidden;
+          sub.hidden = !open;
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

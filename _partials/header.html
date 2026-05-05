@@ -1,0 +1,132 @@
+<!-- ============== SITE HEADER ============== -->
+<header class="site-header" id="siteHeader" role="banner">
+  <div class="site-header__inner">
+    <a href="/inicio" class="site-logo" aria-label="IMGT — Instituto Mineiro de Gestalt-Terapia, página inicial">
+      <img src="Gbrand_assets/gestaltlogo.svg" alt="" aria-hidden="true">
+      <span class="site-logo__word">
+        IMGT
+        <small>Gestalt-Terapia</small>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="/inicio" class="nav-link" data-nav="inicio">Início</a>
+      <a href="/sobre" class="nav-link" data-nav="sobre">Sobre</a>
+
+      <div class="nav-item-has-sub" data-nav="cursos">
+        <a href="/cursos" class="nav-link nav-toggle" aria-haspopup="true">
+          Cursos
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="nav-submenu" role="menu">
+          <a href="/curso-gestalt-terapia-fundamentos-e-tecnicas" role="menuitem">
+            <strong>Curso de Formação</strong>
+            Gestalt-Terapia: Fundamentos e Técnicas
+          </a>
+          <a href="/curso-imgt-gratuito" role="menuitem">
+            <strong>Curso IMGT Gratuito</strong>
+          </a>
+          <a href="/lp-ciclo-de-contato.html" role="menuitem">Minicurso · Ciclo de Contato</a>
+          <a href="/lp-vicios.html" role="menuitem">Minicurso · Vícios Contemporâneos</a>
+          <a href="/lp-fenomenologia.html" role="menuitem">Minicurso · Fenomenologia e Psicoterapia</a>
+          <a href="/lp-depressao.html" role="menuitem">Minicurso · Depressão</a>
+          <a href="/lp-ansiedade.html" role="menuitem">Minicurso · Ansiedade</a>
+          <a href="/lp-teoria-do-self.html" role="menuitem">Minicurso · Teoria do Self</a>
+          <a href="/lp-tdah.html" role="menuitem">Minicurso · TDAH na Clínica</a>
+        </div>
+      </div>
+
+      <a href="/atendimento" class="nav-link" data-nav="atendimento">Atendimento</a>
+      <a href="/supervisao" class="nav-link" data-nav="supervisao">Supervisão</a>
+      <a href="/palestras" class="nav-link" data-nav="palestras">Palestras</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="/contato" class="btn-pill" data-nav="contato">
+        Contato
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <button type="button" class="menu-toggle" id="menuToggle" aria-controls="mobileDrawer" aria-expanded="false" aria-label="Abrir menu">
+      <span class="menu-toggle__bars" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============== MOBILE DRAWER ============== -->
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <ul>
+    <li><a href="/inicio">Início</a></li>
+    <li><a href="/sobre">Sobre</a></li>
+    <li class="m-has-sub">
+      <div class="m-row">
+        <a href="/cursos">Cursos</a>
+        <button type="button" class="m-sub-toggle" aria-controls="mCursosSub" aria-expanded="false" aria-label="Mostrar cursos">
+          <svg width="16" height="16" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <ul id="mCursosSub" class="m-sub" hidden>
+        <li><a href="/curso-gestalt-terapia-fundamentos-e-tecnicas">Curso de Formação</a></li>
+        <li><a href="/curso-imgt-gratuito">Curso IMGT Gratuito</a></li>
+        <li><a href="/lp-ciclo-de-contato.html">Ciclo de Contato</a></li>
+        <li><a href="/lp-vicios.html">Vícios Contemporâneos</a></li>
+        <li><a href="/lp-fenomenologia.html">Fenomenologia e Psicoterapia</a></li>
+        <li><a href="/lp-depressao.html">Depressão</a></li>
+        <li><a href="/lp-ansiedade.html">Ansiedade</a></li>
+        <li><a href="/lp-teoria-do-self.html">Teoria do Self</a></li>
+        <li><a href="/lp-tdah.html">TDAH na Clínica</a></li>
+      </ul>
+    </li>
+    <li><a href="/atendimento">Atendimento</a></li>
+    <li><a href="/supervisao">Supervisão</a></li>
+    <li><a href="/palestras">Palestras</a></li>
+    <li><a href="/contato" class="mobile-drawer__cta">Contato</a></li>
+  </ul>
+</div>
+
+<script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    var drawer = document.getElementById('mobileDrawer');
+
+    var onScroll = function () {
+      if (window.scrollY > 24) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        document.body.classList.toggle('menu-open', open);
+      });
+      drawer.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          drawer.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('menu-open');
+        }
+      });
+      drawer.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var sub = document.getElementById(btn.getAttribute('aria-controls'));
+          if (!sub) return;
+          var open = sub.hidden;
+          sub.hidden = !open;
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    }
+  })();
+</script>

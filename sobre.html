@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Sobre o IMGT — Trajetória, fundação e missão | Instituto Mineiro de Gestalt-Terapia</title>
+<meta name="description" content="Dez anos de Gestalt-Terapia em Minas. Conheça a trajetória de Marcelo Gomes, a fundação do IMGT em 2016 e a história que sustenta a clínica-escola.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Zilla Slab';
+    src: url('GFonts/Zilla_Slab/ZillaSlab-Light.ttf') format('truetype');
+    font-weight: 300; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Zilla Slab';
+    src: url('GFonts/Zilla_Slab/ZillaSlab-Regular.ttf') format('truetype');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Zilla Slab';
+    src: url('GFonts/Zilla_Slab/ZillaSlab-Medium.ttf') format('truetype');
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Zilla Slab';
+    src: url('GFonts/Zilla_Slab/ZillaSlab-SemiBold.ttf') format('truetype');
+    font-weight: 600; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: 'Zilla Slab';
+    src: url('GFonts/Zilla_Slab/ZillaSlab-Bold.ttf') format('truetype');
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+
+  :root {
+    --bg: #0d1019;
+    --bg-secondary: #ECEAE4;
+    --bg-dark: #0d1019;
+    --bg-dark-deeper: #1c1924;
+    --text: #F5F4F0;
+    --text-secondary: #F5F4F0;
+    --text-muted: #f7f4f0;
+    --text-on-dark: #F5F4F0;
+    --text-secondary-on-dark: #F5F4F0;
+    --text-muted-on-dark: #918D88;
+    --accent: #8752ef;
+    --accent-soft: #7440d6;
+    --accent-mid: #5d2eb5;
+    --accent-glow: rgba(135, 82, 239, 0.35);
+    --line: rgba(26, 26, 26, 0.08);
+    --line-on-dark: rgba(245, 244, 240, 0.10);
+    --fade-h: clamp(120px, 14vh, 200px);
+  }
+
+  * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  html {
+    scroll-behavior: smooth;
+    background-color: #0d1019;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(135, 82, 239, 0.08) 0px, rgba(135, 82, 239, 0.08) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(90deg, rgba(135, 82, 239, 0.08) 0px, rgba(135, 82, 239, 0.08) 1px, transparent 1px, transparent 80px);
+  }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--text);
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  .font-display { font-family: 'Zilla Slab', Georgia, serif; }
+
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    z-index: 1;
+  }
+
+  .h-display {
+    font-family: 'Zilla Slab', Georgia, serif;
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    font-weight: 500;
+  }
+  .h-display-light {
+    font-family: 'Zilla Slab', Georgia, serif;
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    font-weight: 300;
+  }
+
+  .body-text { line-height: 1.7; color: var(--text-secondary); }
+  .body-text-dark { line-height: 1.7; color: var(--text-secondary-on-dark); }
+
+  .shadow-dark {
+    box-shadow:
+      0 8px 32px rgba(26, 26, 26, 0.20),
+      0 24px 64px rgba(26, 26, 26, 0.12),
+      0 0 0 1px rgba(245, 244, 240, 0.04) inset;
+  }
+  .shadow-elev {
+    box-shadow:
+      0 4px 12px rgba(26, 26, 26, 0.08),
+      0 16px 40px rgba(26, 26, 26, 0.10),
+      0 40px 80px rgba(26, 26, 26, 0.06);
+  }
+
+  .spring { transition: transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 280ms ease, background-color 220ms ease, border-color 220ms ease, color 220ms ease, box-shadow 320ms ease; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.95rem 1.65rem;
+    background: var(--accent-soft);
+    color: var(--text-on-dark);
+    font-weight: 500;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 24px var(--accent-glow), 0 1px 0 rgba(255,255,255,0.12) inset;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px var(--accent-glow), 0 1px 0 rgba(255,255,255,0.15) inset; }
+  .btn-primary:active { transform: translateY(0); }
+  .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .btn-ghost-dark {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.95rem 1.5rem;
+    background: rgba(245,244,240,0.06);
+    color: var(--text-on-dark);
+    border: 1px solid rgba(245,244,240,0.14);
+    font-weight: 500;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    backdrop-filter: blur(10px);
+  }
+  .btn-ghost-dark:hover { background: rgba(245,244,240,0.10); border-color: rgba(245,244,240,0.24); transform: translateY(-2px); }
+  .btn-ghost-dark:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .pill-on-dark {
+    background: rgba(245,244,240,0.08);
+    color: var(--text-secondary-on-dark);
+    border: 1px solid rgba(245,244,240,0.10);
+    backdrop-filter: blur(8px);
+  }
+  .pill-accent {
+    background: rgba(135,82,239,0.14);
+    color: #b9a9e8;
+    border: 1px solid rgba(135,82,239,0.30);
+  }
+
+  .image-treat { position: relative; }
+  .image-treat::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 35%, rgba(13,16,25,0.55) 100%);
+    pointer-events: none;
+  }
+
+  .stat-num {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  /* Marquee */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee-track { width: max-content; animation: marquee 40s linear infinite; will-change: transform; }
+  .marquee-track > * { flex-shrink: 0; }
+  .marquee-text {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+  }
+
+  /* Hero entrance */
+  @keyframes hero-rise {
+    0% { opacity: 0; transform: translateY(28px); letter-spacing: 0.02em; }
+    100% { opacity: 1; transform: translateY(0); letter-spacing: -0.04em; }
+  }
+  .hero-title { animation: hero-rise 1100ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-meta { animation: hero-rise 1100ms 120ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+  .hero-cta  { animation: hero-rise 1100ms 240ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+
+  /* Reveal-on-scroll */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 800ms ease, transform 800ms cubic-bezier(0.16, 1, 0.3, 1); transition-delay: var(--reveal-delay, 0ms); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ============== STAGE BG (hero image) ============== */
+  .stage-bg {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background: var(--bg-dark);
+  }
+  .stage-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('imagens/bg-professor-leitura-consultorio.webp');
+    background-size: cover;
+    background-position: center 28%;
+    background-repeat: no-repeat;
+    filter: saturate(0.78) contrast(1.05) brightness(0.55);
+    opacity: 1;
+  }
+  .stage-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: multiply;
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 38%, rgba(13,16,25,0.55) 0%, transparent 70%),
+      radial-gradient(ellipse at 50% 0%, rgba(135,82,239,0.38) 0%, transparent 55%),
+      linear-gradient(180deg, rgba(13,16,25,0.40) 0%, rgba(13,16,25,0.30) 40%, rgba(13,16,25,0.55) 70%, rgba(13,16,25,0.95) 95%, var(--bg-dark) 100%);
+  }
+
+  .dark-stage {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(135,82,239,0.40) 0%, transparent 55%),
+      radial-gradient(ellipse at 0% 90%, rgba(135,82,239,0.28) 0%, transparent 55%),
+      radial-gradient(ellipse at 100% 70%, rgba(93,46,181,0.40) 0%, transparent 55%),
+      var(--bg-dark);
+  }
+
+  /* ============== SECTION CROSSFADES ============== */
+  .section-stacked {
+    position: relative;
+    isolation: isolate;
+    margin-top: calc(var(--fade-h) * -1);
+  }
+  /* Padrão de fundo de seção:
+     1. Imagem da seção (via inline style="background-image:url(...)")
+     2. Cinza sólido em multiply (escurece e dessatura a foto)
+     3. Fade-both nas bordas (dissolve para o canvas do html nas duas pontas) */
+  .section-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: #1A1A1A;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 var(--fade-h), #000 calc(100% - var(--fade-h)), transparent 100%);
+            mask-image: linear-gradient(180deg, transparent 0, #000 var(--fade-h), #000 calc(100% - var(--fade-h)), transparent 100%);
+  }
+
+  /* Hero usa stage-bg próprio — fade só na base, pois é a primeira seção */
+  .stage-bg.fade-bottom {
+    -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - var(--fade-h)), transparent 100%);
+            mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - var(--fade-h)), transparent 100%);
+  }
+
+  /* ============== TIMELINE COMPONENT (novo) ============== */
+  .timeline {
+    position: relative;
+    padding: 1rem 0;
+    view-timeline-name: --timeline-view;
+    view-timeline-axis: block;
+  }
+  /* Linha vertical central (desktop) / esquerda (mobile) */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 24px;
+    width: 1px;
+    background: linear-gradient(180deg, transparent 0%, rgba(232,138,45,1) 8%, rgba(232,138,45,1) 92%, transparent 100%);
+    opacity: 0.3;
+    animation: line-pulse linear both;
+    animation-timeline: --timeline-view;
+    animation-range: cover 0% cover 100%;
+  }
+  @keyframes line-pulse {
+    0%   { opacity: 0.3; }
+    50%  { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+  @media (min-width: 1024px) {
+    .timeline::before {
+      left: 50%;
+      transform: translateX(-0.5px);
+    }
+  }
+
+  .tl-row {
+    position: relative;
+    padding-left: 64px;
+    margin-bottom: 1.75rem;
+  }
+  @media (min-width: 1024px) {
+    .tl-row {
+      padding-left: 0;
+      width: 50%;
+      margin-bottom: 2.5rem;
+    }
+    .tl-row.tl-right {
+      margin-left: 50%;
+      padding-left: 56px;
+    }
+    .tl-row.tl-left {
+      padding-right: 56px;
+      text-align: right;
+    }
+  }
+
+  /* Nó (círculo accent) */
+  .tl-node {
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: #8cc63f;
+    box-shadow:
+      0 0 0 4px rgba(13,16,25,1),
+      0 0 0 5px rgba(232,138,45,0.30),
+      0 0 18px rgba(232,138,45,0.30);
+    z-index: 2;
+    animation: dot-pulse linear both;
+    animation-timeline: view();
+    animation-range: entry 20% cover 60%;
+  }
+  @keyframes dot-pulse {
+    0% {
+      box-shadow:
+        0 0 0 4px rgba(13,16,25,1),
+        0 0 0 5px rgba(232,138,45,0.30),
+        0 0 18px rgba(232,138,45,0.30);
+    }
+    50% {
+      box-shadow:
+        0 0 0 4px rgba(13,16,25,1),
+        0 0 0 5px rgba(232,138,45,1),
+        0 0 36px rgba(232,138,45,1);
+    }
+    100% {
+      box-shadow:
+        0 0 0 4px rgba(13,16,25,1),
+        0 0 0 5px rgba(232,138,45,0.30),
+        0 0 18px rgba(232,138,45,0.30);
+    }
+  }
+  @media (min-width: 1024px) {
+    .tl-row .tl-node { left: auto; right: -9px; top: 18px; }
+    .tl-row.tl-right .tl-node { left: -9px; right: auto; }
+  }
+
+  /* Card lateral */
+  .tl-card {
+    background: transparent;
+    border: 1px solid var(--line-on-dark);
+    border-radius: 22px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.20),
+      0 24px 64px rgba(0, 0, 0, 0.12),
+      0 0 0 1px rgba(245, 244, 240, 0.04) inset;
+  }
+  /* Fundo translúcido (sem afetar a borda) */
+  .tl-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #130c2b;
+    border-radius: inherit;
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .tl-card > * { position: relative; z-index: 1; }
+  .tl-card.tl-card-accent {
+    border-color: rgba(135,82,239,0.30);
+  }
+
+  .tl-year {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    font-size: 1.05rem;
+    display: inline-block;
+    margin-bottom: 0.35rem;
+  }
+  .tl-title {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.18;
+    color: var(--text-on-dark);
+    font-size: 1.18rem;
+  }
+  .tl-desc {
+    color: var(--text-secondary-on-dark);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-top: 0.45rem;
+  }
+
+  /* Era marker (segmenta blocos da timeline) */
+  .tl-era {
+    position: relative;
+    padding: 1.5rem 0 0.75rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  @media (min-width: 1024px) {
+    .tl-era { text-align: center; }
+  }
+  .tl-era-label {
+    display: inline-block;
+    background: var(--bg-dark);
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(135,82,239,0.30);
+    border-radius: 999px;
+    color: var(--text-secondary-on-dark);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Card-capítulo (Ato I/II/III) */
+  .ato-num {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 0.85;
+    font-size: clamp(12rem, 28vw, 24rem);
+    color: rgba(135,82,239,0.18);
+    user-select: none;
+  }
+  /* Empurra o conteúdo da coluna direita para baixo do topo visual do numeral
+     (compensa o offset entre line-box top e cap-top em ~0.18em do .ato-num) */
+  @media (min-width: 1024px) {
+    .ato-right { padding-top: clamp(2.16rem, 5.04vw, 4.32rem); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track, .hero-title, .hero-meta, .hero-cta,
+    .timeline::before, .tl-node { animation: none !important; }
+  }
+
+  /* ============== SITE HEADER (transparent → glass on scroll) ============== */
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 60;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background-color 320ms ease, border-color 320ms ease, backdrop-filter 320ms ease;
+  }
+  .site-header.is-scrolled {
+    background: rgba(13, 16, 25, 0.62);
+    border-bottom-color: rgba(245, 244, 240, 0.08);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+  .site-header__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1.1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  @media (min-width: 640px) { .site-header__inner { padding: 1.2rem 1.5rem; } }
+  @media (min-width: 1024px) { .site-header__inner { padding: 1.4rem 2rem; } }
+
+  .site-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--text-on-dark);
+    text-decoration: none;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+  .site-logo img { width: 36px; height: 36px; display: block; }
+  .site-logo__word { line-height: 1; }
+  .site-logo__word small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-muted-on-dark);
+    margin-top: 2px;
+  }
+
+  .site-nav { display: none; align-items: center; gap: 0.15rem; }
+  @media (min-width: 1024px) { .site-nav { display: flex; } }
+
+  .site-nav .nav-link {
+    position: relative;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-secondary-on-dark);
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    transition: color 220ms ease, background-color 220ms ease;
+  }
+  .site-nav .nav-link:hover { color: var(--text-on-dark); background: rgba(245,244,240,0.06); }
+  .site-nav .nav-link[aria-current="page"] { color: var(--text-on-dark); }
+  .site-nav .nav-link[aria-current="page"]::after {
+    content: '';
+    position: absolute;
+    left: 1rem; right: 1rem; bottom: 0.35rem;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .nav-item-has-sub { position: relative; }
+  .nav-toggle {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    background: none; border: 0; cursor: pointer; font: inherit;
+  }
+  .nav-toggle svg { transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .nav-item-has-sub:hover .nav-toggle svg,
+  .nav-item-has-sub:focus-within .nav-toggle svg { transform: rotate(180deg); }
+
+  .nav-submenu {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    min-width: 320px;
+    padding: 0.6rem;
+    background: rgba(20, 17, 32, 0.92);
+    border: 1px solid rgba(245, 244, 240, 0.08);
+    border-radius: 18px;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.45), 0 8px 24px rgba(0,0,0,0.30);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    opacity: 0; visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 220ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1), visibility 220ms;
+  }
+  .nav-item-has-sub:hover .nav-submenu,
+  .nav-item-has-sub:focus-within .nav-submenu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .nav-submenu a {
+    display: block;
+    padding: 0.65rem 0.85rem;
+    color: var(--text-secondary-on-dark);
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+  .nav-submenu a:hover,
+  .nav-submenu a:focus-visible {
+    background: rgba(135, 82, 239, 0.14);
+    color: var(--text-on-dark);
+    outline: none;
+  }
+  .nav-submenu a strong { display: block; font-weight: 500; color: var(--text-on-dark); }
+
+  .header-cta { display: none; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+  @media (min-width: 1024px) { .header-cta { display: inline-flex; } }
+  .header-cta .btn-pill {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 999px;
+    font-size: 0.9rem; font-weight: 500;
+    background: var(--accent-soft);
+    color: var(--text-on-dark);
+    text-decoration: none;
+    box-shadow: 0 8px 24px var(--accent-glow), 0 1px 0 rgba(255,255,255,0.12) inset;
+    transition: transform 220ms ease, background-color 220ms ease, box-shadow 280ms ease;
+  }
+  .header-cta .btn-pill:hover { transform: translateY(-2px); }
+  .header-cta .btn-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .menu-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 999px;
+    background: rgba(245,244,240,0.06);
+    border: 1px solid rgba(245,244,240,0.14);
+    color: var(--text-on-dark);
+    cursor: pointer;
+    transition: background-color 220ms ease, border-color 220ms ease;
+  }
+  .menu-toggle:hover { background: rgba(245,244,240,0.10); border-color: rgba(245,244,240,0.24); }
+  .menu-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  @media (min-width: 1024px) { .menu-toggle { display: none; } }
+  .menu-toggle__bars { width: 18px; height: 12px; position: relative; }
+  .menu-toggle__bars::before,
+  .menu-toggle__bars::after {
+    content: ''; position: absolute; left: 0; right: 0;
+    height: 1.5px; background: currentColor; border-radius: 2px;
+    transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), top 320ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .menu-toggle__bars::before { top: 0; }
+  .menu-toggle__bars::after  { top: 10px; }
+  .menu-toggle[aria-expanded="true"] .menu-toggle__bars::before { top: 5px; transform: rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] .menu-toggle__bars::after  { top: 5px; transform: rotate(-45deg); }
+
+  .mobile-drawer {
+    position: fixed; inset: 0; z-index: 55;
+    background: rgba(13, 16, 25, 0.96);
+    backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    padding: 96px 1.5rem 2.5rem;
+    overflow-y: auto;
+    opacity: 0; visibility: hidden;
+    transition: opacity 320ms ease, visibility 320ms;
+  }
+  .mobile-drawer.is-open { opacity: 1; visibility: visible; }
+  .mobile-drawer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+  .mobile-drawer a {
+    display: block;
+    padding: 0.95rem 1rem;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-size: 1rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-on-dark);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245,244,240,0.08);
+  }
+  .mobile-drawer a:hover { color: var(--accent); }
+  .mobile-drawer .m-has-sub { border-bottom: 1px solid rgba(245,244,240,0.08); }
+  .mobile-drawer .m-row { display: flex; align-items: stretch; justify-content: space-between; }
+  .mobile-drawer .m-row > a { flex: 1; border-bottom: 0; }
+  .mobile-drawer .m-sub-toggle {
+    flex-shrink: 0; width: 56px;
+    background: transparent;
+    border: 0; border-left: 1px solid rgba(245,244,240,0.08);
+    color: var(--text-secondary-on-dark); cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center;
+    transition: color 220ms ease, background-color 220ms ease;
+  }
+  .mobile-drawer .m-sub-toggle:hover { color: var(--text-on-dark); background: rgba(245,244,240,0.04); }
+  .mobile-drawer .m-sub-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+  .mobile-drawer .m-sub-toggle svg { transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .mobile-drawer .m-sub-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .mobile-drawer .m-sub { list-style: none; padding: 0.25rem 0 0.5rem; margin: 0; background: rgba(245,244,240,0.02); }
+  .mobile-drawer .m-sub a {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-size: 1rem; font-weight: 400;
+    letter-spacing: -0.01em; text-transform: none;
+    padding: 0.6rem 1.25rem;
+    color: var(--text-secondary-on-dark);
+    border: 0;
+  }
+  .mobile-drawer__cta {
+    margin-top: 1.5rem;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 1rem 1.5rem;
+    background: var(--accent);
+    color: var(--text-on-dark) !important;
+    border-radius: 999px;
+    font-family: 'Zilla Slab', Georgia, serif !important;
+    font-size: 0.95rem !important; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    border: 0 !important;
+    box-shadow: 0 8px 24px var(--accent-glow);
+  }
+
+  body.menu-open { overflow: hidden; }
+
+  /* ============== SITE FOOTER (solid, layered dark) ============== */
+  .site-footer {
+    position: relative;
+    background: var(--bg-dark);
+    border-top: 1px solid rgba(245, 244, 240, 0.10);
+    color: var(--text-secondary-on-dark);
+    isolation: isolate;
+    overflow: hidden;
+  }
+  .site-footer::before {
+    content: '';
+    position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(ellipse 70% 60% at 12% 0%, rgba(135, 82, 239, 0.16) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 100% 100%, rgba(93, 46, 181, 0.18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .site-footer__inner {
+    max-width: 1440px; margin: 0 auto;
+    padding: 1.5rem 1.25rem 2rem;
+  }
+  @media (min-width: 768px) { .site-footer__inner { padding: 1.75rem 2rem 2.25rem; } }
+  @media (min-width: 1024px) { .site-footer__inner { padding: 2rem 2.5rem 2.5rem; } }
+
+  .site-footer__top {
+    display: flex; flex-direction: column; gap: 1.25rem;
+    align-items: flex-start; justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(245, 244, 240, 0.08);
+  }
+  @media (min-width: 768px) {
+    .site-footer__top { flex-direction: row; align-items: center; gap: 2.5rem; }
+  }
+
+  .footer-brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+  .footer-brand img { width: 64px; height: 64px; flex-shrink: 0; }
+  .footer-brand__word {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 400;
+    font-size: 1.15rem; line-height: 1.15;
+    color: var(--text-on-dark);
+    letter-spacing: -0.015em;
+    max-width: 18ch;
+  }
+  .footer-brand__word strong { display: block; font-weight: 600; }
+
+  .footer-social { display: inline-flex; align-items: center; gap: 0.6rem; }
+  .footer-social a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    border-radius: 999px;
+    background: rgba(245, 244, 240, 0.05);
+    border: 1px solid rgba(245, 244, 240, 0.10);
+    color: var(--text-secondary-on-dark);
+    transition: background-color 220ms ease, color 220ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease;
+  }
+  .footer-social a:hover {
+    background: var(--accent); color: var(--text-on-dark);
+    border-color: var(--accent); transform: translateY(-2px);
+  }
+  .footer-social a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .site-footer__cols {
+    display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+    padding: 3.5rem 0;
+  }
+  @media (min-width: 640px)  { .site-footer__cols { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .site-footer__cols { grid-template-columns: 1.4fr 1fr 1fr 1.5fr; gap: 3rem; } }
+
+  .footer-col h3 {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1.25rem;
+  }
+  .footer-col__tagline {
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 300;
+    font-size: 1.4rem; line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--text-on-dark);
+    margin: 0 0 1.5rem;
+    max-width: 22ch;
+  }
+  .footer-col__meta {
+    font-size: 0.85rem; line-height: 1.7;
+    color: var(--text-muted-on-dark);
+    margin: 0;
+  }
+  .footer-col__meta strong { color: var(--text-secondary-on-dark); font-weight: 500; }
+
+  .footer-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+  .footer-links a {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    color: var(--text-secondary-on-dark);
+    font-size: 0.95rem; text-decoration: none;
+    transition: color 220ms ease, gap 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .footer-links a::before {
+    content: ''; width: 6px; height: 6px;
+    border-radius: 999px; background: var(--accent);
+    opacity: 0.5; flex-shrink: 0;
+    transition: opacity 220ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .footer-links a:hover { color: var(--text-on-dark); gap: 0.85rem; }
+  .footer-links a:hover::before { opacity: 1; transform: scale(1.4); }
+  .footer-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .footer-contact { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+  .footer-contact a {
+    display: inline-flex; align-items: flex-start; gap: 0.75rem;
+    color: var(--text-secondary-on-dark);
+    font-size: 0.95rem; text-decoration: none;
+    transition: color 220ms ease;
+  }
+  .footer-contact a:hover { color: var(--text-on-dark); }
+  .footer-contact a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .footer-contact .icon {
+    flex-shrink: 0; width: 36px; height: 36px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 10px;
+    background: rgba(135, 82, 239, 0.12);
+    color: var(--accent);
+    border: 1px solid rgba(135, 82, 239, 0.20);
+  }
+  .footer-contact .label { display: flex; flex-direction: column; line-height: 1.35; }
+  .footer-contact .label small {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted-on-dark);
+    margin-bottom: 2px;
+  }
+
+  .site-footer__bottom {
+    padding-top: 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    align-items: flex-start; justify-content: space-between;
+    border-top: 1px solid rgba(245, 244, 240, 0.08);
+    color: var(--text-muted-on-dark);
+    font-size: 0.82rem; line-height: 1.55;
+  }
+  @media (min-width: 768px) { .site-footer__bottom { flex-direction: row; align-items: center; } }
+  .site-footer__legal { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center; }
+  .site-footer__legal a {
+    color: var(--text-muted-on-dark);
+    text-decoration: none;
+    transition: color 220ms ease;
+  }
+  .site-footer__legal a:hover { color: var(--text-on-dark); }
+  .site-footer__legal a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  .site-footer__legal a[aria-current="page"] { color: var(--accent); }
+  .site-footer__legal .sep { opacity: 0.4; }
+
+  .site-footer__credit {
+    color: var(--text-muted-on-dark);
+    font-size: 0.78rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(245, 244, 240, 0.05);
+  }
+  .site-footer__credit a {
+    color: var(--text-secondary-on-dark);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(245, 244, 240, 0.25);
+    transition: color 220ms ease, border-color 220ms ease;
+  }
+  .site-footer__credit a:hover { color: var(--accent); border-color: var(--accent); }
+
+
+</style>
+</head>
+<body class="relative">
+
+<!-- @@HEADER-FOOTER:BEGIN @@ -->
+<!-- ============== SITE HEADER ============== -->
+<header class="site-header" id="siteHeader" role="banner">
+  <div class="site-header__inner">
+    <a href="/inicio" class="site-logo" aria-label="IMGT — Instituto Mineiro de Gestalt-Terapia, página inicial">
+      <img src="Gbrand_assets/gestaltlogo.svg" alt="" aria-hidden="true">
+      <span class="site-logo__word">
+        IMGT
+        <small>Gestalt-Terapia</small>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <a href="/inicio" class="nav-link" data-nav="inicio">Início</a>
+      <a href="/sobre" class="nav-link" data-nav="sobre" aria-current="page">Sobre</a>
+
+      <div class="nav-item-has-sub" data-nav="cursos">
+        <a href="/cursos" class="nav-link nav-toggle" aria-haspopup="true">
+          Cursos
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <div class="nav-submenu" role="menu">
+          <a href="/curso-gestalt-terapia-fundamentos-e-tecnicas" role="menuitem">
+            <strong>Curso de Formação</strong>
+            Gestalt-Terapia: Fundamentos e Técnicas
+          </a>
+          <a href="/curso-imgt-gratuito" role="menuitem">
+            <strong>Curso IMGT Gratuito</strong>
+          </a>
+          <a href="/lp-ciclo-de-contato.html" role="menuitem">Minicurso · Ciclo de Contato</a>
+          <a href="/lp-vicios.html" role="menuitem">Minicurso · Vícios Contemporâneos</a>
+          <a href="/lp-fenomenologia.html" role="menuitem">Minicurso · Fenomenologia e Psicoterapia</a>
+          <a href="/lp-depressao.html" role="menuitem">Minicurso · Depressão</a>
+          <a href="/lp-ansiedade.html" role="menuitem">Minicurso · Ansiedade</a>
+          <a href="/lp-teoria-do-self.html" role="menuitem">Minicurso · Teoria do Self</a>
+          <a href="/lp-tdah.html" role="menuitem">Minicurso · TDAH na Clínica</a>
+        </div>
+      </div>
+
+      <a href="/atendimento" class="nav-link" data-nav="atendimento">Atendimento</a>
+      <a href="/supervisao" class="nav-link" data-nav="supervisao">Supervisão</a>
+      <a href="/palestras" class="nav-link" data-nav="palestras">Palestras</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="/contato" class="btn-pill" data-nav="contato">
+        Contato
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <button type="button" class="menu-toggle" id="menuToggle" aria-controls="mobileDrawer" aria-expanded="false" aria-label="Abrir menu">
+      <span class="menu-toggle__bars" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============== MOBILE DRAWER ============== -->
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+  <ul>
+    <li><a href="/inicio">Início</a></li>
+    <li><a href="/sobre">Sobre</a></li>
+    <li class="m-has-sub">
+      <div class="m-row">
+        <a href="/cursos">Cursos</a>
+        <button type="button" class="m-sub-toggle" aria-controls="mCursosSub" aria-expanded="false" aria-label="Mostrar cursos">
+          <svg width="16" height="16" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <ul id="mCursosSub" class="m-sub" hidden>
+        <li><a href="/curso-gestalt-terapia-fundamentos-e-tecnicas">Curso de Formação</a></li>
+        <li><a href="/curso-imgt-gratuito">Curso IMGT Gratuito</a></li>
+        <li><a href="/lp-ciclo-de-contato.html">Ciclo de Contato</a></li>
+        <li><a href="/lp-vicios.html">Vícios Contemporâneos</a></li>
+        <li><a href="/lp-fenomenologia.html">Fenomenologia e Psicoterapia</a></li>
+        <li><a href="/lp-depressao.html">Depressão</a></li>
+        <li><a href="/lp-ansiedade.html">Ansiedade</a></li>
+        <li><a href="/lp-teoria-do-self.html">Teoria do Self</a></li>
+        <li><a href="/lp-tdah.html">TDAH na Clínica</a></li>
+      </ul>
+    </li>
+    <li><a href="/atendimento">Atendimento</a></li>
+    <li><a href="/supervisao">Supervisão</a></li>
+    <li><a href="/palestras">Palestras</a></li>
+    <li><a href="/contato" class="mobile-drawer__cta">Contato</a></li>
+  </ul>
+</div>
+
+<script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    var drawer = document.getElementById('mobileDrawer');
+
+    var onScroll = function () {
+      if (window.scrollY > 24) header.classList.add('is-scrolled');
+      else header.classList.remove('is-scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    if (toggle && drawer) {
+      toggle.addEventListener('click', function () {
+        var open = drawer.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        document.body.classList.toggle('menu-open', open);
+      });
+      drawer.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          drawer.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('menu-open');
+        }
+      });
+      drawer.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var sub = document.getElementById(btn.getAttribute('aria-controls'));
+          if (!sub) return;
+          var open = sub.hidden;
+          sub.hidden = !open;
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+      });
+    }
+  })();
+</script>
+
+<!-- @@HEADER-FOOTER:END @@ -->
+
+
+<!-- ============== HERO (anchored-bottom, edge-to-edge) ============== -->
+<section class="relative overflow-hidden grain min-h-screen flex flex-col">
+  <div class="stage-bg fade-bottom" aria-hidden="true"></div>
+<div class="max-w-[1440px] mx-auto relative px-3 sm:px-5 w-full flex-1 flex flex-col">
+    <div class="flex-1"></div>
+
+    <div class="relative z-10 px-5 md:px-10 lg:px-14 text-left">
+      <p class="hero-meta text-[0.78rem] uppercase tracking-[0.28em] mb-5" style="color:#8cc63f">Nossa trajetória</p>
+
+      <h1 class="hero-title h-display text-[#F5F4F0] text-[clamp(2.4rem,6.4vw,5.8rem)]">
+        <span style="color:#8752ef">Dez anos</span> cuidando,<br>ensinando e difundindo<br>Gestalt-Terapia.
+      </h1>
+
+      <p class="hero-meta mt-7 body-text-dark text-[clamp(1rem,1.25vw,1.18rem)] max-w-2xl">
+        Da insatisfação no curso de Direito à fundação do IMGT em outubro de 2016. A história do Instituto se confunde com a trajetória de quem o fundou — Marcelo Gomes, psicólogo, professor e supervisor clínico.
+      </p>
+
+      <div class="hero-cta mt-9 flex flex-wrap items-center justify-start gap-3">
+        <a href="#convite" class="btn-primary spring">
+          Quero fazer parte da próxima turma
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="pill pill-accent" style="padding:0.95rem 1.65rem;font-size:0.95rem;font-weight:500;">
+          <span class="w-1.5 h-1.5 rounded-full" style="background:#6ca240"></span>
+          Fundado em outubro de 2016
+        </span>
+      </div>
+    </div>
+
+    <!-- Stats: ancorados logo acima da zona de fade — bottom do container = topo do fade -->
+    <div class="relative z-10 px-5 md:px-10 lg:px-14 mt-16 md:mt-20" style="padding-bottom: var(--fade-h)">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x divide-[color:var(--line-on-dark)]">
+        <div class="md:px-8 reveal text-center">
+          <div class="stat-num text-[color:var(--text)] text-[clamp(2.4rem,4.8vw,4.4rem)]">1999</div>
+          <div class="text-[0.74rem] uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)] mt-2">início da graduação</div>
+        </div>
+        <div class="md:px-8 reveal text-center">
+          <div class="stat-num text-[color:var(--text)] text-[clamp(2.4rem,4.8vw,4.4rem)]">2016</div>
+          <div class="text-[0.74rem] uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)] mt-2">fundação do IMGT</div>
+        </div>
+        <div class="md:px-8 reveal text-center">
+          <div class="stat-num text-[color:var(--text)] text-[clamp(2.4rem,4.8vw,4.4rem)]">19<span class="text-[color:var(--accent)]">+</span></div>
+          <div class="text-[0.74rem] uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)] mt-2">turmas formadas</div>
+        </div>
+        <div class="md:px-8 reveal text-center">
+          <div class="stat-num text-[color:var(--text)] text-[clamp(2.4rem,4.8vw,4.4rem)]">50<span class="text-[color:var(--accent)]">+</span></div>
+          <div class="text-[0.74rem] uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)] mt-2">profissionais supervisionados</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== QUEM SOMOS ============== -->
+<section id="quem-somos" class="relative px-3 sm:px-5" style="padding-top:100px;padding-bottom:200px">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-5 reveal text-center">
+        <p class="text-[0.78rem] uppercase tracking-[0.28em] mb-4" style="color:#8cc63f">Quem somos</p>
+        <h2 class="h-display text-[color:var(--text-on-dark)] text-[clamp(2.2rem,4.4vw,3.8rem)]">
+          Uma clínica-escola dedicada ao ensino e à prática da Gestalt-Terapia.
+        </h2>
+      </div>
+      <div class="lg:col-span-6 lg:col-start-7 reveal text-left">
+        <p class="body-text-dark text-[1.05rem]">
+          Fundado em 2016, o Instituto Mineiro de Gestalt-Terapia surgiu da intenção de promover e difundir a Gestalt-Terapia por meio do ensino e do atendimento clínico de excelência.
+        </p>
+        <p class="mt-5 body-text-dark text-[1.05rem]">
+          Marcelo Gomes, fundador e diretor do IMGT, trouxe sua experiência como psicólogo clínico, professor universitário e Mestre em Psicologia para a criação e gestão do espaço. Buscamos a promoção de estudos e a divulgação da prática gestáltica em diferentes espaços de atuação. O curso <strong style="color:#fff;font-weight:500">"Gestalt-Terapia: Fundamentos e Técnicas"</strong> é a nossa principal formação e pré-requisito para a supervisão.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-2.5">
+          <p class="text-[0.74rem] uppercase tracking-[0.22em] text-[color:var(--text-muted-on-dark)] mr-2 w-full mb-1">Valores que nos orientam</p>
+          <span class="pill pill-on-dark">Experiência</span>
+          <span class="pill pill-on-dark">Dedicação</span>
+          <span class="pill pill-on-dark">Compromisso</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== STATS DA TRAJETÓRIA ============== -->
+<section class="section-stacked fade-both relative px-3 sm:px-5" style="padding-top:150px;padding-bottom:0">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="text-center" style="margin-bottom:120px">
+      <p class="h-display text-[color:var(--text)] max-w-6xl mx-auto leading-[1.15]" style="font-size:clamp(1.9rem,3.4vw,3rem)">
+        <span class="block reveal">A história do Instituto se confunde</span>
+        <span class="block reveal" style="--reveal-delay:200ms">com a trajetória de quem o fundou.</span>
+      </p>
+      <p class="reveal body-text-dark mt-7 max-w-2xl mx-auto" style="--reveal-delay:400ms">
+        Nas próximas seções, Marcelo Gomes conta o caminho que tornou o IMGT possível.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== ATO I — Da insatisfação ao insight ============== -->
+<section id="ato-1" class="section-stacked fade-both relative px-3 sm:px-5 py-28 md:py-36">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <!-- Coluna 1: número + eyebrow -->
+      <div class="lg:col-span-5 reveal">
+        <div class="ato-num">01</div>
+        <p class="text-[0.78rem] uppercase tracking-[0.28em] mt-2" style="color:#8cc63f">Ato 01 · 1996 — 1999</p>
+        <h2 class="h-display text-[#F5F4F0] text-[clamp(2rem,3.6vw,3rem)] mt-4 leading-[1.06]">
+          Da insatisfação<br>ao insight.
+        </h2>
+        <div class="mt-7 border-l-2 pl-5" style="border-color:var(--accent)">
+          <p class="text-[color:var(--text-muted-on-dark)] text-sm uppercase tracking-[0.18em]">Cenário</p>
+          <p class="font-display text-[#F5F4F0] text-[1.35rem] mt-2 leading-[1.2]">
+            Direito → trancamentos → uma pergunta autêntica.
+          </p>
+        </div>
+      </div>
+
+      <!-- Coluna 2: corpo do texto -->
+      <div class="lg:col-span-7 reveal ato-right">
+        <p class="body-text-dark text-[1.05rem]">
+          Meu nome é Marcelo Gomes, sou psicólogo e me graduei em Psicologia na Universidade Federal de Minas Gerais (UFMG) em 2004.
+        </p>
+        <p class="mt-5 body-text-dark text-[1.05rem]">
+          Inicialmente cursava Direito, mas sentia uma insatisfação profunda. Após sucessivos trancamentos e abandonos de disciplinas, fiz a mim mesmo uma pergunta autêntica sobre meu verdadeiro interesse — e dela veio o insight: <em style="color:#8752ef;font-style:normal">Psicologia</em>. Desde os 13 anos eu tinha interesse pela área, mas introjeções sobre rentabilidade financeira me afastavam.
+        </p>
+        <p class="mt-5 body-text-dark text-[1.05rem]">
+          A decisão não veio sem custo. Em 1999 iniciei a graduação em Psicologia, escolha ousada que recebeu críticas de amigos e familiares — e que se mostraria, com o tempo, transformadora.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== ATO II — Clínica, formação e docência ============== -->
+<section id="ato-2" class="section-stacked fade-both relative px-3 sm:px-5 py-28 md:py-36">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <!-- Coluna 1: número + eyebrow -->
+      <div class="lg:col-span-5 reveal lg:sticky lg:top-24">
+        <div class="ato-num">02</div>
+        <p class="text-[0.78rem] uppercase tracking-[0.28em] mt-2" style="color:#8cc63f">Ato 02 · 2004 — 2015</p>
+        <h2 class="h-display text-[#F5F4F0] text-[clamp(2rem,3.6vw,3rem)] mt-4 leading-[1.06]">
+          Clínica, formação<br>e docência.
+        </h2>
+        <div class="mt-7 border-l-2 pl-5" style="border-color:var(--accent)">
+          <p class="text-[color:var(--text-muted-on-dark)] text-sm uppercase tracking-[0.18em]">Capítulo</p>
+          <p class="font-display text-[#F5F4F0] text-[1.35rem] mt-2 leading-[1.2]">
+            Sustentar a clínica, descobrir a supervisão.
+          </p>
+        </div>
+      </div>
+
+      <!-- Coluna 2: corpo + timeline -->
+      <div class="lg:col-span-7 reveal ato-right">
+        <p class="body-text-dark text-[1.05rem]">
+          Apreciei o curso desde o início e decidi me tornar psicoterapeuta. A Gestalt-Terapia me conquistou logo no primeiro período. A prática clínica, porém, mostrou-se mais desafiadora do que eu imaginava: o retorno financeiro era baixo e a captação de clientes, difícil.
+        </p>
+        <p class="mt-5 body-text-dark text-[1.05rem]">
+          Para sustentar a clínica, busquei formação complementar e estabilidade em paralelo:
+        </p>
+
+        <!-- Timeline segmento Ato II -->
+        <div class="timeline mt-10">
+          <div class="tl-row tl-right">
+            <span class="tl-node"></span>
+            <div class="tl-card">
+              <span class="tl-year">2007</span>
+              <h3 class="tl-title">Pós-graduação em Psicologia Clínica Gestáltica e Existencial</h3>
+              <p class="tl-desc">Aprofundamento na abordagem que viria a ser meu campo de atuação. Nesse mesmo ano nasce o desejo de fundar uma entidade própria.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-left">
+            <span class="tl-node"></span>
+            <div class="tl-card">
+              <span class="tl-year">2009</span>
+              <h3 class="tl-title">Pós-graduação em Filosofia</h3>
+              <p class="tl-desc">Aproximação com a Fenomenologia e o Existencialismo — bases filosóficas da Gestalt.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-right">
+            <span class="tl-node"></span>
+            <div class="tl-card">
+              <span class="tl-year">2010 — 2011</span>
+              <h3 class="tl-title">Docência na UFMG</h3>
+              <p class="tl-desc">Primeiros passos na docência universitária — o despertar de um novo interesse.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-left">
+            <span class="tl-node"></span>
+            <div class="tl-card">
+              <span class="tl-year">2011</span>
+              <h3 class="tl-title">Docência na PUC-MG</h3>
+              <p class="tl-desc">Ampliação da experiência docente em outra grande universidade mineira.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-right">
+            <span class="tl-node"></span>
+            <div class="tl-card">
+              <span class="tl-year">2012 — 2014</span>
+              <h3 class="tl-title">Mestrado em Psicologia</h3>
+              <p class="tl-desc">Consolidação acadêmica, sustentada por um cargo público de carga reduzida que tornou tudo possível.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-left">
+            <span class="tl-node"></span>
+            <div class="tl-card tl-card-accent">
+              <span class="tl-year">2013</span>
+              <h3 class="tl-title">A descoberta da supervisão — Universidade Fumec</h3>
+              <p class="tl-desc">Comecei a lecionar Gestalt-Terapia na Fumec e me tornei supervisor de estágio. Foi ali que percebi o quanto a supervisão clínica realiza: ver os estudantes consolidando conceitos na prática e ganhando confiança me trouxe um sentido de propósito que eu não havia encontrado em nenhum outro espaço.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-right">
+            <span class="tl-node"></span>
+            <div class="tl-card tl-card-accent">
+              <span class="tl-year">2015</span>
+              <h3 class="tl-title">O projeto IMGT toma forma</h3>
+              <p class="tl-desc">O sucesso entre os alunos da Fumec, somado a uma demanda por supervisão maior do que as vagas que eu podia oferecer, fez o projeto ganhar forma concreta. Foram os próprios alunos, ao finalizar o estágio, que sugeriram a fundação de um instituto para dar continuidade à formação.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== MARQUEE DE VERBOS ============== -->
+<section class="section-stacked fade-both relative py-20 md:py-28">
+  <div class="overflow-hidden py-4 md:py-5 border-y border-[color:var(--line-on-dark)]">
+    <div class="flex marquee-track whitespace-nowrap">
+      <div class="flex items-center gap-10 pr-10">
+        <span class="marquee-text text-[clamp(2.2rem,4.6vw,3.8rem)] text-[color:var(--text)]">Ensinar</span>
+        <svg aria-hidden="true" class="shrink-0" width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" transform="rotate(45 7 7)" fill="currentColor" style="color:var(--accent)"/></svg>
+        <span class="marquee-text text-[clamp(2.2rem,4.6vw,3.8rem)] text-[color:var(--text-muted-on-dark)]">Cuidar</span>
+        <svg aria-hidden="true" class="shrink-0" width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" transform="rotate(45 7 7)" fill="currentColor" style="color:var(--accent)"/></svg>
+        <span class="marquee-text text-[clamp(2.2rem,4.6vw,3.8rem)] text-[color:var(--text)]">Supervisionar</span>
+        <svg aria-hidden="true" class="shrink-0" width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" transform="rotate(45 7 7)" fill="currentColor" style="color:var(--accent)"/></svg>
+        <span class="marquee-text text-[clamp(2.2rem,4.6vw,3.8rem)] text-[color:var(--text-muted-on-dark)]">Difundir</span>
+        <svg aria-hidden="true" class="shrink-0" width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" transform="rotate(45 7 7)" fill="currentColor" style="color:var(--accent)"/></svg>
+      </div>
+      <div class="flex items-center gap-10 pr-10" aria-hidden="true">
+        <span class="marquee-text text-[clamp(2.2rem,4.6vw,3.8rem)] text-[color:var(--text)]">Ensinar</span>
+        <svg aria-hidden="true" class="shrink-0" width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" transform="rotate(45 7 7)" fill="currentColor" style="color:var(--accent)"/></svg>
+        <span class="marquee-text text-[clamp(2.2rem,4.6vw,3.8rem)] text-[color:var(--text-muted-on-dark)]">Cuidar</span>
+        <svg aria-hidden="true" class="shrink-0" width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" transform="rotate(45 7 7)" fill="currentColor" style="color:var(--accent)"/></svg>
+        <span class="marquee-text text-[clamp(2.2rem,4.6vw,3.8rem)] text-[color:var(--text)]">Supervisionar</span>
+        <svg aria-hidden="true" class="shrink-0" width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" transform="rotate(45 7 7)" fill="currentColor" style="color:var(--accent)"/></svg>
+        <span class="marquee-text text-[clamp(2.2rem,4.6vw,3.8rem)] text-[color:var(--text-muted-on-dark)]">Difundir</span>
+        <svg aria-hidden="true" class="shrink-0" width="14" height="14" viewBox="0 0 14 14"><rect x="2" y="2" width="10" height="10" transform="rotate(45 7 7)" fill="currentColor" style="color:var(--accent)"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== ATO III — A fundação do IMGT ============== -->
+<section id="ato-3" class="section-stacked fade-both relative grain px-3 sm:px-5 py-28 md:py-40">
+  <div class="max-w-[1440px] mx-auto relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+      <!-- Coluna 1 -->
+      <div class="lg:col-span-5 lg:self-stretch">
+        <div class="hidden lg:block mb-8 reveal">
+          <div class="rounded-[22px] overflow-hidden image-treat aspect-[4/3]">
+            <img src="imagens/retrato-marcelo-gomes-02.webp" alt="Marcelo Gomes" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <div class="reveal lg:sticky lg:top-24">
+          <div class="ato-num">03</div>
+          <p class="text-[0.78rem] uppercase tracking-[0.28em] mt-4" style="color:#8cc63f">Ato 03 · 2016 — 2026</p>
+          <h2 class="h-display text-[#F5F4F0] text-[clamp(2rem,3.6vw,3rem)] mt-4 leading-[1.06]">
+            A fundação<br>do IMGT.
+          </h2>
+          <div class="mt-7 border-l-2 pl-5" style="border-color:var(--accent)">
+            <p class="text-[color:var(--text-muted-on-dark)] text-sm uppercase tracking-[0.18em]">Capítulo</p>
+            <p class="font-display text-[#F5F4F0] text-[1.35rem] mt-2 leading-[1.2]">
+              Da sede física à comunidade global online.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna 2 -->
+      <div class="lg:col-span-7 reveal ato-right">
+        <p class="body-text-dark text-[1.05rem]">
+          Em 2016, tomei outra decisão ousada e autêntica: pedi exoneração do cargo público de psicólogo, diante da crescente demanda como professor e clínico. Novamente houve críticas — <em style="color:#b9a9e8;font-style:normal">"o emprego público é sua única segurança"</em> —, mas nenhuma decisão autêntica que tomei na vida me gerou arrependimento.
+        </p>
+        <p class="mt-5 body-text-dark text-[1.05rem]">
+          Naquele mesmo ano, estabeleci sociedade com colegas e alugamos um imóvel com <strong style="color:#fff;font-weight:500">seis consultórios, sala de cursos e sala de supervisão</strong>. A sede do IMGT foi inaugurada em <strong style="color:#fff;font-weight:500">outubro de 2016</strong>, concretizando uma aspiração de nove anos.
+        </p>
+        <p class="mt-5 body-text-dark text-[1.05rem]">
+          A missão ia além de oferecer cursos e supervisão. O Instituto nasceu para apoiar o psicólogo recém-formado: sublocação de salas, clínica social atendida pelos supervisionandos, espaços de convivência para troca profissional. Eu sempre reconheci o caráter solitário da clínica, e idealizei o IMGT como <strong style="color:#fff;font-weight:500">"um espaço de encontro"</strong>.
+        </p>
+
+        <!-- Timeline segmento Ato III -->
+        <div class="timeline mt-12">
+          <div class="tl-era"><span class="tl-era-label">Era 01 · A sede em BH</span></div>
+
+          <div class="tl-row tl-right">
+            <span class="tl-node"></span>
+            <div class="tl-card tl-card-accent">
+              <span class="tl-year">out · 2016</span>
+              <h3 class="tl-title">Inauguração da sede do IMGT</h3>
+              <p class="tl-desc">Seis consultórios, sala de cursos, sala de supervisão. Uma aspiração de nove anos toma forma física em Belo Horizonte.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-left">
+            <span class="tl-node"></span>
+            <div class="tl-card">
+              <span class="tl-year">fev · 2017</span>
+              <h3 class="tl-title">Primeira turma da formação</h3>
+              <p class="tl-desc">A procura cresceu rapidamente — cheguei a supervisionar 30 profissionais.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-right">
+            <span class="tl-node"></span>
+            <div class="tl-card">
+              <span class="tl-year">jul · 2017</span>
+              <h3 class="tl-title">Despedida da Fumec</h3>
+              <p class="tl-desc">Saída emocionalmente difícil, dado o reconhecimento que recebi lá: fui paraninfo e patrono por quatro vezes. Mas as atividades no IMGT mostravam-se ainda mais realizadoras.</p>
+            </div>
+          </div>
+
+          <div class="tl-era"><span class="tl-era-label">Era 02 · A pandemia e a reinvenção</span></div>
+
+          <div class="tl-row tl-left">
+            <span class="tl-node"></span>
+            <div class="tl-card tl-card-accent">
+              <span class="tl-year">mar · 2020</span>
+              <h3 class="tl-title">A 10ª turma é pausada</h3>
+              <p class="tl-desc">As turmas continuaram crescendo até março de 2020, quando a 10ª turma foi pausada pelas restrições sanitárias. Eu nunca havia desejado atuar online — mas, diante do meio desafiador, percebi a necessidade de um ajustamento criativo.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-right">
+            <span class="tl-node"></span>
+            <div class="tl-card">
+              <span class="tl-year">2020 — 2021</span>
+              <h3 class="tl-title">Pivot para online</h3>
+              <p class="tl-desc">A turma 10 finalizou online, e o mesmo aconteceu com supervisões e atendimentos. A surpresa foi positiva: apesar de diferente da interação presencial, o trabalho fluiu bem. E veio um ganho inesperado — supervisionandos e alunos de múltiplas cidades, estados e países passaram a conviver na mesma turma.</p>
+            </div>
+          </div>
+
+          <div class="tl-row tl-left">
+            <span class="tl-node"></span>
+            <div class="tl-card">
+              <span class="tl-year">2021</span>
+              <h3 class="tl-title">Sede física desocupada · operação 100% online</h3>
+              <p class="tl-desc">O IMGT, que poderia ter encolhido, se ampliou.</p>
+            </div>
+          </div>
+
+          <div class="tl-era"><span class="tl-era-label">Era 03 · Comunidade global</span></div>
+
+          <div class="tl-row tl-right">
+            <span class="tl-node"></span>
+            <div class="tl-card tl-card-accent">
+              <span class="tl-year">2022 — 2026</span>
+              <h3 class="tl-title">Turmas 14, 15, 16, 17 e 18 concluídas</h3>
+              <p class="tl-desc">Hoje supervisionamos cerca de 50 profissionais, e a clínica social atende pessoas de todos os estados brasileiros e de vários países. Espaços virtuais foram criados para fortalecer a troca entre supervisionandos.</p>
+              <details class="mt-4 group">
+                <summary class="flex items-center justify-between gap-3 cursor-pointer text-[color:var(--text-muted-on-dark)] text-sm">
+                  <span class="uppercase tracking-[0.18em]">Ver marcos da expansão online</span>
+                  <span class="faq-icon w-7 h-7 rounded-full flex items-center justify-center" style="background:rgba(135,82,239,0.20);color:#fff;border:1px solid rgba(135,82,239,0.35);">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </summary>
+                <ul class="mt-4 space-y-2 text-sm text-[color:var(--text-secondary-on-dark)] pl-1">
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Turmas 11, 12 e 13 realizadas online durante a pandemia</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Sede física desocupada em 2021 — operação 100% online</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Turmas 14, 15, 16, 17 e 18 concluídas</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Turma 19 em breve</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Espaços virtuais criados para fortalecer a troca entre supervisionandos</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== SOBRE A GESTALT-TERAPIA ============== -->
+<section id="gestalt" class="section-stacked fade-both relative overflow-hidden grain py-28 md:py-40">
+  <div class="max-w-[1440px] mx-auto relative px-3 sm:px-5">
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5 reveal">
+        <div class="text-center">
+          <p class="text-[0.78rem] uppercase tracking-[0.28em] mb-4" style="color:#8cc63f">A abordagem</p>
+          <h2 class="h-display text-[#F5F4F0] text-[clamp(2rem,4.2vw,3.6rem)]">
+            Sobre a Gestalt-Terapia.
+          </h2>
+        </div>
+        <p class="body-text-dark mt-7 text-[1.02rem]">
+          A Gestalt-Terapia é uma modalidade de psicoterapia fundamentada na <em style="color:#8752ef;font-style:normal">Fenomenologia</em>, no <em style="color:#8752ef;font-style:normal">Existencialismo</em> e no <em style="color:#8752ef;font-style:normal">Humanismo</em>, que busca facilitar uma compreensão mais profunda do sujeito sobre si mesmo e suas relações.
+        </p>
+        <p class="body-text-dark mt-4 text-[1.02rem]">
+          Promove maior abertura existencial e capacidade de enfrentamento dos desafios da vida, na busca por seus objetivos.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 lg:pl-8 reveal">
+        <div class="space-y-2">
+          <details open class="rounded-2xl border border-[color:var(--line-on-dark)] bg-[rgba(245,244,240,0.03)] backdrop-blur-sm overflow-hidden">
+            <summary class="p-5 md:p-6 flex items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-3 mb-1.5">
+                  <span class="font-display text-[color:var(--text-muted-on-dark)] text-sm">01</span>
+                  <span class="text-xs uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)]">Pilares teóricos</span>
+                </div>
+                <h3 class="font-display text-[#F5F4F0] text-[1.4rem] leading-tight">Fenomenologia · Existencialismo · Humanismo</h3>
+              </div>
+              <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--accent);color:#F5F4F0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-5 md:px-6 pb-6 -mt-1">
+              <p class="body-text-dark text-[0.95rem]">As três bases filosóficas que sustentam a leitura clínica da Gestalt-Terapia. Da redução fenomenológica ao olhar para a existência como projeto.</p>
+            </div>
+          </details>
+
+          <details class="rounded-2xl border border-[color:var(--line-on-dark)] bg-[rgba(245,244,240,0.03)] backdrop-blur-sm overflow-hidden">
+            <summary class="p-5 md:p-6 flex items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-3 mb-1.5">
+                  <span class="font-display text-[color:var(--text-muted-on-dark)] text-sm">02</span>
+                  <span class="text-xs uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)]">Conceitos centrais</span>
+                </div>
+                <h3 class="font-display text-[#F5F4F0] text-[1.4rem] leading-tight">Ciclo de contato · Teoria do self · Mecanismos de defesa</h3>
+              </div>
+              <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(245,244,240,0.06);color:#F5F4F0;border:1px solid rgba(245,244,240,0.14);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-5 md:px-6 pb-6 -mt-1">
+              <p class="body-text-dark text-[0.95rem]">Como a experiência se organiza em fases, como o self se constitui no contato e os mecanismos que interrompem o fluxo.</p>
+            </div>
+          </details>
+
+          <details class="rounded-2xl border border-[color:var(--line-on-dark)] bg-[rgba(245,244,240,0.03)] backdrop-blur-sm overflow-hidden">
+            <summary class="p-5 md:p-6 flex items-center justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-3 mb-1.5">
+                  <span class="font-display text-[color:var(--text-muted-on-dark)] text-sm">03</span>
+                  <span class="text-xs uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)]">Para quem é</span>
+                </div>
+                <h3 class="font-display text-[#F5F4F0] text-[1.4rem] leading-tight">Pessoas em sofrimento, transição ou autoconhecimento</h3>
+              </div>
+              <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(245,244,240,0.06);color:#F5F4F0;border:1px solid rgba(245,244,240,0.14);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-5 md:px-6 pb-6 -mt-1">
+              <p class="body-text-dark text-[0.95rem]">Para qualquer fase da vida — do questionamento existencial ao manejo de sintomas. A clínica acolhe adultos, adolescentes e crianças.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============== CTA FINAL — O CONVITE ============== -->
+<section id="convite" class="section-stacked fade-top relative overflow-hidden grain py-28 md:py-40 lg:py-48">
+  <div class="section-bg" style="background:url('imagens/bg-curso-gratuito-gestalt.webp') #505050 center/cover no-repeat;background-blend-mode:multiply;-webkit-mask-image:linear-gradient(180deg, transparent 0, #000 var(--fade-h), #000 100%);mask-image:linear-gradient(180deg, transparent 0, #000 var(--fade-h), #000 100%)"></div>
+  <div class="max-w-[1440px] mx-auto relative px-3 sm:px-5">
+    <div class="relative z-10 text-center mb-14">
+      <p class="text-[0.78rem] uppercase tracking-[0.28em] mb-5" style="color:#8cc63f">O convite</p>
+      <h2 class="hero-title h-display text-[#F5F4F0] text-[clamp(2.4rem,7vw,6rem)] max-w-[18ch] mx-auto leading-[0.98]">
+        Quero fazer parte da próxima <span style="color:#8752ef">turma</span>.
+      </h2>
+      <p class="body-text-dark mt-7 max-w-2xl mx-auto">
+        Seja para se tornar gestalt-terapeuta, iniciar um processo de psicoterapia ou tirar uma dúvida sobre nossos cursos, estamos à disposição.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+        <a href="https://wa.me/553196143891" class="btn-primary spring">
+          Falar com o IMGT
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="index.html#cursos" class="btn-ghost-dark spring">Ver cursos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Reveal-on-scroll JS -->
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+
+<!-- @@HEADER-FOOTER:BEGIN @@ -->
+<!-- ============== SITE FOOTER ============== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+
+    <div class="site-footer__top">
+      <a href="/inicio" class="footer-brand" aria-label="IMGT — Instituto Mineiro de Gestalt-Terapia">
+        <img src="Gbrand_assets/gestaltlogo.svg" alt="" aria-hidden="true">
+        <span class="footer-brand__word">
+          <strong>Instituto Mineiro</strong>
+          de Gestalt-Terapia
+        </span>
+      </a>
+
+      <div class="footer-social" aria-label="Redes sociais">
+        <a href="https://wa.me/5531996143891" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/institutomineirodegestalt" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@institutomineirodegestalt" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="site-footer__cols">
+
+      <div class="footer-col">
+        <p class="footer-col__tagline">Formação, clínica e supervisão em Gestalt-Terapia.</p>
+        <p class="footer-col__meta">
+          <strong>Belo Horizonte · MG</strong><br>
+          Atendimento presencial e online<br>
+          <strong>CRP 04/PJ-2830</strong> · Desde 2016
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Nossos serviços</h3>
+        <ul class="footer-links">
+          <li><a href="/cursos">Cursos</a></li>
+          <li><a href="/atendimento">Psicoterapia</a></li>
+          <li><a href="/supervisao">Supervisão</a></li>
+          <li><a href="/palestras">Palestras</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Links rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="/inicio">Início</a></li>
+          <li><a href="/sobre">Sobre o IMGT</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contato</h3>
+        <ul class="footer-contact">
+          <li>
+            <a href="https://wa.me/5531996143891" target="_blank" rel="noopener noreferrer">
+              <span class="icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                </svg>
+              </span>
+              <span class="label">
+                <small>WhatsApp</small>
+                +55 (31) 9 9614-3891
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:institutomineirodegestalt@gmail.com">
+              <span class="icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <path d="M3 7l9 6 9-6"/>
+                </svg>
+              </span>
+              <span class="label">
+                <small>E-mail</small>
+                institutomineirodegestalt@gmail.com
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© 2026 Instituto Mineiro de Gestalt-Terapia LTDA · CNPJ 42.667.490/0001-24</p>
+      <div class="site-footer__legal">
+        <a href="/politica-de-privacidade">Política de Privacidade</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/termos">Termos e Condições</a>
+      </div>
+    </div>
+
+    <p class="site-footer__credit">
+      webdesign <a href="https://possbranding.com.br" target="_blank" rel="noopener noreferrer">Poss Branding</a>
+    </p>
+
+  </div>
+</footer>
+
+<!-- @@HEADER-FOOTER:END @@ -->
+</body>
+</html>

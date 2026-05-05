@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
+
+# Screenshots locais (workflow de comparação visual)
+temporary screenshots/
+
+# Arquivos de referência e backups locais (não versionar)
+_archive/
+
+# Logs / env
+*.log
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
