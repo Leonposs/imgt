@@ -1,0 +1,75 @@
+/* === GLOBAL TOKENS — shared across all pages === */
+
+@font-face {
+  font-family: 'Zilla Slab';
+  src: url('/GFonts/Zilla_Slab/ZillaSlab-Light.ttf') format('truetype');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Zilla Slab';
+  src: url('/GFonts/Zilla_Slab/ZillaSlab-Regular.ttf') format('truetype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Zilla Slab';
+  src: url('/GFonts/Zilla_Slab/ZillaSlab-Medium.ttf') format('truetype');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Zilla Slab';
+  src: url('/GFonts/Zilla_Slab/ZillaSlab-SemiBold.ttf') format('truetype');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Zilla Slab';
+  src: url('/GFonts/Zilla_Slab/ZillaSlab-Bold.ttf') format('truetype');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  --bg: #0d1019;
+  --bg-secondary: #ECEAE4;
+  --bg-dark: #0d1019;
+  --bg-dark-elevated: #1e193a;
+  --bg-dark-deeper: #1c1924;
+  --text: #F5F4F0;
+  --text-secondary: #F5F4F0;
+  --text-muted: #f7f4f0;
+  --text-on-dark: #F5F4F0;
+  --text-secondary-on-dark: #F5F4F0;
+  --text-muted-on-dark: #918D88;
+  --accent: #8752ef;
+  --accent-soft: #7440d6;
+  --accent-mid: #5d2eb5;
+  --accent-glow: rgba(135, 82, 239, 0.35);
+  --line: rgba(26, 26, 26, 0.08);
+  --line-on-dark: rgba(245, 244, 240, 0.10);
+  --fade-h: clamp(120px, 14vh, 200px);
+
+  /* Base tipográfica fluida — 1rem escala suavemente entre 16px (≤1920) e 22px (≥3440).
+     Toda tipografia em rem (incluindo Tailwind padrão) escala junto. Viewports principais:
+     ≤1920 → 16px (cap no piso, layout atual preservado)
+     2560 → 18.5px | 3440 → 22px (cap no teto)
+     Atende telas 4K/ultrawide sem o usuário precisar dar zoom no browser. */
+  font-size: clamp(16px, 0.4vw + 8.32px, 22px);
+}
+
+* { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+html {
+  scroll-behavior: smooth;
+  background-color: #0d1019;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(135, 82, 239, 0.08) 0px, rgba(135, 82, 239, 0.08) 1px, transparent 1px, transparent 80px),
+    repeating-linear-gradient(90deg, rgba(135, 82, 239, 0.08) 0px, rgba(135, 82, 239, 0.08) 1px, transparent 1px, transparent 80px);
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.font-display { font-family: 'Zilla Slab', Georgia, serif; }

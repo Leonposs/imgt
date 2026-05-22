@@ -1,10 +1,21 @@
 {
+  "name": "imgt-site",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
     "puppeteer": "^24.40.0",
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.0",
+    "astro": "^6.3.7",
     "chrome-launcher": "^1.2.1",
-    "lighthouse": "^13.3.0"
+    "lighthouse": "^13.3.0",
+    "tailwindcss": "^4.3.0"
   }
 }

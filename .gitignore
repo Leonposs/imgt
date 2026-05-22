@@ -1,3 +1,12 @@
+# Astro build output
+dist/
+.astro/
+
+# Migration scratch artifacts (kept locally, not versioned)
+_debug*.mjs
+_migrate-body*.html
+_migrate-body*.css
+
 # Dependencies
 node_modules/
 
