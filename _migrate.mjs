@@ -1,32 +1,39 @@
-// One-off migration helper. Extracts CSS/JS/body from a source HTML
-// and emits artifacts for Astro migration.
-import { readFileSync, writeFileSync, mkdirSync } from 'fs';
-import { join, dirname } from 'path';
+// Migration helper for landing pages (LPs).
+// Usage: node _migrate.mjs <source.html> [--update-lp-css]
+//
+// Without --update-lp-css: emits <name>.astro using LpLayout (uses existing lp.css).
+// With --update-lp-css: also appends any new CSS rules to src/styles/lp.css.
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
+import { join, dirname, basename } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const src = readFileSync(join(__dirname, 'lp-formacao.html'), 'utf8');
+const srcFile = process.argv[2];
+const updateCss = process.argv.includes('--update-lp-css');
+if (!srcFile) {
+  console.error('Usage: node _migrate.mjs <source.html> [--update-lp-css]');
+  process.exit(1);
+}
 
-// Extract first <style>...</style>
+const src = readFileSync(join(__dirname, srcFile), 'utf8');
+
+const titleMatch = src.match(/<title>([^<]+)<\/title>/);
+const descMatch = src.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/);
 const styleMatch = src.match(/<style>([\s\S]*?)<\/style>/);
-const scriptMatch = src.match(/<script>([\s\S]*?)<\/script>/);
-const bodyMatch = src.match(/<body>([\s\S]*?)<\/body>/);
+const bodyMatch = src.match(/<body[^>]*>([\s\S]*?)<\/body>/);
 
-if (!styleMatch || !scriptMatch || !bodyMatch) {
-  console.error('Missing one of style/script/body');
+if (!styleMatch || !bodyMatch) {
+  console.error('Missing <style> or <body>');
   process.exit(1);
 }
 
 let css = styleMatch[1];
-let js = scriptMatch[1];
 let body = bodyMatch[1];
 
-// 1. CSS: remove @font-face blocks (already in global.css)
+// 1. CSS: drop duplicate @font-face (already in global.css)
 css = css.replace(/@font-face\s*\{[^}]*\}\s*/g, '');
 
-// 2. CSS: remove the page-specific body { --page-... } block.
-//    This is the block in lp-formacao that starts with the comment about palette.
-//    We'll extract it separately for the page file.
+// 2. Extract per-page body palette block
 const bodyPaletteMatch = css.match(
   /\/\*\s*Page-specific palette[^*]*\*\/\s*body\s*\{[\s\S]*?\n\s*\}/
 );
@@ -36,33 +43,46 @@ if (bodyPaletteMatch) {
   css = css.replace(bodyPaletteMatch[0], '');
 }
 
-// 3. Asset paths in CSS: add leading /
+// 3. CSS asset paths
 css = css.replace(/url\((['"])(?!https?:|\/|data:)([^'")]+)\1\)/g, "url($1/$2$1)");
 css = css.replace(/url\((?!['"]|https?:|\/|data:)([^)]+)\)/g, "url(/$1)");
 
-// 4. Body content: prefix asset references with /
-//    Match src="something" and href="something" that don't start with /, http, #, mailto:
+// 4. Body asset paths
 body = body.replace(/(src|href)=(['"])(?!https?:|\/|#|mailto:|tel:|data:)([^'"]+)\2/g, "$1=$2/$3$2");
 
-// 5. Body: remove <script>...</script> blocks (we serve them via LpLayout from /scripts/lp.js)
+// 5. Strip <script> blocks from body (we serve them via LpLayout → /scripts/lp.js)
 body = body.replace(/<script[\s\S]*?<\/script>/g, '');
 
-mkdirSync(join(__dirname, 'src/styles'), { recursive: true });
-mkdirSync(join(__dirname, 'src/scripts'), { recursive: true });
+// 6. If --update-lp-css: append the full CSS verbatim to lp.css.
+//    Duplicate rules are harmless (cascade collapses identical declarations);
+//    new selectors (e.g. .sobre-curso, .aprender) get added automatically.
+//    Smart-merging top-level rules is fragile (keyframes/media-query nesting),
+//    so we just concat with a marker comment.
+const lpCssPath = join(__dirname, 'src/styles/lp.css');
+if (updateCss && existsSync(lpCssPath)) {
+  const existingCss = readFileSync(lpCssPath, 'utf8');
+  const marker = `/* === Merged from ${basename(srcFile)} === */`;
+  if (!existingCss.includes(marker)) {
+    writeFileSync(lpCssPath, existingCss + `\n\n${marker}\n` + css.trim() + '\n');
+    console.log(`Appended ${css.length} bytes of CSS from ${srcFile}`);
+  } else {
+    console.log(`Already merged ${srcFile}`);
+  }
+}
+
+// 7. Compose .astro page
+const pageName = basename(srcFile, '.html');
+const title = (titleMatch?.[1] || pageName).replace(/"/g, '\\"');
+const description = (descMatch?.[1] || '').replace(/"/g, '\\"');
+
 mkdirSync(join(__dirname, 'src/pages'), { recursive: true });
 
-writeFileSync(join(__dirname, 'src/styles/lp.css'), css.trim() + '\n');
-writeFileSync(join(__dirname, '_migrate-body.html'), body.trim());
-writeFileSync(join(__dirname, '_migrate-body-tokens.css'), pageBodyTokens.trim());
-
-// Compose lp-formacao.astro
 const astroPage = `---
 import LpLayout from '../layouts/LpLayout.astro';
 ---
 
 <LpLayout
-  title="Formação em Gestalt-Terapia: Fundamentos e Técnicas — IMGT"
-  description="Curso de Formação em Gestalt-Terapia com certificado de extensão universitária reconhecido pelo MEC. Instituto Mineiro de Gestalt-Terapia."
+  title="${title}"${description ? `\n  description="${description}"` : ''}
 >
   <style is:global>
     ${pageBodyTokens.trim().split('\n').join('\n    ')}
@@ -72,9 +92,6 @@ import LpLayout from '../layouts/LpLayout.astro';
 </LpLayout>
 `;
 
-writeFileSync(join(__dirname, 'src/pages/lp-formacao.astro'), astroPage);
+writeFileSync(join(__dirname, `src/pages/${pageName}.astro`), astroPage);
 
-console.log('lp.css:', css.length, 'bytes');
-console.log('body:', body.length, 'bytes');
-console.log('page body tokens:', pageBodyTokens.length, 'bytes');
-console.log('lp-formacao.astro:', astroPage.length, 'bytes');
+console.log(`${pageName}.astro:`, astroPage.length, 'bytes');

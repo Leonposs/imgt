@@ -1,0 +1,1216 @@
+---
+import InstitutionalLayout from '../layouts/InstitutionalLayout.astro';
+---
+
+<InstitutionalLayout
+  title="Atendimento — IMGT | Psicoterapia em Gestalt-Terapia online"
+  description="Atendimento psicológico profissional, ético e fundamentado na Gestalt-Terapia. Clínica Social e Clínica Particular para adolescentes, adultos e idosos — online."
+>
+  <style is:global>
+    :root {
+        --bg: #0d1019;
+        --bg-secondary: #ECEAE4;
+        --bg-dark: #0d1019;
+        --bg-dark-elevated: #2a2636;
+        --bg-dark-deeper: #1c1924;
+        --text: #F5F4F0;
+        --text-secondary: #F5F4F0;
+        --text-muted: #f7f4f0;
+        --text-on-dark: #F5F4F0;
+        --text-secondary-on-dark: #F5F4F0;
+        --text-muted-on-dark: #918D88;
+        --accent: #8752ef;
+        --accent-soft: #7440d6;
+        --accent-mid: #5d2eb5;
+        --accent-glow: rgba(135, 82, 239, 0.35);
+        --line: rgba(26, 26, 26, 0.08);
+        --line-on-dark: rgba(245, 244, 240, 0.10);
+        --fade-h: clamp(120px, 14vh, 200px);
+    
+        /* Escala root font-size 16->22px entre 1920 e 3440 viewports (escala fluida 4K-ready) */
+        font-size: clamp(16px, 0.4vw + 8.32px, 22px);
+      }
+    
+      * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+      html {
+        scroll-behavior: smooth;
+        background-color: #0d1019;
+        background-image:
+          repeating-linear-gradient(0deg, rgba(135, 82, 239, 0.08) 0px, rgba(135, 82, 239, 0.08) 1px, transparent 1px, transparent 80px),
+          repeating-linear-gradient(90deg, rgba(135, 82, 239, 0.08) 0px, rgba(135, 82, 239, 0.08) 1px, transparent 1px, transparent 80px);
+      }
+      body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); font-weight: 400; line-height: 1.6; overflow-x: hidden; }
+    
+      .font-display { font-family: 'Zilla Slab', Georgia, serif; }
+    
+      .grain::before {
+        content: ''; position: absolute; inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.45 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(/%23n)'/%3E%3C/svg%3E");
+        opacity: 0.18; pointer-events: none; mix-blend-mode: overlay; z-index: 1;
+      }
+    
+      .h-display { font-family: 'Zilla Slab', Georgia, serif; letter-spacing: -0.03em; line-height: 1.02; font-weight: 500; }
+      .body-text { line-height: 1.7; color: var(--text-secondary); }
+      .body-text-dark { line-height: 1.7; color: var(--text-secondary-on-dark); }
+    
+      .shadow-elev {
+        box-shadow:
+          0 4px 12px rgba(26, 26, 26, 0.08),
+          0 16px 40px rgba(26, 26, 26, 0.10),
+          0 40px 80px rgba(26, 26, 26, 0.06);
+      }
+      .shadow-dark {
+        box-shadow:
+          0 8px 32px rgba(26, 26, 26, 0.20),
+          0 24px 64px rgba(26, 26, 26, 0.12),
+          0 0 0 1px rgba(245, 244, 240, 0.04) inset;
+      }
+    
+      .spring { transition: transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 280ms ease, background-color 220ms ease, border-color 220ms ease, color 220ms ease, box-shadow 320ms ease; }
+    
+      .btn-primary {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.95rem 1.65rem;
+        background: var(--accent-soft); color: var(--text-on-dark);
+        font-weight: 500; border-radius: 999px; font-size: 0.95rem;
+        box-shadow: 0 8px 24px var(--accent-glow), 0 1px 0 rgba(255,255,255,0.12) inset;
+      }
+      .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 32px var(--accent-glow), 0 1px 0 rgba(255,255,255,0.15) inset; }
+      .btn-primary:active { transform: translateY(0); }
+      .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    
+      .btn-ghost-dark {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.95rem 1.5rem;
+        background: rgba(245,244,240,0.06); color: var(--text-on-dark);
+        border: 1px solid rgba(245,244,240,0.14);
+        font-weight: 500; border-radius: 999px; font-size: 0.95rem; backdrop-filter: blur(10px);
+      }
+      .btn-ghost-dark:hover { background: rgba(245,244,240,0.10); border-color: rgba(245,244,240,0.24); transform: translateY(-2px); }
+      .btn-ghost-dark:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    
+      .btn-ghost-light {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.95rem 1.5rem;
+        background: rgba(26,26,26,0.04); color: var(--text);
+        border: 1px solid rgba(26,26,26,0.10);
+        font-weight: 500; border-radius: 999px; font-size: 0.95rem;
+      }
+      .btn-ghost-light:hover { background: rgba(26,26,26,0.07); border-color: rgba(26,26,26,0.18); transform: translateY(-2px); }
+      .btn-ghost-light:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    
+      .pill {
+        display: inline-flex; align-items: center; gap: 0.45rem;
+        padding: 0.4rem 0.9rem; border-radius: 999px;
+        font-size: 0.78rem; font-weight: 500; letter-spacing: 0.01em;
+      }
+      .pill-on-dark { background: rgba(245,244,240,0.08); color: var(--text-secondary-on-dark); border: 1px solid rgba(245,244,240,0.10); backdrop-filter: blur(8px); }
+      .pill-accent { background: rgba(135,82,239,0.14); color: #8752ef; border: 1px solid rgba(135,82,239,0.30); }
+    
+      /* Hero stage (image-backed) */
+      .stage-bg {
+        position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+        background: var(--bg-dark);
+      }
+      .stage-bg::before {
+        content: ''; position: absolute; inset: 0;
+        background-image: url('/imagens/hero-atendimento-acolhimento-sessao.webp');
+        background-size: cover; background-position: center 32%;
+        background-repeat: no-repeat;
+        filter: saturate(0.75) contrast(1.05) brightness(0.45);
+      }
+      .stage-bg::after {
+        content: ''; position: absolute; inset: 0; mix-blend-mode: multiply;
+        background:
+          radial-gradient(ellipse 60% 60% at 50% 38%, rgba(13,16,25,0.55) 0%, transparent 70%),
+          radial-gradient(ellipse at 50% 0%, rgba(135,82,239,0.38) 0%, transparent 55%),
+          linear-gradient(180deg, rgba(13,16,25,0.40) 0%, rgba(13,16,25,0.30) 40%, rgba(13,16,25,0.55) 70%, rgba(13,16,25,0.95) 95%, var(--bg-dark) 100%);
+      }
+      .stage-bg.fade-bottom {
+        -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - var(--fade-h)), transparent 100%);
+                mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - var(--fade-h)), transparent 100%);
+      }
+    
+      /* Section crossfades — same alpha-only pattern as index.html */
+      .section-stacked { position: relative; isolation: isolate; margin-top: calc(var(--fade-h) * -1); }
+      .section-bg {
+        position: absolute; inset: 0; z-index: -1; pointer-events: none;
+        background-color: #1A1A1A; background-blend-mode: multiply;
+        background-size: cover; background-position: center; background-repeat: no-repeat;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 var(--fade-h), #000 calc(100% - var(--fade-h)), transparent 100%);
+                mask-image: linear-gradient(180deg, transparent 0, #000 var(--fade-h), #000 calc(100% - var(--fade-h)), transparent 100%);
+      }
+      .stat-num { font-family: 'Zilla Slab', Georgia, serif; font-weight: 500; letter-spacing: -0.04em; line-height: 1; }
+    
+      .image-treat { position: relative; }
+      .image-treat::after {
+        content: ''; position: absolute; inset: 0;
+        background: linear-gradient(180deg, transparent 35%, rgba(23,20,31,0.55) 100%);
+        pointer-events: none;
+      }
+    
+      /* Path card — Conclave-style image-headed clinic option */
+      .path-card { position: relative; overflow: hidden; }
+      .path-card .img-wrap { transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1); }
+      .path-card:hover .img-wrap { transform: scale(1.04); }
+      .path-card .arrow-btn { transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1), background-color 220ms ease; }
+      .path-card:hover .arrow-btn { transform: rotate(-45deg); background: var(--accent); color: var(--text-on-dark); }
+    
+      /* Step number ring */
+      .step-num {
+        width: 56px; height: 56px; border-radius: 999px;
+        display: inline-flex; align-items: center; justify-content: center;
+        font-family: 'Zilla Slab', Georgia, serif; font-weight: 500; font-size: 1.4rem;
+        background: rgba(135,82,239,0.10); color: var(--accent);
+        border: 1px solid rgba(135,82,239,0.30);
+        letter-spacing: -0.02em;
+      }
+    
+      /* Hero animations */
+      @keyframes hero-rise {
+        0% { opacity: 0; transform: translateY(28px); letter-spacing: 0.02em; }
+        100% { opacity: 1; transform: translateY(0); letter-spacing: -0.04em; }
+      }
+      .hero-title { animation: hero-rise 1100ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .hero-meta  { animation: hero-rise 1100ms 120ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+      .hero-cta   { animation: hero-rise 1100ms 240ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+    
+      /* FAQ accordion */
+      details > summary { list-style: none; cursor: pointer; }
+      details > summary::-webkit-details-marker { display: none; }
+      details[open] .faq-icon { transform: rotate(45deg); }
+      .faq-icon { transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+    
+      /* Reveal-on-scroll */
+      .reveal { opacity: 0; transform: translateY(28px); transition: opacity 800ms ease, transform 800ms cubic-bezier(0.16, 1, 0.3, 1); transition-delay: var(--reveal-delay, 0ms); }
+      .reveal.in { opacity: 1; transform: translateY(0); }
+    
+      @media (prefers-reduced-motion: reduce) {
+        .hero-title, .hero-meta, .hero-cta { animation: none !important; }
+      }
+    
+      /* ============== SITE HEADER (transparent → glass on scroll) ============== */
+      .site-header {
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        z-index: 60;
+        background: transparent;
+        border-bottom: 1px solid transparent;
+        transition: background-color 320ms ease, border-color 320ms ease, backdrop-filter 320ms ease;
+      }
+      .site-header.is-scrolled {
+        background: rgba(13, 16, 25, 0.62);
+        border-bottom-color: rgba(245, 244, 240, 0.08);
+        backdrop-filter: blur(14px) saturate(140%);
+        -webkit-backdrop-filter: blur(14px) saturate(140%);
+      }
+      .site-header__inner {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 1.1rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+      @media (min-width: 640px) { .site-header__inner { padding: 1.2rem 1.5rem; } }
+      @media (min-width: 1024px) { .site-header__inner { padding: 1.4rem 2rem; } }
+    
+      .site-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        color: var(--text-on-dark);
+        text-decoration: none;
+        font-family: 'Zilla Slab', Georgia, serif;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        font-size: 1.05rem;
+        flex-shrink: 0;
+      }
+      .site-logo img { width: 36px; height: 36px; display: block; }
+      .site-logo__word { line-height: 1; }
+      .site-logo__word small {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 0.68rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--text-muted-on-dark);
+        margin-top: 2px;
+      }
+    
+      .site-nav { display: none; align-items: center; gap: 0.15rem; }
+      @media (min-width: 1024px) { .site-nav { display: flex; } }
+    
+      .site-nav .nav-link {
+        position: relative;
+        font-family: 'Zilla Slab', Georgia, serif;
+        font-weight: 500;
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-secondary-on-dark);
+        text-decoration: none;
+        padding: 0.6rem 1rem;
+        border-radius: 999px;
+        transition: color 220ms ease, background-color 220ms ease;
+      }
+      .site-nav .nav-link:hover { color: var(--text-on-dark); background: rgba(245,244,240,0.06); }
+      .site-nav .nav-link[aria-current="page"] { color: var(--text-on-dark); }
+      .site-nav .nav-link[aria-current="page"]::after {
+        content: '';
+        position: absolute;
+        left: 1rem; right: 1rem; bottom: 0.35rem;
+        height: 2px;
+        background: var(--accent);
+        border-radius: 2px;
+      }
+    
+      .nav-item-has-sub { position: relative; }
+      .nav-toggle {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        background: none; border: 0; cursor: pointer; font: inherit;
+      }
+      .nav-toggle svg { transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1); }
+      .nav-item-has-sub:hover .nav-toggle svg,
+      .nav-item-has-sub:focus-within .nav-toggle svg { transform: rotate(180deg); }
+    
+      .nav-submenu {
+        position: absolute;
+        top: calc(100% + 0.4rem);
+        left: 0;
+        min-width: 320px;
+        padding: 0.6rem;
+        background: rgba(20, 17, 32, 0.92);
+        border: 1px solid rgba(245, 244, 240, 0.08);
+        border-radius: 18px;
+        box-shadow: 0 24px 64px rgba(0,0,0,0.45), 0 8px 24px rgba(0,0,0,0.30);
+        backdrop-filter: blur(18px) saturate(140%);
+        -webkit-backdrop-filter: blur(18px) saturate(140%);
+        opacity: 0; visibility: hidden;
+        transform: translateY(-6px);
+        transition: opacity 220ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1), visibility 220ms;
+      }
+      .nav-item-has-sub:hover .nav-submenu,
+      .nav-item-has-sub:focus-within .nav-submenu { opacity: 1; visibility: visible; transform: translateY(0); }
+      .nav-submenu a {
+        display: block;
+        padding: 0.65rem 0.85rem;
+        color: var(--text-secondary-on-dark);
+        font-family: 'Zilla Slab', Georgia, serif;
+        font-weight: 400;
+        font-size: 1rem;
+        letter-spacing: -0.01em;
+        line-height: 1.35;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: background-color 200ms ease, color 200ms ease;
+      }
+      .nav-submenu a:hover,
+      .nav-submenu a:focus-visible {
+        background: rgba(135, 82, 239, 0.14);
+        color: var(--text-on-dark);
+        outline: none;
+      }
+      .nav-submenu a strong { display: block; font-weight: 500; color: var(--text-on-dark); }
+    
+      .header-cta { display: none; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+      @media (min-width: 1024px) { .header-cta { display: inline-flex; } }
+      .header-cta .btn-pill {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        padding: 0.7rem 1.2rem;
+        border-radius: 999px;
+        font-size: 0.9rem; font-weight: 500;
+        background: var(--accent-soft);
+        color: var(--text-on-dark);
+        text-decoration: none;
+        box-shadow: 0 8px 24px var(--accent-glow), 0 1px 0 rgba(255,255,255,0.12) inset;
+        transition: transform 220ms ease, background-color 220ms ease, box-shadow 280ms ease;
+      }
+      .header-cta .btn-pill:hover { transform: translateY(-2px); }
+      .header-cta .btn-pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    
+      .menu-toggle {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 44px; height: 44px;
+        border-radius: 999px;
+        background: rgba(245,244,240,0.06);
+        border: 1px solid rgba(245,244,240,0.14);
+        color: var(--text-on-dark);
+        cursor: pointer;
+        transition: background-color 220ms ease, border-color 220ms ease;
+      }
+      .menu-toggle:hover { background: rgba(245,244,240,0.10); border-color: rgba(245,244,240,0.24); }
+      .menu-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+      @media (min-width: 1024px) { .menu-toggle { display: none; } }
+      .menu-toggle__bars { width: 18px; height: 12px; position: relative; }
+      .menu-toggle__bars::before,
+      .menu-toggle__bars::after {
+        content: ''; position: absolute; left: 0; right: 0;
+        height: 1.5px; background: currentColor; border-radius: 2px;
+        transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), top 320ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .menu-toggle__bars::before { top: 0; }
+      .menu-toggle__bars::after  { top: 10px; }
+      .menu-toggle[aria-expanded="true"] .menu-toggle__bars::before { top: 5px; transform: rotate(45deg); }
+      .menu-toggle[aria-expanded="true"] .menu-toggle__bars::after  { top: 5px; transform: rotate(-45deg); }
+    
+      .mobile-drawer {
+        position: fixed; inset: 0; z-index: 55;
+        background: rgba(13, 16, 25, 0.96);
+        backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+        padding: 96px 1.5rem 2.5rem;
+        overflow-y: auto;
+        opacity: 0; visibility: hidden;
+        transition: opacity 320ms ease, visibility 320ms;
+      }
+      .mobile-drawer.is-open { opacity: 1; visibility: visible; }
+      .mobile-drawer ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+      .mobile-drawer a {
+        display: block;
+        padding: 0.95rem 1rem;
+        font-family: 'Zilla Slab', Georgia, serif;
+        font-size: 1rem; font-weight: 500;
+        letter-spacing: 0.1em; text-transform: uppercase;
+        color: var(--text-on-dark);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(245,244,240,0.08);
+      }
+      .mobile-drawer a:hover { color: var(--accent); }
+      .mobile-drawer .m-has-sub { border-bottom: 1px solid rgba(245,244,240,0.08); }
+      .mobile-drawer .m-row { display: flex; align-items: stretch; justify-content: space-between; }
+      .mobile-drawer .m-row > a { flex: 1; border-bottom: 0; }
+      .mobile-drawer .m-sub-toggle {
+        flex-shrink: 0; width: 56px;
+        background: transparent;
+        border: 0; border-left: 1px solid rgba(245,244,240,0.08);
+        color: var(--text-secondary-on-dark); cursor: pointer;
+        display: inline-flex; align-items: center; justify-content: center;
+        transition: color 220ms ease, background-color 220ms ease;
+      }
+      .mobile-drawer .m-sub-toggle:hover { color: var(--text-on-dark); background: rgba(245,244,240,0.04); }
+      .mobile-drawer .m-sub-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+      .mobile-drawer .m-sub-toggle svg { transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1); }
+      .mobile-drawer .m-sub-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+      .mobile-drawer .m-sub { list-style: none; padding: 0.25rem 0 0.5rem; margin: 0; background: rgba(245,244,240,0.02); }
+      .mobile-drawer .m-sub a {
+        font-family: 'Zilla Slab', Georgia, serif;
+        font-size: 1rem; font-weight: 400;
+        letter-spacing: -0.01em; text-transform: none;
+        padding: 0.6rem 1.25rem;
+        color: var(--text-secondary-on-dark);
+        border: 0;
+      }
+      .mobile-drawer__cta {
+        margin-top: 1.5rem;
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        padding: 1rem 1.5rem;
+        background: var(--accent);
+        color: var(--text-on-dark) !important;
+        border-radius: 999px;
+        font-family: 'Zilla Slab', Georgia, serif !important;
+        font-size: 0.95rem !important; font-weight: 500;
+        letter-spacing: 0.1em; text-transform: uppercase;
+        border: 0 !important;
+        box-shadow: 0 8px 24px var(--accent-glow);
+      }
+    
+      body.menu-open { overflow: hidden; }
+    
+      /* ============== SITE FOOTER (solid, layered dark) ============== */
+      .site-footer {
+        position: relative;
+        background: var(--bg-dark);
+        border-top: 1px solid rgba(245, 244, 240, 0.10);
+        color: var(--text-secondary-on-dark);
+        isolation: isolate;
+        overflow: hidden;
+      }
+      .site-footer::before {
+        content: '';
+        position: absolute; inset: 0; z-index: -1;
+        background:
+          radial-gradient(ellipse 70% 60% at 12% 0%, rgba(135, 82, 239, 0.16) 0%, transparent 60%),
+          radial-gradient(ellipse 60% 50% at 100% 100%, rgba(93, 46, 181, 0.18) 0%, transparent 60%);
+        pointer-events: none;
+      }
+      .site-footer__inner {
+        max-width: 1440px; margin: 0 auto;
+        padding: 1.5rem 1.25rem 2rem;
+      }
+      @media (min-width: 768px) { .site-footer__inner { padding: 1.75rem 2rem 2.25rem; } }
+      @media (min-width: 1024px) { .site-footer__inner { padding: 2rem 2.5rem 2.5rem; } }
+    
+      .site-footer__top {
+        display: flex; flex-direction: column; gap: 1.25rem;
+        align-items: flex-start; justify-content: space-between;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(245, 244, 240, 0.08);
+      }
+      @media (min-width: 768px) {
+        .site-footer__top { flex-direction: row; align-items: center; gap: 2.5rem; }
+      }
+    
+      .footer-brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+      .footer-brand img { width: 64px; height: 64px; flex-shrink: 0; }
+      .footer-brand__word {
+        font-family: 'Zilla Slab', Georgia, serif;
+        font-weight: 400;
+        font-size: 1.15rem; line-height: 1.15;
+        color: var(--text-on-dark);
+        letter-spacing: -0.015em;
+        max-width: 18ch;
+      }
+      .footer-brand__word strong { display: block; font-weight: 600; }
+    
+      .footer-social { display: inline-flex; align-items: center; gap: 0.6rem; }
+      .footer-social a {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 44px; height: 44px;
+        border-radius: 999px;
+        background: rgba(245, 244, 240, 0.05);
+        border: 1px solid rgba(245, 244, 240, 0.10);
+        color: var(--text-secondary-on-dark);
+        transition: background-color 220ms ease, color 220ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease;
+      }
+      .footer-social a:hover {
+        background: var(--accent); color: var(--text-on-dark);
+        border-color: var(--accent); transform: translateY(-2px);
+      }
+      .footer-social a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    
+      .site-footer__cols {
+        display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+        padding: 3.5rem 0;
+      }
+      @media (min-width: 640px)  { .site-footer__cols { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1024px) { .site-footer__cols { grid-template-columns: 1.4fr 1fr 1fr 1.5fr; gap: 3rem; } }
+    
+      .footer-col h3 {
+        font-family: 'Zilla Slab', Georgia, serif;
+        font-weight: 500;
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin: 0 0 1.25rem;
+      }
+      .footer-col__tagline {
+        font-family: 'Zilla Slab', Georgia, serif;
+        font-weight: 300;
+        font-size: 1.4rem; line-height: 1.25;
+        letter-spacing: -0.02em;
+        color: var(--text-on-dark);
+        margin: 0 0 1.5rem;
+        max-width: 22ch;
+      }
+      .footer-col__meta {
+        font-size: 0.85rem; line-height: 1.7;
+        color: var(--text-muted-on-dark);
+        margin: 0;
+      }
+      .footer-col__meta strong { color: var(--text-secondary-on-dark); font-weight: 500; }
+    
+      .footer-links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+      .footer-links a {
+        display: inline-flex; align-items: center; gap: 0.55rem;
+        color: var(--text-secondary-on-dark);
+        font-size: 0.95rem; text-decoration: none;
+        transition: color 220ms ease, gap 280ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .footer-links a::before {
+        content: ''; width: 6px; height: 6px;
+        border-radius: 999px; background: var(--accent);
+        opacity: 0.5; flex-shrink: 0;
+        transition: opacity 220ms ease, transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .footer-links a:hover { color: var(--text-on-dark); gap: 0.85rem; }
+      .footer-links a:hover::before { opacity: 1; transform: scale(1.4); }
+      .footer-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+    
+      .footer-contact { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem; }
+      .footer-contact a {
+        display: inline-flex; align-items: flex-start; gap: 0.75rem;
+        color: var(--text-secondary-on-dark);
+        font-size: 0.95rem; text-decoration: none;
+        transition: color 220ms ease;
+      }
+      .footer-contact a:hover { color: var(--text-on-dark); }
+      .footer-contact a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+      .footer-contact .icon {
+        flex-shrink: 0; width: 36px; height: 36px;
+        display: inline-flex; align-items: center; justify-content: center;
+        border-radius: 10px;
+        background: rgba(135, 82, 239, 0.12);
+        color: var(--accent);
+        border: 1px solid rgba(135, 82, 239, 0.20);
+      }
+      .footer-contact .label { display: flex; flex-direction: column; line-height: 1.35; }
+      .footer-contact .label small {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--text-muted-on-dark);
+        margin-bottom: 2px;
+      }
+    
+      .site-footer__bottom {
+        padding-top: 2rem;
+        display: flex; flex-direction: column; gap: 1rem;
+        align-items: flex-start; justify-content: space-between;
+        border-top: 1px solid rgba(245, 244, 240, 0.08);
+        color: var(--text-muted-on-dark);
+        font-size: 0.82rem; line-height: 1.55;
+      }
+      @media (min-width: 768px) { .site-footer__bottom { flex-direction: row; align-items: center; } }
+      .site-footer__legal { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; align-items: center; }
+      .site-footer__legal a {
+        color: var(--text-muted-on-dark);
+        text-decoration: none;
+        transition: color 220ms ease;
+      }
+      .site-footer__legal a:hover { color: var(--text-on-dark); }
+      .site-footer__legal a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+      .site-footer__legal a[aria-current="page"] { color: var(--accent); }
+      .site-footer__legal .sep { opacity: 0.4; }
+    
+      .site-footer__credit {
+        color: var(--text-muted-on-dark);
+        font-size: 0.78rem;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(245, 244, 240, 0.05);
+      }
+      .site-footer__credit a {
+        color: var(--text-secondary-on-dark);
+        text-decoration: none;
+        border-bottom: 1px dotted rgba(245, 244, 240, 0.25);
+        transition: color 220ms ease, border-color 220ms ease;
+      }
+      .site-footer__credit a:hover { color: var(--accent); border-color: var(--accent); }
+  </style>
+
+  <!-- @@HEADER-FOOTER:BEGIN @@ -->
+  <!-- ============== SITE HEADER ============== -->
+  <header class="site-header" id="siteHeader" role="banner">
+    <div class="site-header__inner">
+      <a href="/inicio" class="site-logo" aria-label="IMGT — Instituto Mineiro de Gestalt-Terapia, página inicial">
+        <img src="/Gbrand_assets/gestaltlogo.svg" alt="" aria-hidden="true">
+        <span class="site-logo__word">
+          IMGT
+          <small>Gestalt-Terapia</small>
+        </span>
+      </a>
+  
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="/inicio" class="nav-link" data-nav="inicio">Início</a>
+        <a href="/sobre" class="nav-link" data-nav="sobre">Sobre</a>
+  
+        <div class="nav-item-has-sub" data-nav="cursos">
+          <a href="/cursos" class="nav-link nav-toggle" aria-haspopup="true">
+            Cursos
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <div class="nav-submenu" role="menu">
+            <a href="/curso-gestalt-terapia-fundamentos-e-tecnicas" role="menuitem">
+              <strong>Curso de Formação</strong>
+              Gestalt-Terapia: Fundamentos e Técnicas
+            </a>
+            <a href="/curso-imgt-gratuito" role="menuitem">
+              <strong>Curso IMGT Gratuito</strong>
+            </a>
+            <a href="/lp-ciclo-de-contato.html" role="menuitem">Minicurso · Ciclo de Contato</a>
+            <a href="/lp-vicios.html" role="menuitem">Minicurso · Vícios Contemporâneos</a>
+            <a href="/lp-fenomenologia.html" role="menuitem">Minicurso · Fenomenologia e Psicoterapia</a>
+            <a href="/lp-depressao.html" role="menuitem">Minicurso · Depressão</a>
+            <a href="/lp-ansiedade.html" role="menuitem">Minicurso · Ansiedade</a>
+            <a href="/lp-teoria-do-self.html" role="menuitem">Minicurso · Teoria do Self</a>
+            <a href="/lp-tdah.html" role="menuitem">Minicurso · TDAH na Clínica</a>
+          </div>
+        </div>
+  
+        <a href="/atendimento" class="nav-link" data-nav="atendimento" aria-current="page">Atendimento</a>
+        <a href="/supervisao" class="nav-link" data-nav="supervisao">Supervisão</a>
+        <a href="/palestras" class="nav-link" data-nav="palestras">Palestras</a>
+      </nav>
+  
+      <div class="header-cta">
+        <a href="/contato" class="btn-pill" data-nav="contato">
+          Contato
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 7h8m0 0L7.5 3.5M11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+  
+      <button type="button" class="menu-toggle" id="menuToggle" aria-controls="mobileDrawer" aria-expanded="false" aria-label="Abrir menu">
+        <span class="menu-toggle__bars" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+  
+  <!-- ============== MOBILE DRAWER ============== -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+    <ul>
+      <li><a href="/inicio">Início</a></li>
+      <li><a href="/sobre">Sobre</a></li>
+      <li class="m-has-sub">
+        <div class="m-row">
+          <a href="/cursos">Cursos</a>
+          <button type="button" class="m-sub-toggle" aria-controls="mCursosSub" aria-expanded="false" aria-label="Mostrar cursos">
+            <svg width="16" height="16" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <ul id="mCursosSub" class="m-sub" hidden>
+          <li><a href="/curso-gestalt-terapia-fundamentos-e-tecnicas">Curso de Formação</a></li>
+          <li><a href="/curso-imgt-gratuito">Curso IMGT Gratuito</a></li>
+          <li><a href="/lp-ciclo-de-contato.html">Ciclo de Contato</a></li>
+          <li><a href="/lp-vicios.html">Vícios Contemporâneos</a></li>
+          <li><a href="/lp-fenomenologia.html">Fenomenologia e Psicoterapia</a></li>
+          <li><a href="/lp-depressao.html">Depressão</a></li>
+          <li><a href="/lp-ansiedade.html">Ansiedade</a></li>
+          <li><a href="/lp-teoria-do-self.html">Teoria do Self</a></li>
+          <li><a href="/lp-tdah.html">TDAH na Clínica</a></li>
+        </ul>
+      </li>
+      <li><a href="/atendimento">Atendimento</a></li>
+      <li><a href="/supervisao">Supervisão</a></li>
+      <li><a href="/palestras">Palestras</a></li>
+      <li><a href="/contato" class="mobile-drawer__cta">Contato</a></li>
+    </ul>
+  </div>
+  
+  
+  
+  <!-- @@HEADER-FOOTER:END @@ -->
+  
+  
+  <!-- ============== HERO — quote-as-editorial-headline ============== -->
+  <section class="relative overflow-hidden grain min-h-screen flex flex-col">
+    <div class="stage-bg fade-bottom" aria-hidden="true"></div>
+    <div class="max-w-[1440px] mx-auto relative px-3 sm:px-5 w-full flex-1 flex flex-col">
+      <div class="flex-1"></div>
+  
+      <div class="relative z-10 px-5 md:px-10 lg:px-14 pb-[180px] md:pb-[220px] lg:pb-[260px] text-left">
+        <div class="hero-meta flex items-center gap-3 mb-7">
+          <span class="pill pill-accent">Atendimento</span>
+          <span class="text-[0.78rem] uppercase tracking-[0.28em]" style="color:#8cc63f">A Clínica do IMGT</span>
+        </div>
+  
+        <h1 class="hero-title h-display text-[#F5F4F0] text-[clamp(2.2rem,5.4vw,4.8rem)] max-w-[20ch]">
+          Atendimento psicológico profissional, ético e fundamentado na <span style="color:#8752ef">Gestalt-Terapia</span>.
+        </h1>
+  
+        <p class="hero-meta mt-7 body-text-dark text-[clamp(1rem,1.25vw,1.18rem)] max-w-2xl">
+          Clínica-escola para adolescentes a partir de 13 anos, adultos e idosos — predominantemente online, com presencial na região de Belo Horizonte.
+        </p>
+  
+        <div class="hero-cta mt-9 flex flex-wrap items-center justify-start gap-3">
+          <a href="#caminhos" class="btn-primary spring">
+            Escolher um caminho
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#como-funciona" class="btn-ghost-dark spring">Como funciona</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- ============== QUEM ATENDEMOS · PADRÃO PROFISSIONAL ============== -->
+  <section class="section-stacked relative px-3 sm:px-5" style="padding-top:13rem;padding-bottom:9rem">
+    <div class="max-w-[1440px] mx-auto">
+  
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5 reveal">
+          <p class="text-[0.78rem] uppercase tracking-[0.28em] mb-4" style="color:#8cc63f">Quem atendemos</p>
+          <h2 class="h-display text-[color:var(--text)] text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]">
+            Adolescentes a partir de 13 anos, adultos e idosos.
+          </h2>
+          <p class="body-text mt-7 text-[1.02rem]">
+            Não atendemos crianças. Atendimento clínico online em Gestalt-Terapia para adolescentes a partir de 13 anos, adultos e idosos.
+          </p>
+  
+          <div class="mt-8 flex flex-wrap gap-2">
+            <span class="pill" style="background:rgba(135,82,239,0.10);color:var(--accent);border:1px solid rgba(135,82,239,0.22)">13+</span>
+            <span class="pill" style="background:rgba(135,82,239,0.10);color:var(--accent);border:1px solid rgba(135,82,239,0.22)">Online · todo o Brasil</span>
+          </div>
+        </div>
+  
+        <!-- Padrão profissional — credibility block -->
+        <div class="lg:col-span-7 reveal" style="--reveal-delay:120ms">
+          <div class="rounded-[22px] border border-[color:var(--line-on-dark)] p-7 md:p-10 shadow-dark relative overflow-hidden grain" style="background:var(--bg-dark-elevated)">
+            <div class="relative z-10">
+              <div class="flex items-center gap-3 mb-7">
+                <span class="w-10 h-px bg-[color:var(--line-on-dark)]"></span>
+                <span class="text-xs uppercase tracking-[0.22em] text-[color:var(--text-muted-on-dark)]">Padrão profissional</span>
+              </div>
+  
+              <p class="h-display text-[#F5F4F0] text-[clamp(1.4rem,2.2vw,1.95rem)] leading-[1.22]">
+                Todos os psicoterapeutas têm formação em Psicologia, registro <span style="color:var(--accent)">CRP</span>, concluíram o curso de formação em Gestalt-Terapia do IMGT e mantêm supervisão clínica contínua.
+              </p>
+  
+              <div class="mt-9 grid grid-cols-3 gap-4 md:gap-6 border-t border-[color:var(--line-on-dark)] pt-7">
+                <div>
+                  <div class="stat-num text-[#F5F4F0] text-[clamp(1.6rem,2.4vw,2.2rem)]">CRP</div>
+                  <div class="text-xs uppercase tracking-[0.14em] text-[color:var(--text-muted-on-dark)] mt-1.5">Registro ativo</div>
+                </div>
+                <div>
+                  <div class="stat-num text-[#F5F4F0] text-[clamp(1.6rem,2.4vw,2.2rem)]">110h<span style="color:var(--accent)">+</span></div>
+                  <div class="text-xs uppercase tracking-[0.14em] text-[color:var(--text-muted-on-dark)] mt-1.5">Formação IMGT concluída</div>
+                </div>
+                <div>
+                  <div class="stat-num text-[#F5F4F0] text-[clamp(1.6rem,2.4vw,2.2rem)]"><span style="color:var(--accent)">·</span></div>
+                  <div class="text-xs uppercase tracking-[0.14em] text-[color:var(--text-muted-on-dark)] mt-1.5">Supervisão contínua</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- ============== DOIS CAMINHOS — Clínica Social + Clínica Particular ============== -->
+  <section id="caminhos" class="section-stacked relative px-3 sm:px-5 py-20 md:py-32">
+    <div class="section-bg" style="background:url('imagens/bg-sobre-instituto-mineiro-gestalt.webp') #505050 center/cover no-repeat;background-blend-mode:multiply"></div>
+    <div class="max-w-[1440px] mx-auto">
+  
+      <div class="text-center mb-12 md:mb-16 reveal">
+        <p class="text-[0.78rem] uppercase tracking-[0.28em] mb-4" style="color:#8cc63f">Dois caminhos de atendimento</p>
+        <h2 class="h-display text-[#F5F4F0] text-[clamp(2rem,4.4vw,3.6rem)] max-w-3xl mx-auto leading-[1.05]">
+          A partir do mesmo padrão clínico, duas portas de entrada.
+        </h2>
+      </div>
+  
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+  
+        <!-- Clínica Social -->
+        <article class="path-card rounded-[22px] overflow-hidden relative shadow-elev group reveal" style="background:var(--bg-dark);min-height:560px;">
+          <div class="img-wrap absolute inset-0">
+            <img src="/imagens/bg-estudante-laptop-anotando.webp" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(23,20,31,0.20) 0%,rgba(23,20,31,0.82) 60%,rgba(23,20,31,0.96) 100%)"></div>
+          </div>
+          <div class="relative z-10 flex flex-col h-full p-7 md:p-10 justify-between">
+            <div class="flex items-start justify-between">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="pill" style="background:#6ca240;color:#1A1A1A;border:1px solid rgba(0,0,0,0.12);">Acessível</span>
+                <span class="pill pill-on-dark">Apenas individual</span>
+              </div>
+              <span class="text-[color:var(--text-muted-on-dark)] text-xs uppercase tracking-[0.18em]">01</span>
+            </div>
+  
+            <div>
+              <h3 class="h-display text-[#F5F4F0] text-[clamp(1.8rem,2.6vw,2.6rem)] max-w-md leading-[1.05]">Clínica Social</h3>
+              <p class="text-[color:var(--text-secondary-on-dark)] text-[1rem] mt-4 max-w-md leading-[1.7]">
+                Para pessoas em situação de vulnerabilidade financeira. Requer preenchimento de questionário socioeconômico para avaliação. Oferece apenas sessões individuais — não atende casais. Psicólogos com registro CRP e formação pelo IMGT.
+              </p>
+              <div class="mt-7 flex items-center justify-between">
+                <a href="#" class="btn-primary spring text-[0.88rem]">Preencher questionário
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <button class="arrow-btn w-11 h-11 rounded-full flex items-center justify-center" style="background:rgba(245,244,240,0.10);color:#F5F4F0;border:1px solid rgba(245,244,240,0.18);" aria-label="Saber mais">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+  
+        <!-- Clínica Particular -->
+        <article class="path-card rounded-[22px] overflow-hidden relative shadow-elev group reveal" style="background:var(--bg-dark);min-height:560px;--reveal-delay:120ms">
+          <div class="img-wrap absolute inset-0">
+            <img src="/imagens/bg-mulher-exaustao-mental.webp" alt="" class="w-full h-full object-cover">
+            <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(23,20,31,0.20) 0%,rgba(23,20,31,0.82) 60%,rgba(23,20,31,0.96) 100%)"></div>
+          </div>
+          <div class="relative z-10 flex flex-col h-full p-7 md:p-10 justify-between">
+            <div class="flex items-start justify-between">
+              <div class="flex flex-wrap gap-1.5">
+                <span class="pill pill-accent">Particular</span>
+                <span class="pill pill-on-dark">Individual + casal</span>
+              </div>
+              <span class="text-[color:var(--text-muted-on-dark)] text-xs uppercase tracking-[0.18em]">02</span>
+            </div>
+  
+            <div>
+              <h3 class="h-display text-[#F5F4F0] text-[clamp(1.8rem,2.6vw,2.6rem)] max-w-md leading-[1.05]">Clínica Particular</h3>
+              <p class="text-[color:var(--text-secondary-on-dark)] text-[1rem] mt-4 max-w-md leading-[1.7]">
+                Para quem pode pagar valores integrais. Oferece terapia personalizada e contínua. Inclui sessões individuais e de casal. Sem necessidade de avaliação socioeconômica. Mesmo padrão profissional.
+              </p>
+              <div class="mt-7 flex items-center justify-between">
+                <a href="#" class="btn-primary spring text-[0.88rem]">Solicitar atendimento
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <button class="arrow-btn w-11 h-11 rounded-full flex items-center justify-center" style="background:rgba(245,244,240,0.10);color:#F5F4F0;border:1px solid rgba(245,244,240,0.18);" aria-label="Saber mais">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- ============== COMO FUNCIONA — 3 passos ============== -->
+  <section id="como-funciona" class="section-stacked relative px-3 sm:px-5 py-20 md:py-32">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="text-center mb-12 md:mb-16 reveal">
+        <p class="text-[0.78rem] uppercase tracking-[0.28em] mb-4" style="color:#8cc63f">Como funciona</p>
+        <h2 class="h-display text-[color:var(--text)] text-[clamp(2rem,4.4vw,3.6rem)] max-w-3xl mx-auto leading-[1.05]">
+          Três passos do formulário à primeira sessão.
+        </h2>
+      </div>
+  
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+  
+        <!-- 01 -->
+        <article class="rounded-[22px] overflow-hidden relative shadow-dark border border-[color:var(--line-on-dark)] reveal" style="background:var(--bg-dark-elevated);">
+          <div class="relative h-48 overflow-hidden image-treat">
+            <img src="/imagens/bg-grupo-estudo-leitura.webp" alt="" class="w-full h-full object-cover">
+            <span class="absolute top-4 left-4 pill pill-on-dark">Passo 01</span>
+          </div>
+          <div class="p-7 md:p-8">
+            <span class="step-num">01</span>
+            <h3 class="h-display text-[#F5F4F0] text-[1.45rem] mt-5 leading-[1.15]">Preencha o formulário adequado</h3>
+            <p class="body-text-dark mt-3 text-[0.95rem]">
+              Escolha entre Clínica Social ou Particular e preencha o formulário correspondente.
+            </p>
+          </div>
+        </article>
+  
+        <!-- 02 -->
+        <article class="rounded-[22px] overflow-hidden relative shadow-dark border border-[color:var(--line-on-dark)] reveal" style="background:var(--bg-dark-elevated);--reveal-delay:120ms">
+          <div class="relative h-48 overflow-hidden image-treat">
+            <img src="/imagens/bg-jornada-caminho-neblina.webp" alt="" class="w-full h-full object-cover">
+            <span class="absolute top-4 left-4 pill pill-on-dark">Passo 02</span>
+          </div>
+          <div class="p-7 md:p-8">
+            <span class="step-num">02</span>
+            <h3 class="h-display text-[#F5F4F0] text-[1.45rem] mt-5 leading-[1.15]">Um psicoterapeuta entra em contato</h3>
+            <p class="body-text-dark mt-3 text-[0.95rem]">
+              Um dos profissionais da clínica entra em contato diretamente com você.
+            </p>
+          </div>
+        </article>
+  
+        <!-- 03 -->
+        <article class="rounded-[22px] overflow-hidden relative grain shadow-dark reveal" style="background:var(--bg-dark);--reveal-delay:240ms">
+          <div class="relative h-48 overflow-hidden image-treat">
+            <img src="/imagens/bg-jovens-celular-rua-noite.webp" alt="" class="w-full h-full object-cover" style="filter:saturate(0.9) brightness(0.92)">
+            <span class="absolute top-4 left-4 pill pill-accent">Passo 03</span>
+          </div>
+          <div class="relative z-10 p-7 md:p-8">
+            <span class="step-num">03</span>
+            <h3 class="h-display text-[#F5F4F0] text-[1.45rem] mt-5 leading-[1.15]">Combinem horário, valor e formato</h3>
+            <p class="body-text-dark mt-3 text-[0.95rem]">
+              O profissional combina horário, valor e formato de forma autônoma com você.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- ============== FAQ ============== -->
+  <section id="faq" class="section-stacked relative px-3 sm:px-5 pt-32 md:pt-44 pb-28 md:pb-40">
+    <div class="max-w-[1440px] mx-auto px-3 sm:px-5">
+      <div class="reveal text-center max-w-2xl mx-auto mb-14 md:mb-20">
+        <p class="text-[0.78rem] uppercase tracking-[0.28em] mb-5" style="color:#8cc63f">Perguntas frequentes</p>
+        <h2 class="h-display text-[color:var(--text)] text-[clamp(2rem,4vw,3.4rem)] leading-[1.05]">
+          Dúvidas comuns sobre o atendimento.
+        </h2>
+      </div>
+  
+      <div class="reveal max-w-3xl mx-auto">
+        <div class="space-y-4">
+  
+          <details open class="rounded-2xl border border-[color:var(--line-on-dark)] bg-[color:var(--bg-dark-elevated)] overflow-hidden">
+            <summary class="p-6 md:p-8 flex items-center justify-between gap-6">
+              <h3 class="font-display text-[color:var(--text)] text-[1.15rem] leading-tight">Como me cadastro?</h3>
+              <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:var(--accent);color:#F5F4F0;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
+              <p class="body-text text-[0.96rem]">Escolha entre Clínica Social ou Particular, preencha o formulário e aguarde o contato do psicoterapeuta.</p>
+            </div>
+          </details>
+  
+          <details class="rounded-2xl border border-[color:var(--line-on-dark)] bg-[color:var(--bg-dark-elevated)] overflow-hidden">
+            <summary class="p-6 md:p-8 flex items-center justify-between gap-6">
+              <h3 class="font-display text-[color:var(--text)] text-[1.15rem] leading-tight">Quanto custa a Clínica Social?</h3>
+              <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(245,244,240,0.06);color:#F5F4F0;border:1px solid rgba(245,244,240,0.14);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
+              <p class="body-text text-[0.96rem]">Os valores são definidos diretamente entre cliente e psicoterapeuta.</p>
+            </div>
+          </details>
+  
+          <details class="rounded-2xl border border-[color:var(--line-on-dark)] bg-[color:var(--bg-dark-elevated)] overflow-hidden">
+            <summary class="p-6 md:p-8 flex items-center justify-between gap-6">
+              <h3 class="font-display text-[color:var(--text)] text-[1.15rem] leading-tight">Tem opção online?</h3>
+              <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(245,244,240,0.06);color:#F5F4F0;border:1px solid rgba(245,244,240,0.14);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
+              <p class="body-text text-[0.96rem]">Sim, disponível para os dois tipos de clínica.</p>
+            </div>
+          </details>
+  
+          <details class="rounded-2xl border border-[color:var(--line-on-dark)] bg-[color:var(--bg-dark-elevated)] overflow-hidden">
+            <summary class="p-6 md:p-8 flex items-center justify-between gap-6">
+              <h3 class="font-display text-[color:var(--text)] text-[1.15rem] leading-tight">Quem tem direito à Clínica Social?</h3>
+              <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(245,244,240,0.06);color:#F5F4F0;border:1px solid rgba(245,244,240,0.14);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
+              <p class="body-text text-[0.96rem]">Qualquer pessoa que não consiga arcar com valores padrão de terapia (avaliação por questionário).</p>
+            </div>
+          </details>
+  
+          <details class="rounded-2xl border border-[color:var(--line-on-dark)] bg-[color:var(--bg-dark-elevated)] overflow-hidden">
+            <summary class="p-6 md:p-8 flex items-center justify-between gap-6">
+              <h3 class="font-display text-[color:var(--text)] text-[1.15rem] leading-tight">Sessões para casais?</h3>
+              <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(245,244,240,0.06);color:#F5F4F0;border:1px solid rgba(245,244,240,0.14);">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
+              <p class="body-text text-[0.96rem]">Disponíveis apenas na Clínica Particular.</p>
+            </div>
+          </details>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- ============== CTA FINAL ============== -->
+  <section id="contato" class="section-stacked relative overflow-hidden grain py-28 md:py-40 lg:py-48">
+    <div class="section-bg" style="background:url('imagens/bg-escritura-reflexao-noturna.webp') #505050 center/cover no-repeat;background-blend-mode:multiply;-webkit-mask-image:linear-gradient(180deg, transparent 0, #000 var(--fade-h), #000 100%);mask-image:linear-gradient(180deg, transparent 0, #000 var(--fade-h), #000 100%)"></div>
+    <div class="max-w-[1440px] mx-auto relative px-3 sm:px-5">
+      <div class="relative z-10 text-center">
+        <h2 class="hero-title h-display text-[#F5F4F0] text-[clamp(2.4rem,6vw,5.4rem)] max-w-[20ch] mx-auto leading-[0.98]">
+          Pronto para dar o <span style="color:#8752ef">primeiro passo</span>?
+        </h2>
+        <p class="body-text-dark mt-7 max-w-2xl mx-auto">
+          Escolha o caminho que faz sentido para você e preencha o formulário. Em seguida, um dos psicoterapeutas da casa entra em contato.
+        </p>
+        <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+          <a href="#caminhos" class="btn-primary spring">
+            Escolher um caminho
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://wa.me/553196143891" class="btn-ghost-dark spring">Falar com o IMGT</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Reveal-on-scroll -->
+  
+  
+  <!-- FAQ Schema -->
+  
+  
+  
+  <!-- @@HEADER-FOOTER:BEGIN @@ -->
+  <!-- ============== SITE FOOTER ============== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+  
+      <div class="site-footer__top">
+        <a href="/inicio" class="footer-brand" aria-label="IMGT — Instituto Mineiro de Gestalt-Terapia">
+          <img src="/Gbrand_assets/gestaltlogo.svg" alt="" aria-hidden="true">
+          <span class="footer-brand__word">
+            <strong>Instituto Mineiro</strong>
+            de Gestalt-Terapia
+          </span>
+        </a>
+  
+        <div class="footer-social" aria-label="Redes sociais">
+          <a href="https://wa.me/5531996143891" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/institutomineirodegestalt" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@institutomineirodegestalt" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+  
+      <div class="site-footer__cols">
+  
+        <div class="footer-col">
+          <p class="footer-col__tagline">Formação, clínica e supervisão em Gestalt-Terapia.</p>
+          <p class="footer-col__meta">
+            <strong>Belo Horizonte · MG</strong><br>
+            Atendimento online<br>
+            <strong>CRP 04/PJ-2830</strong> · Desde 2016
+          </p>
+        </div>
+  
+        <div class="footer-col">
+          <h3>Nossos serviços</h3>
+          <ul class="footer-links">
+            <li><a href="/cursos">Cursos</a></li>
+            <li><a href="/atendimento">Psicoterapia</a></li>
+            <li><a href="/supervisao">Supervisão</a></li>
+            <li><a href="/palestras">Palestras</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-col">
+          <h3>Links rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="/inicio">Início</a></li>
+            <li><a href="/sobre">Sobre o IMGT</a></li>
+            <li><a href="/contato">Contato</a></li>
+          </ul>
+        </div>
+  
+        <div class="footer-col">
+          <h3>Contato</h3>
+          <ul class="footer-contact">
+            <li>
+              <a href="https://wa.me/5531996143891" target="_blank" rel="noopener noreferrer">
+                <span class="icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  </svg>
+                </span>
+                <span class="label">
+                  <small>WhatsApp</small>
+                  +55 (31) 9 9614-3891
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:institutomineirodegestalt@gmail.com">
+                <span class="icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="M3 7l9 6 9-6"/>
+                  </svg>
+                </span>
+                <span class="label">
+                  <small>E-mail</small>
+                  institutomineirodegestalt@gmail.com
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="site-footer__bottom">
+        <p>© 2026 Instituto Mineiro de Gestalt-Terapia LTDA · CNPJ 42.667.490/0001-24</p>
+        <div class="site-footer__legal">
+          <a href="/politica-de-privacidade">Política de Privacidade</a>
+          <span class="sep" aria-hidden="true">·</span>
+          <a href="/termos">Termos e Condições</a>
+        </div>
+      </div>
+  
+      <p class="site-footer__credit">
+        webdesign <a href="https://possbranding.com.br" target="_blank" rel="noopener noreferrer">Poss Branding</a>
+      </p>
+  
+    </div>
+  </footer>
+  
+  <!-- @@HEADER-FOOTER:END @@ -->
+
+  <script is:inline>
+    (function () {
+        var header = document.getElementById('siteHeader');
+        var toggle = document.getElementById('menuToggle');
+        var drawer = document.getElementById('mobileDrawer');
+    
+        var onScroll = function () {
+          if (window.scrollY > 24) header.classList.add('is-scrolled');
+          else header.classList.remove('is-scrolled');
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    
+        if (toggle && drawer) {
+          toggle.addEventListener('click', function () {
+            var open = drawer.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+            document.body.classList.toggle('menu-open', open);
+          });
+          drawer.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A') {
+              drawer.classList.remove('is-open');
+              toggle.setAttribute('aria-expanded', 'false');
+              document.body.classList.remove('menu-open');
+            }
+          });
+          drawer.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var sub = document.getElementById(btn.getAttribute('aria-controls'));
+              if (!sub) return;
+              var open = sub.hidden;
+              sub.hidden = !open;
+              btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+          });
+        }
+      })();
+    
+    
+    
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+
+  <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Como me cadastro?","acceptedAnswer":{"@type":"Answer","text":"Escolha entre Clínica Social ou Particular, preencha o formulário e aguarde o contato do psicoterapeuta."}},
+    {"@type":"Question","name":"Quanto custa a Clínica Social?","acceptedAnswer":{"@type":"Answer","text":"Os valores são definidos diretamente entre cliente e psicoterapeuta."}},
+    {"@type":"Question","name":"Tem opção online?","acceptedAnswer":{"@type":"Answer","text":"Sim, disponível para os dois tipos de clínica."}},
+    {"@type":"Question","name":"Quem tem direito à Clínica Social?","acceptedAnswer":{"@type":"Answer","text":"Qualquer pessoa que não consiga arcar com valores padrão de terapia (avaliação por questionário)."}},
+    {"@type":"Question","name":"Sessões para casais?","acceptedAnswer":{"@type":"Answer","text":"Disponíveis apenas na Clínica Particular."}}
+  ]
+}
+</script>
+</InstitutionalLayout>

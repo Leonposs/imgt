@@ -1,0 +1,389 @@
+---
+import LpLayout from '../layouts/LpLayout.astro';
+---
+
+<LpLayout
+  title="Por dentro da Gestalt-Terapia — IMGT"
+  description="Curso gratuito de introdução à Gestalt-Terapia com Marcelo Gomes. Instituto Mineiro de Gestalt-Terapia."
+>
+  <style is:global>
+    /* Page-specific palette — LP Gratuito DARK MODE */
+        body {
+          --page-dark: #F5F4F0;
+          --page-mid: #0A6F99;
+          --page-accent: #00C3FF;
+          --page-accent-soft: #00A8DB;
+    
+          /* Glass tokens — DARK MODE */
+          --glass-light: rgba(19, 40, 71, 0.55);
+          --glass-light-border: rgba(0, 195, 255, 0.15);
+          --glass-dark: rgba(0, 0, 0, 0.2);
+          --glass-dark-border: rgba(0, 195, 255, 0.12);
+          --glass-placeholder: rgba(19, 40, 71, 0.65);
+          --glass-blur: 16px;
+    
+          /* Ambient shadow — deeper for dark bg */
+          --shadow-ambient: 0 4px 24px rgba(0, 0, 0, 0.15), 0 12px 48px rgba(0, 0, 0, 0.10);
+          --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.20), 0 24px 64px rgba(0, 0, 0, 0.12);
+          --shadow-float: 0 12px 40px rgba(0, 0, 0, 0.25), 0 32px 80px rgba(0, 0, 0, 0.15);
+        }
+  </style>
+
+  <!-- SVG SYMBOLS -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+      <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+    </svg>
+  
+    <!-- GRADIENT MESH -->
+    <div class="gradient-mesh" aria-hidden="true">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+    </div>
+  
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+  
+    <!-- 01. HERO -->
+    <section class="hero scroll-section">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="morph-blob morph-blob--stroke" style="width:320px;height:320px;top:5%;left:1%;" aria-hidden="true">
+        <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40,-62C53,-55,65,-45,73,-32C81,-19,85,-3,82,11C79,25,69,38,57,48C45,58,31,66,15,69C-1,72,-19,70,-34,63C-49,56,-61,44,-68,29C-75,14,-77,-3,-72,-19C-67,-35,-55,-49,-42,-58C-29,-67,-14,-71,1,-72C16,-73,32,-70,40,-62Z"
+            data-morph="M45,-58C56,-49,63,-35,67,-20C71,-5,72,11,66,25C60,39,47,51,33,58C19,65,4,67,-12,65C-28,63,-45,57,-56,45C-67,33,-72,15,-70,-2C-68,-19,-59,-35,-47,-47C-35,-59,-20,-67,-4,-68C12,-69,34,-67,45,-58Z" />
+        </svg>
+      </div>
+  
+      <div class="morph-blob morph-blob--fill" style="width:220px;height:220px;bottom:12%;right:5%;" aria-hidden="true">
+        <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M38,-52C50,-44,60,-33,65,-19C70,-5,70,11,64,25C58,39,46,51,32,57C18,63,2,63,-14,60C-30,57,-46,51,-55,39C-64,27,-66,9,-63,-8C-60,-25,-52,-41,-40,-51C-28,-61,-14,-65,1,-65C16,-65,32,-60,38,-52Z"
+            data-morph="M42,-56C54,-46,62,-32,66,-17C70,-2,70,14,63,28C56,42,42,54,27,59C12,64,-4,62,-19,57C-34,52,-48,44,-57,32C-66,20,-70,4,-67,-11C-64,-26,-54,-40,-42,-50C-30,-60,-15,-66,0,-66C15,-66,30,-62,42,-56Z" />
+        </svg>
+      </div>
+  
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-tag hero-anim">Curso Gratuito</span>
+          <h1 class="hero-anim">Por dentro da <em>Gestalt-Terapia</em></h1>
+          <p class="hero-subtitle hero-anim">Fundamentos, Práticas e Reflexões</p>
+          <p class="hero-lead hero-anim">Cinco aulas gratuitas que vão da teoria à prática clínica — ansiedade, relacionamentos e os primeiros passos na formação gestáltica.</p>
+          <div class="hero-actions hero-anim">
+            <a href="#" class="btn-primary magnetic" data-strength="0.3">Quero me inscrever</a>
+            <a href="#sobre" class="btn-secondary magnetic" data-strength="0.2">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 02. STATS BAR -->
+    <section class="stats-bar scroll-section">
+      <div class="stats-progress" aria-hidden="true"></div>
+      <canvas class="particle-canvas" aria-hidden="true"></canvas>
+      <div class="container">
+        <div class="stat-item" data-anim="fade-up">
+          <div class="stat-number"><span data-target="3500" data-suffix="+">0</span></div>
+          <div class="stat-label">Alunos formados</div>
+        </div>
+        <div class="stat-item" data-anim="fade-up" data-delay="1">
+          <div class="stat-number"><span data-target="5">0</span></div>
+          <div class="stat-label">Aulas disponíveis</div>
+        </div>
+        <div class="stat-item" data-anim="fade-up" data-delay="2">
+          <div class="stat-number"><span data-target="5" data-suffix="h">0</span></div>
+          <div class="stat-label">Certificado de carga horária</div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 03. SOBRE O CURSO -->
+    <section id="sobre" class="sobre-curso scroll-section">
+      <div class="container">
+        <div class="sobre-curso-text">
+          <span class="section-label" data-anim="fade-up" data-scramble>Sobre o conteúdo</span>
+          <h2 data-letter-stagger>Sua porta de entrada para a formação gestáltica</h2>
+          <div class="section-divider" data-anim="clip-left" data-delay="2"></div>
+          <p data-anim="fade-up" data-delay="2">Em cinco aulas, você percorre os caminhos da formação em Gestalt — desde a introdução à psicologia gestáltica até aplicações práticas em ansiedade e relacionamentos amorosos.</p>
+          <p data-anim="fade-up" data-delay="3">Cada módulo foi pensado para oferecer fundamentos sólidos, reflexões que conectam teoria e prática, e uma visão clara de como dar os primeiros passos na jornada gestáltica.</p>
+          <a href="#" class="btn-primary magnetic" data-anim="fade-up" data-delay="4" data-strength="0.3">Começar agora — é grátis</a>
+        </div>
+        <div class="sobre-curso-visual">
+          <div class="img-placeholder" data-anim="fade-up" style="aspect-ratio: 4/3;" data-role="ambiente-instituto">
+            <img src="/imagens/bg-curso-gratuito-gestalt.webp" alt="Curso gratuito de Gestalt-Terapia — ambiente do instituto" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;">
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 04. MARQUEE -->
+    <section class="marquee-section">
+      <div class="marquee-track">
+        <span class="marquee-item">Fundamentos</span>
+        <span class="marquee-item">Psicologia Gestáltica</span>
+        <span class="marquee-item">Ansiedade</span>
+        <span class="marquee-item">Relacionamentos</span>
+        <span class="marquee-item">Prática Clínica</span>
+        <span class="marquee-item">Formação</span>
+        <span class="marquee-item">Reflexões</span>
+        <span class="marquee-item">Awareness</span>
+        <span class="marquee-item">Fundamentos</span>
+        <span class="marquee-item">Psicologia Gestáltica</span>
+        <span class="marquee-item">Ansiedade</span>
+        <span class="marquee-item">Relacionamentos</span>
+        <span class="marquee-item">Prática Clínica</span>
+        <span class="marquee-item">Formação</span>
+        <span class="marquee-item">Reflexões</span>
+        <span class="marquee-item">Awareness</span>
+      </div>
+    </section>
+  
+    <!-- 05. O QUE APRENDER -->
+    <section class="aprender scroll-section">
+      <div class="logo-adornment" aria-hidden="true"></div>
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>Conteúdo do curso</span>
+        <h2 data-letter-stagger>Cinco aulas que constroem sua base gestáltica</h2>
+        <p class="aprender-intro" data-anim="blur-in" data-delay="2">Da formação à prática clínica — cada módulo avança de forma progressiva e conectada.</p>
+  
+        <div class="aprender-grid">
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="1">
+            <div class="card-shine"></div>
+            <div class="card-number">01</div>
+            <h3>Bem-vindos e Caminhos da Formação em Gestalt</h3>
+            <p>Conheça o percurso formativo da Gestalt-Terapia e entenda como essa abordagem pode transformar sua prática profissional.</p>
+          </div>
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="2">
+            <div class="card-shine"></div>
+            <div class="card-number">02</div>
+            <h3>Introdução à Psicologia Gestáltica</h3>
+            <p>Os conceitos fundamentais que sustentam a Gestalt-Terapia: awareness, aqui-e-agora, campo e as bases filosóficas da abordagem.</p>
+          </div>
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="3">
+            <div class="card-shine"></div>
+            <div class="card-number">03</div>
+            <h3>Ansiedade na Perspectiva da Gestalt-Terapia</h3>
+            <p>Como a Gestalt-Terapia compreende e trabalha com a ansiedade — uma aplicação prática que conecta teoria e clínica.</p>
+          </div>
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="4">
+            <div class="card-shine"></div>
+            <div class="card-number">04</div>
+            <h3>Gestalt-Terapia e Relacionamentos Amorosos</h3>
+            <p>O olhar gestáltico sobre as relações afetivas: contato, confluência, isolamento e os ajustamentos criativos nos vínculos.</p>
+          </div>
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="5">
+            <div class="card-shine"></div>
+            <div class="card-number">05</div>
+            <h3>Fundamentos e Primeiros Passos na Jornada Gestáltica</h3>
+            <p>Uma síntese dos aprendizados e orientações concretas para quem deseja aprofundar-se na formação em Gestalt-Terapia.</p>
+          </div>
+          <div class="aprender-card aprender-card--bonus tilt-card" data-anim="scale-up" data-delay="6">
+            <div class="card-shine"></div>
+            <div class="card-number">&#10038;</div>
+            <h3>Bônus exclusivo</h3>
+            <p>Conteúdo especial incluso para aprofundar ainda mais sua compreensão da abordagem gestáltica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 06. PARA QUEM E -->
+    <section class="para-quem scroll-section">
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>Para quem é este curso</span>
+        <h2 data-letter-stagger>Pensado para quem busca profundidade com leveza</h2>
+  
+        <div class="para-quem-list">
+          <div class="para-quem-item" data-anim="slide-left" data-delay="1">
+            <div class="check">
+              <svg><use href="#icon-check"/></svg>
+            </div>
+            <p><strong>Estudantes de Psicologia e Gestalt-terapeutas</strong> que querem conhecer a Gestalt-Terapia com mais profundidade</p>
+          </div>
+          <div class="para-quem-item" data-anim="slide-right" data-delay="1">
+            <div class="check">
+              <svg><use href="#icon-check"/></svg>
+            </div>
+            <p><strong>Psicólogos clínicos</strong> de outras abordagens curiosos sobre o olhar gestáltico</p>
+          </div>
+          <div class="para-quem-item" data-anim="slide-left" data-delay="2">
+            <div class="check">
+              <svg><use href="#icon-check"/></svg>
+            </div>
+            <p><strong>Profissionais da saúde mental</strong> que desejam ampliar seu repertório teórico e prático</p>
+          </div>
+          <div class="para-quem-item" data-anim="slide-right" data-delay="2">
+            <div class="check">
+              <svg><use href="#icon-check"/></svg>
+            </div>
+            <p><strong>Qualquer pessoa interessada</strong> em autoconhecimento com base fenomenológica</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 07. COMO FUNCIONA -->
+    <section class="como-funciona scroll-section">
+      <div class="como-funciona-bg" aria-hidden="true"></div>
+      <div class="como-funciona-overlay" aria-hidden="true"></div>
+      <div class="deco-circle-bg" aria-hidden="true"></div>
+      <canvas class="particle-canvas" aria-hidden="true"></canvas>
+  
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>Como funciona</span>
+        <h2 data-letter-stagger>Três passos para começar</h2>
+  
+        <div class="como-funciona-grid">
+          <div class="etapa-card tilt-card" data-anim="fade-up" data-delay="1">
+            <div class="card-shine"></div>
+            <div class="etapa-number">01</div>
+            <h3>Inscreva-se gratuitamente</h3>
+            <p>Preencha o formulário com seu nome e e-mail. Em segundos, você recebe o acesso à plataforma.</p>
+          </div>
+          <div class="etapa-card tilt-card" data-anim="fade-up" data-delay="2">
+            <div class="card-shine"></div>
+            <div class="etapa-number">02</div>
+            <h3>Assista no seu ritmo</h3>
+            <p>As aulas ficam disponíveis para você assistir quando e onde quiser. Sem prazo, sem pressão.</p>
+          </div>
+          <div class="etapa-card tilt-card" data-anim="fade-up" data-delay="3">
+            <div class="card-shine"></div>
+            <div class="etapa-number">03</div>
+            <h3>Aprofunde-se</h3>
+            <p>Ao final, você terá clareza para decidir se quer continuar sua formação em Gestalt-Terapia conosco.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 08. SOBRE O PROFESSOR -->
+    <section class="sobre-professor scroll-section">
+      <div class="container">
+        <div class="professor-image" data-anim="slide-left">
+          <div class="img-placeholder" data-role="sobre-professor" style="aspect-ratio: 1/1;">
+            <img src="/imagens/retrato-marcelo-gomes-03.webp" alt="Marcelo Gomes" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+            <div class="professor-logo-watermark"><img src="/Gbrand_assets/gestaltlogo.svg" alt=""></div>
+          </div>
+        </div>
+        <div class="professor-text">
+          <span class="section-label" data-anim="fade-up" data-scramble>Conheça o professor</span>
+          <h2 data-letter-stagger>Marcelo Gomes</h2>
+          <div class="section-divider" data-anim="clip-left" data-delay="2"></div>
+          <p data-anim="fade-up" data-delay="2">Marcelo Gomes, CRP 04/23858, é psicoterapeuta, professor e supervisor clínico com mais de 20 anos de experiência. Psicólogo formado pela UFMG, é especialista em Filosofia (UFMG) e em Psicologia Clínica Existencial e Gestáltica (FEAD), além de mestre em Psicologia pela PUC Minas.</p>
+          <p data-anim="fade-up" data-delay="3">Atuou como professor na UFMG, PUC Minas e Universidade Fumec. Atualmente, coordena atendimentos, supervisões e formações em Gestalt-Terapia no Instituto Mineiro de Gestalt-Terapia (IMGT), onde é professor titular e supervisor clínico.</p>
+          <ul class="professor-credentials" data-anim="fade-up" data-delay="4">
+            <li>Psicoterapeuta e supervisor clínico</li>
+            <li>Coordenador do IMGT</li>
+            <li>Mestre em Psicologia — PUC Minas</li>
+            <li>Especialista em Filosofia — UFMG</li>
+            <li>Especialista em Psicologia Clínica — FEAD</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 09. DEPOIMENTOS -->
+    <section class="depoimentos scroll-section">
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>O que dizem nossos alunos</span>
+        <h2 data-letter-stagger>Experiências que falam por si</h2>
+  
+        <div class="depoimentos-grid">
+          <div class="glass-card depoimento-card tilt-card" data-anim="fade-up" data-delay="1">
+            <div class="card-shine"></div>
+            <span class="quote-mark">&ldquo;</span>
+            <blockquote>O curso me deu uma clareza sobre a Gestalt que eu não encontrei em nenhum livro. A forma como o Marcelo ensina torna tudo palpável e vivo.</blockquote>
+            <div class="depoimento-author">
+              <div class="img-placeholder" data-role="depoimento-aluna" style="aspect-ratio: 1/1;"><span>1:1</span></div>
+              <div>
+                <div class="author-name">Ana Cláudia M.</div>
+                <div class="author-role">Psicóloga clínica — BH</div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-card depoimento-card tilt-card" data-anim="fade-up" data-delay="2">
+            <div class="card-shine"></div>
+            <span class="quote-mark">&ldquo;</span>
+            <blockquote>Comecei pelo curso gratuito e hoje estou na formação completa. Foi o ponto de virada na minha carreira como terapeuta.</blockquote>
+            <div class="depoimento-author">
+              <div class="img-placeholder" data-role="depoimento-aluno" style="aspect-ratio: 1/1;"><span>1:1</span></div>
+              <div>
+                <div class="author-name">Rafael S.</div>
+                <div class="author-role">Estudante de Psicologia — SP</div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-card depoimento-card tilt-card" data-anim="fade-up" data-delay="3">
+            <div class="card-shine"></div>
+            <span class="quote-mark">&ldquo;</span>
+            <blockquote>A didática é excepcional. Cada aula abre uma perspectiva nova sem perder a profundidade teórica. Recomendo de olhos fechados.</blockquote>
+            <div class="depoimento-author">
+              <div class="img-placeholder" data-role="depoimento-aluna" style="aspect-ratio: 1/1;"><span>1:1</span></div>
+              <div>
+                <div class="author-name">Juliana P.</div>
+                <div class="author-role">Psicóloga — RJ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 10. CTA FINAL -->
+    <section class="cta-final scroll-section">
+      <div class="cta-final-bg" aria-hidden="true"></div>
+      <div class="cta-final-overlay" aria-hidden="true"></div>
+      <div class="cta-ring-2" aria-hidden="true"></div>
+      <div class="cta-ring-3" aria-hidden="true"></div>
+      <canvas class="particle-canvas" aria-hidden="true"></canvas>
+  
+      <div class="container">
+        <span class="section-label section-label--light" data-anim="fade-up" data-scramble>Pronto para começar?</span>
+        <h2 data-letter-stagger>Comece sua jornada gestáltica agora</h2>
+        <p class="cta-lead" data-anim="fade-up" data-delay="2">Cinco aulas gratuitas com Marcelo Gomes — fundamentos, ansiedade, relacionamentos e os primeiros passos na formação.</p>
+        <div class="cta-actions" data-anim="fade-up" data-delay="3">
+          <a href="#" class="btn-primary btn-primary--inverted magnetic" data-strength="0.3">Inscrever-me gratuitamente</a>
+          <a href="#" class="btn-secondary btn-secondary--inverted magnetic" data-strength="0.2">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 10. CONHECA OUTROS CURSOS -->
+    <section class="outros-cursos scroll-section" data-current-course="curso-gratuito">
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>Explore nosso catálogo</span>
+        <h2 data-letter-stagger>Conheça outros cursos</h2>
+        <nav class="carousel-nav" data-anim="fade-up" data-delay="1">
+          <div class="carousel-dots"></div>
+          <button class="carousel-btn carousel-prev magnetic" data-strength="0.2" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-btn carousel-next magnetic" data-strength="0.2" aria-label="Próximo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </nav>
+        <div class="outros-cursos-viewport">
+          <div class="outros-cursos-track">
+            <!-- Cards injetados via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 11. RODAPE -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-brand">
+          <img src="/Gbrand_assets/gestaltlogo.svg" alt="IMGT">
+          <span>Instituto Mineiro de Gestalt-Terapia</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#">Termos de uso</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+        <div class="footer-copy">
+          &copy; 2026 Instituto Mineiro de Gestalt-Terapia. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+</LpLayout>

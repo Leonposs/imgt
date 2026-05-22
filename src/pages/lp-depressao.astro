@@ -1,0 +1,426 @@
+---
+import LpLayout from '../layouts/LpLayout.astro';
+---
+
+<LpLayout
+  title="Compreensão e Manejo Clínico da Depressão na Psicoterapia — IMGT"
+  description="Minicurso sobre Compreensão e Manejo Clínico da Depressão na Psicoterapia. Instituto Mineiro de Gestalt-Terapia."
+>
+  <style is:global>
+    /* Page-specific palette — LP Depressão */
+        body {
+          --page-dark: #F5F4F0;
+          --page-mid: #0E7A3D;
+          --page-accent: #07D62D;
+          --page-accent-soft: #06B826;
+    
+          /* Glass tokens — DARK MODE */
+          --glass-light: rgba(29, 29, 53, 0.55);
+          --glass-light-border: rgba(7, 214, 45, 0.08);
+          --glass-dark: rgba(0, 0, 0, 0.3);
+          --glass-dark-border: rgba(7, 214, 45, 0.06);
+          --glass-placeholder: rgba(29, 29, 53, 0.65);
+          --glass-blur: 16px;
+    
+          /* Ambient shadow — deeper for dark bg */
+          --shadow-ambient: 0 4px 24px rgba(0, 0, 0, 0.15), 0 12px 48px rgba(0, 0, 0, 0.10);
+          --shadow-elevated: 0 8px 32px rgba(0, 0, 0, 0.20), 0 24px 64px rgba(0, 0, 0, 0.12);
+          --shadow-float: 0 12px 40px rgba(0, 0, 0, 0.25), 0 32px 80px rgba(0, 0, 0, 0.15);
+        }
+  </style>
+
+  <!-- SVG SYMBOLS -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+      <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></symbol>
+      <!-- Aula icons — Depressão -->
+      <symbol id="icon-aula-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M12 18v4"/></symbol>
+      <symbol id="icon-aula-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></symbol>
+      <symbol id="icon-aula-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+      <symbol id="icon-aula-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 13V7"/><path d="M12 13l-2-2"/><path d="M12 13l2-2"/></symbol>
+      <symbol id="icon-aula-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m2 12 5.1 2.5"/><path d="m17 9.5 4.9 2.5"/><path d="M12 2v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m19.07 4.93-2.83 2.83"/></symbol>
+      <symbol id="icon-aula-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="icon-aula-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 8-6 4 6 4V8Z"/><rect width="14" height="12" x="2" y="6" rx="2" ry="2"/></symbol>
+      <symbol id="icon-aula-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+    </svg>
+  
+    <!-- GRADIENT MESH -->
+    <div class="gradient-mesh" aria-hidden="true">
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+    </div>
+  
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+  
+    <!-- 01. HERO -->
+    <section class="hero scroll-section">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="morph-blob morph-blob--stroke" style="width:320px;height:320px;top:5%;left:1%;" aria-hidden="true">
+        <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40,-62C53,-55,65,-45,73,-32C81,-19,85,-3,82,11C79,25,69,38,57,48C45,58,31,66,15,69C-1,72,-19,70,-34,63C-49,56,-61,44,-68,29C-75,14,-77,-3,-72,-19C-67,-35,-55,-49,-42,-58C-29,-67,-14,-71,1,-72C16,-73,32,-70,40,-62Z"
+            data-morph="M45,-58C56,-49,63,-35,67,-20C71,-5,72,11,66,25C60,39,47,51,33,58C19,65,4,67,-12,65C-28,63,-45,57,-56,45C-67,33,-72,15,-70,-2C-68,-19,-59,-35,-47,-47C-35,-59,-20,-67,-4,-68C12,-69,34,-67,45,-58Z" />
+        </svg>
+      </div>
+  
+      <div class="morph-blob morph-blob--fill" style="width:220px;height:220px;bottom:12%;right:5%;" aria-hidden="true">
+        <svg viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path d="M38,-52C50,-44,60,-33,65,-19C70,-5,70,11,64,25C58,39,46,51,32,57C18,63,2,63,-14,60C-30,57,-46,51,-55,39C-64,27,-66,9,-63,-8C-60,-25,-52,-41,-40,-51C-28,-61,-14,-65,1,-65C16,-65,32,-60,38,-52Z"
+            data-morph="M42,-56C54,-46,62,-32,66,-17C70,-2,70,14,63,28C56,42,42,54,27,59C12,64,-4,62,-19,57C-34,52,-48,44,-57,32C-66,20,-70,4,-67,-11C-64,-26,-54,-40,-42,-50C-30,-60,-15,-66,0,-66C15,-66,30,-62,42,-56Z" />
+        </svg>
+      </div>
+  
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-tag hero-anim">Minicurso</span>
+          <p class="hero-leadin hero-anim">Compreensão e Manejo Clínico da</p>
+          <h1 class="hero-anim"><em>Depressão</em> na Psicoterapia</h1>
+          <p class="hero-lead hero-anim">Uma leitura fenomenológica e gestáltica dos processos depressivos — compreensão clínica, ajustamentos criativos e estratégias de manejo terapêutico.</p>
+          <div class="hero-actions hero-anim">
+            <a href="#" class="btn-primary magnetic" data-strength="0.3">Quero me inscrever</a>
+            <a href="#sobre" class="btn-secondary magnetic" data-strength="0.2">Saiba mais</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 02. STATS BAR -->
+    <section class="stats-bar scroll-section">
+      <div class="stats-progress" aria-hidden="true"></div>
+      <canvas class="particle-canvas" aria-hidden="true"></canvas>
+      <div class="container">
+        <div class="stat-item" data-anim="fade-up">
+          <div class="stat-number"><span data-target="4" data-suffix="h">0</span></div>
+          <div class="stat-label">De conteúdo</div>
+        </div>
+        <div class="stat-item" data-anim="fade-up" data-delay="1">
+          <div class="stat-number"><span data-target="5" data-suffix=" eixos">0</span></div>
+          <div class="stat-label">Abordados no minicurso</div>
+        </div>
+        <div class="stat-item" data-anim="fade-up" data-delay="2">
+          <div class="stat-number"><span data-target="30" data-suffix=" dias">0</span></div>
+          <div class="stat-label">Acesso à gravação</div>
+        </div>
+        <div class="stat-item" data-anim="fade-up" data-delay="3">
+          <div class="stat-number"><span data-target="100" data-suffix="%">0</span></div>
+          <div class="stat-label">Online e certificado</div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 03. SOBRE O CURSO -->
+    <section id="sobre" class="sobre-curso scroll-section">
+      <div class="container">
+        <div class="sobre-curso-text">
+          <span class="section-label" data-anim="fade-up" data-scramble>Sobre o minicurso</span>
+          <h2 data-letter-stagger>Compreensão e manejo clínico da depressão na psicoterapia</h2>
+          <div class="section-divider" data-anim="clip-left" data-delay="2"></div>
+          <p data-anim="fade-up" data-delay="2">A depressão é um dos quadros clínicos mais frequentes na prática psicoterápica contemporânea — amplamente medicada, mas nem sempre verdadeiramente compreendida em sua dimensão existencial. Este minicurso propõe uma leitura fenomenológica e gestáltica dos processos depressivos.</p>
+          <p data-anim="fade-up" data-delay="3">O que é depressão? Emoção, sintoma, transtorno, ajustamento criativo? Exploraremos a experiência vivida do cliente depressivo — temporalidade, corporalidade, interrupção do ciclo de contato — e as estratégias clínicas para um manejo que respeite a singularidade de cada sujeito.</p>
+          <a href="#" class="btn-primary magnetic" data-anim="fade-up" data-delay="4" data-strength="0.3">Garantir minha vaga</a>
+        </div>
+        <div class="sobre-curso-visual">
+          <div class="img-placeholder" data-anim="clip-up" style="aspect-ratio: 4/3;" data-role="ambiente-instituto">
+            <span>ambiente-instituto · 4:3</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 04. MARQUEE -->
+    <section class="marquee-section">
+      <div class="marquee-track">
+        <span class="marquee-item">Depressão</span>
+        <span class="marquee-item">Manejo Clínico</span>
+        <span class="marquee-item">Gestalt-Terapia</span>
+        <span class="marquee-item">Fenomenologia</span>
+        <span class="marquee-item">DSM-5</span>
+        <span class="marquee-item">Ciclo de Contato</span>
+        <span class="marquee-item">Relação Terapêutica</span>
+        <span class="marquee-item">Ajustamento Criativo</span>
+        <span class="marquee-item">Depressão</span>
+        <span class="marquee-item">Manejo Clínico</span>
+        <span class="marquee-item">Gestalt-Terapia</span>
+        <span class="marquee-item">Fenomenologia</span>
+        <span class="marquee-item">DSM-5</span>
+        <span class="marquee-item">Ciclo de Contato</span>
+        <span class="marquee-item">Relação Terapêutica</span>
+        <span class="marquee-item">Ajustamento Criativo</span>
+      </div>
+    </section>
+  
+    <!-- 05. O QUE APRENDER -->
+    <section class="aprender scroll-section">
+      <div class="logo-adornment" aria-hidden="true"></div>
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>Programa do curso</span>
+        <h2 data-letter-stagger>Temas abordados no minicurso</h2>
+        <p class="aprender-intro" data-anim="blur-in" data-delay="2">Cinco eixos que constroem uma compreensão clínica integrada da depressão — da fenomenologia ao manejo psicoterapêutico.</p>
+  
+        <div class="aprender-grid">
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="1">
+            <div class="card-shine"></div>
+            <div class="aprender-card-icon">
+              <svg><use href="#icon-aula-1"/></svg>
+            </div>
+            <h3>Fenomenologia da depressão: temporalidade, corporalidade e intersubjetividade</h3>
+          </div>
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="2">
+            <div class="card-shine"></div>
+            <div class="aprender-card-icon">
+              <svg><use href="#icon-aula-2"/></svg>
+            </div>
+            <h3>A depressão na perspectiva gestáltica: ajustamentos criativos e ciclo de contato</h3>
+          </div>
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="3">
+            <div class="card-shine"></div>
+            <div class="aprender-card-icon">
+              <svg><use href="#icon-aula-3"/></svg>
+            </div>
+            <h3>Diagnóstico processual: compreensão que respeita a singularidade do cliente</h3>
+          </div>
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="1">
+            <div class="card-shine"></div>
+            <div class="aprender-card-icon">
+              <svg><use href="#icon-aula-4"/></svg>
+            </div>
+            <h3>Manejo clínico e intervenções práticas com quadros depressivos</h3>
+          </div>
+          <div class="aprender-card tilt-card" data-anim="scale-up" data-delay="2">
+            <div class="card-shine"></div>
+            <div class="aprender-card-icon">
+              <svg><use href="#icon-aula-5"/></svg>
+            </div>
+            <h3>A relação terapêutica como instrumento de cuidado e transformação</h3>
+          </div>
+          <div class="aprender-card tilt-card aprender-card--bonus" data-anim="scale-up" data-delay="3">
+            <div class="card-shine"></div>
+            <div class="aprender-card-icon">
+              <svg><use href="#icon-aula-6"/></svg>
+            </div>
+            <h3>Estudo de caso: análise detalhada com discussão das intervenções realizadas</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 06. PARA QUEM E -->
+    <section class="para-quem scroll-section">
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>Para quem é este minicurso</span>
+        <h2 data-letter-stagger>Profissionais que lidam com depressão na clínica</h2>
+  
+        <div class="para-quem-list">
+          <div class="para-quem-item" data-anim="slide-left" data-delay="1">
+            <div class="check">
+              <svg><use href="#icon-check"/></svg>
+            </div>
+            <p><strong>Psicólogos clínicos</strong> que atendem pacientes com quadros depressivos e buscam uma compreensão fenomenológica mais profunda</p>
+          </div>
+          <div class="para-quem-item" data-anim="slide-right" data-delay="1">
+            <div class="check">
+              <svg><use href="#icon-check"/></svg>
+            </div>
+            <p><strong>Estudantes de Psicologia</strong> interessados em uma leitura gestáltica da depressão que vai além dos manuais diagnósticos</p>
+          </div>
+          <div class="para-quem-item" data-anim="slide-left" data-delay="2">
+            <div class="check">
+              <svg><use href="#icon-check"/></svg>
+            </div>
+            <p><strong>Profissionais da saúde mental</strong> que desejam ampliar seu repertório de manejo clínico da depressão</p>
+          </div>
+          <div class="para-quem-item" data-anim="slide-right" data-delay="2">
+            <div class="check">
+              <svg><use href="#icon-check"/></svg>
+            </div>
+            <p><strong>Qualquer profissional</strong> que queira compreender a depressão para além da medicalização, com fundamentação teórica e sensibilidade clínica</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 07. COMO FUNCIONA -->
+    <section class="como-funciona scroll-section">
+      <div class="como-funciona-bg" aria-hidden="true"></div>
+      <div class="como-funciona-overlay" aria-hidden="true"></div>
+      <div class="deco-circle-bg" aria-hidden="true"></div>
+      <canvas class="particle-canvas" aria-hidden="true"></canvas>
+  
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>Como funciona</span>
+        <h2 data-letter-stagger>Tudo o que você precisa saber</h2>
+  
+        <div class="como-funciona-grid">
+          <div class="etapa-card tilt-card" data-anim="fade-up" data-delay="1">
+            <div class="card-shine"></div>
+            <div class="etapa-number">01</div>
+            <h3>Formato e Acesso</h3>
+            <p>Ao vivo via Zoom, com transmissão em tempo real. A gravação fica disponível por 30 dias após a compra para rever quantas vezes quiser.</p>
+          </div>
+          <div class="etapa-card tilt-card" data-anim="fade-up" data-delay="2">
+            <div class="card-shine"></div>
+            <div class="etapa-number">02</div>
+            <h3>Escolha onde estudar</h3>
+            <p>Assista pelo computador, celular ou televisão, através do aplicativo da Hotmart. Você escolhe o dispositivo mais confortável.</p>
+          </div>
+          <div class="etapa-card tilt-card" data-anim="fade-up" data-delay="3">
+            <div class="card-shine"></div>
+            <div class="etapa-number">03</div>
+            <h3>Carga horária</h3>
+            <p>São 4 horas de conteúdo com transmissão ao vivo e acesso à gravação posterior para rever quantas vezes quiser.</p>
+          </div>
+          <div class="etapa-card tilt-card" data-anim="fade-up" data-delay="4">
+            <div class="card-shine"></div>
+            <div class="etapa-number">04</div>
+            <h3>Materiais exclusivos</h3>
+            <p>Apostila com conceitos-chave, esquemas e reflexões, slides da aula e acesso exclusivo à inteligência artificial Fritz, programada para responder dúvidas com base no conteúdo do minicurso.</p>
+          </div>
+          <div class="etapa-card tilt-card" data-anim="fade-up" data-delay="5">
+            <div class="card-shine"></div>
+            <div class="etapa-number">05</div>
+            <h3>Flexibilidade</h3>
+            <p>Assista às aulas ao vivo ou no momento que preferir. O conteúdo pode ser acessado por computador, tablet, smartphone ou TV.</p>
+          </div>
+          <div class="etapa-card tilt-card" data-anim="fade-up" data-delay="6">
+            <div class="card-shine"></div>
+            <div class="etapa-number">06</div>
+            <h3>Certificado de conclusão</h3>
+            <p>Ao completar a carga horária do minicurso, você poderá emitir seu Certificado de Conclusão, validando sua participação.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 08. SOBRE O PROFESSOR -->
+    <section class="sobre-professor scroll-section">
+      <div class="container">
+        <div class="professor-image" data-anim="slide-left">
+          <div class="img-placeholder" data-role="sobre-professor" style="aspect-ratio: 1/1;">
+            <img src="/imagens/retrato-marcelo-gomes-01.webp" alt="Marcelo Gomes" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+            <div class="professor-logo-watermark"><img src="/Gbrand_assets/gestaltlogo.svg" alt=""></div>
+          </div>
+        </div>
+        <div class="professor-text">
+          <span class="section-label" data-anim="fade-up" data-scramble>Conheça o professor</span>
+          <h2 data-letter-stagger>Marcelo Gomes</h2>
+          <div class="section-divider" data-anim="clip-left" data-delay="2"></div>
+          <p data-anim="fade-up" data-delay="2">Marcelo Gomes, CRP 04/23858, é psicoterapeuta, professor e supervisor clínico com mais de 20 anos de experiência. Psicólogo formado pela UFMG, é especialista em Filosofia (UFMG) e em Psicologia Clínica Existencial e Gestáltica (FEAD), além de mestre em Psicologia pela PUC Minas.</p>
+          <p data-anim="fade-up" data-delay="3">Atuou como professor na UFMG, PUC Minas e Universidade Fumec. Atualmente, coordena atendimentos, supervisões e formações em Gestalt-Terapia no Instituto Mineiro de Gestalt-Terapia (IMGT), onde é professor titular e supervisor clínico.</p>
+          <ul class="professor-credentials" data-anim="fade-up" data-delay="4">
+            <li>Psicoterapeuta e supervisor clínico</li>
+            <li>Coordenador do IMGT</li>
+            <li>Mestre em Psicologia — PUC Minas</li>
+            <li>Especialista em Filosofia — UFMG</li>
+            <li>Especialista em Psicologia Clínica — FEAD</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 09. DEPOIMENTOS -->
+    <section class="depoimentos scroll-section">
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>O que dizem nossos alunos</span>
+        <h2 data-letter-stagger>Experiências que falam por si</h2>
+  
+        <div class="depoimentos-grid">
+          <div class="glass-card depoimento-card tilt-card" data-anim="fade-up" data-delay="1">
+            <div class="card-shine"></div>
+            <span class="quote-mark">&ldquo;</span>
+            <blockquote>Esse curso aborda a depressão de uma forma diferente do que estamos acostumados a ver. O conteúdo me surpreendeu positivamente — profundo, fenomenológico e muito aplicável à clínica.</blockquote>
+            <div class="depoimento-author">
+              <div class="img-placeholder" data-role="depoimento-aluna" style="aspect-ratio: 1/1;"><span>1:1</span></div>
+              <div>
+                <div class="author-name">Aline Fernandes</div>
+                <div class="author-role">Psicóloga — CRP 12/20294</div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-card depoimento-card tilt-card" data-anim="fade-up" data-delay="2">
+            <div class="card-shine"></div>
+            <span class="quote-mark">&ldquo;</span>
+            <blockquote>Os cursos do professor Marcelo sempre fogem do padrão. No minicurso de depressão, ele conduz a busca pelo entendimento profundo do sentido do sintoma — algo raro e valioso.</blockquote>
+            <div class="depoimento-author">
+              <div class="img-placeholder" data-role="depoimento-aluna" style="aspect-ratio: 1/1;"><span>1:1</span></div>
+              <div>
+                <div class="author-name">Isabelle</div>
+                <div class="author-role">Psicóloga — CRP 044/77339</div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-card depoimento-card tilt-card" data-anim="fade-up" data-delay="3">
+            <div class="card-shine"></div>
+            <span class="quote-mark">&ldquo;</span>
+            <blockquote>A forma como o professor Marcelo articula fenomenologia, Gestalt-Terapia e prática clínica é única. O estudo de caso do minicurso foi revelador para minha atuação.</blockquote>
+            <div class="depoimento-author">
+              <div class="img-placeholder" data-role="depoimento-aluna" style="aspect-ratio: 1/1;"><span>1:1</span></div>
+              <div>
+                <div class="author-name">Lara</div>
+                <div class="author-role">Psicóloga — CRP 04/58488</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 10. CTA FINAL -->
+    <section class="cta-final scroll-section">
+      <div class="cta-final-bg" aria-hidden="true"></div>
+      <div class="cta-final-overlay" aria-hidden="true"></div>
+      <div class="cta-ring-2" aria-hidden="true"></div>
+      <div class="cta-ring-3" aria-hidden="true"></div>
+      <canvas class="particle-canvas" aria-hidden="true"></canvas>
+  
+      <div class="container">
+        <span class="section-label section-label--light" data-anim="fade-up" data-scramble>Garanta sua vaga</span>
+        <h2 data-letter-stagger>Depressão — compreensão clínica com profundidade</h2>
+        <p class="cta-lead" data-anim="fade-up" data-delay="2">Quatro horas de conteúdo ao vivo — fenomenologia, diagnóstico processual, manejo clínico e estudo de caso com abordagem gestáltica.</p>
+        <div class="cta-actions" data-anim="fade-up" data-delay="3">
+          <a href="#" class="btn-primary btn-primary--inverted magnetic" data-strength="0.3">Quero me inscrever</a>
+          <a href="#" class="btn-secondary btn-secondary--inverted magnetic" data-strength="0.2">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 10. CONHECA OUTROS CURSOS -->
+    <section class="outros-cursos scroll-section" data-current-course="depressao">
+      <div class="container">
+        <span class="section-label" data-anim="fade-up" data-scramble>Explore nosso catálogo</span>
+        <h2 data-letter-stagger>Conheça outros cursos</h2>
+        <nav class="carousel-nav" data-anim="fade-up" data-delay="1">
+          <div class="carousel-dots"></div>
+          <button class="carousel-btn carousel-prev magnetic" data-strength="0.2" aria-label="Anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-btn carousel-next magnetic" data-strength="0.2" aria-label="Próximo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </nav>
+        <div class="outros-cursos-viewport">
+          <div class="outros-cursos-track">
+            <!-- Cards injetados via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- 11. RODAPE -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-brand">
+          <img src="/Gbrand_assets/gestaltlogo.svg" alt="IMGT">
+          <span>Instituto Mineiro de Gestalt-Terapia</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#">Termos de uso</a></li>
+          <li><a href="#">Política de privacidade</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+        <div class="footer-copy">
+          &copy; 2026 Instituto Mineiro de Gestalt-Terapia. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+</LpLayout>
