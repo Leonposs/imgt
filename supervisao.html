@@ -55,7 +55,10 @@
     --accent-glow: rgba(135, 82, 239, 0.35);
     --line: rgba(26, 26, 26, 0.08);
     --line-on-dark: rgba(245, 244, 240, 0.10);
-    --fade-h: clamp(120px, 14vh, 200px);
+    --fade-h: clamp(120px, 14vh, 200px);
+
+    /* Escala root font-size 16->22px entre 1920 e 3440 viewports (escala fluida 4K-ready) */
+    font-size: clamp(16px, 0.4vw + 8.32px, 22px);
   }
 
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -890,7 +893,7 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x divide-[color:var(--line)]">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-0 md:divide-x divide-[color:var(--line)]">
       <div class="md:px-8 reveal text-center">
         <div class="stat-num text-[color:var(--text)] text-[clamp(3rem,6vw,5.4rem)]">15</div>
         <div class="text-[0.78rem] uppercase tracking-[0.18em] text-[color:var(--text-muted)] mt-2">supervisionandos por grupo</div>
@@ -902,10 +905,6 @@
       <div class="md:px-8 reveal text-center">
         <div class="stat-num text-[color:var(--text)] text-[clamp(3rem,6vw,5.4rem)]">90<span class="text-[color:var(--accent)]">h</span></div>
         <div class="text-[0.78rem] uppercase tracking-[0.18em] text-[color:var(--text-muted)] mt-2">para certificação</div>
-      </div>
-      <div class="md:px-8 reveal text-center">
-        <div class="stat-num text-[color:var(--text)] text-[clamp(3rem,6vw,5.4rem)]">~1<span class="text-[color:var(--accent)]">a</span></div>
-        <div class="text-[0.78rem] uppercase tracking-[0.18em] text-[color:var(--text-muted)] mt-2">duração aproximada</div>
       </div>
     </div>
   </div>
@@ -1146,7 +1145,7 @@
             </span>
           </summary>
           <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
-            <p class="body-text text-[0.96rem]">R$ 299,00 mensais.</p>
+            <p class="body-text text-[0.96rem]">R$ 299,00 mensais como supervisionando e R$ 149,50 como ouvinte.</p>
           </div>
         </details>
 
@@ -1222,7 +1221,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type":"Question","name":"Como funciona a supervisão?","acceptedAnswer":{"@type":"Answer","text":"Grupos de no máximo 15 supervisionandos se reúnem semanalmente por 2 horas, discutindo casos com base na teoria da Gestalt-Terapia."}},
-    {"@type":"Question","name":"Qual o valor?","acceptedAnswer":{"@type":"Answer","text":"R$ 299,00 mensais."}},
+    {"@type":"Question","name":"Qual o valor?","acceptedAnswer":{"@type":"Answer","text":"R$ 299,00 mensais como supervisionando e R$ 149,50 como ouvinte."}},
     {"@type":"Question","name":"Quem pode participar?","acceptedAnswer":{"@type":"Answer","text":"Qualquer pessoa que tenha concluído o curso 'Gestalt-Terapia: Fundamentos e Técnicas'."}},
     {"@type":"Question","name":"Há certificação?","acceptedAnswer":{"@type":"Answer","text":"Sim, após 90 horas de supervisão."}}
   ]
@@ -1271,7 +1270,7 @@
         <p class="footer-col__tagline">Formação, clínica e supervisão em Gestalt-Terapia.</p>
         <p class="footer-col__meta">
           <strong>Belo Horizonte · MG</strong><br>
-          Atendimento presencial e online<br>
+          Atendimento online<br>
           <strong>CRP 04/PJ-2830</strong> · Desde 2016
         </p>
       </div>

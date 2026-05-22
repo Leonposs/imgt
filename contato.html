@@ -35,7 +35,10 @@
     --accent-glow: rgba(135, 82, 239, 0.35);
     --line: rgba(26, 26, 26, 0.08);
     --line-on-dark: rgba(245, 244, 240, 0.10);
-    --fade-h: clamp(120px, 14vh, 200px);
+    --fade-h: clamp(120px, 14vh, 200px);
+
+    /* Escala root font-size 16->22px entre 1920 e 3440 viewports (escala fluida 4K-ready) */
+    font-size: clamp(16px, 0.4vw + 8.32px, 22px);
   }
 
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -1065,7 +1068,7 @@
         <p class="footer-col__tagline">Formação, clínica e supervisão em Gestalt-Terapia.</p>
         <p class="footer-col__meta">
           <strong>Belo Horizonte · MG</strong><br>
-          Atendimento presencial e online<br>
+          Atendimento online<br>
           <strong>CRP 04/PJ-2830</strong> · Desde 2016
         </p>
       </div>

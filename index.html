@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>IMGT — Instituto Mineiro de Gestalt-Terapia | Formação e Clínica em BH</title>
-<meta name="description" content="Clínica-escola de Gestalt-Terapia em Belo Horizonte. Formação para psicólogos, supervisão clínica e atendimento psicoterápico presencial e online. Desde 2016 — CRP04/PJ-2830.">
+<title>IMGT — Instituto Mineiro de Gestalt-Terapia | Formação e Clínica online</title>
+<meta name="description" content="Clínica-escola de Gestalt-Terapia. Formação para psicólogos, supervisão clínica e atendimento psicoterápico online. Desde 2016 — CRP04/PJ-2830.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +56,13 @@
     --line: rgba(26, 26, 26, 0.08);
     --line-on-dark: rgba(245, 244, 240, 0.10);
     --fade-h: clamp(120px, 14vh, 200px);
+
+    /* Base tipográfica fluida — 1rem escala suavemente entre 16px (≤1920) e 22px (≥3440).
+       Toda tipografia em rem (incluindo Tailwind padrão) escala junto. Viewports principais:
+       ≤1920 → 16px (cap no piso, layout atual preservado)
+       2560 → 18.5px | 3440 → 22px (cap no teto)
+       Atende telas 4K/ultrawide sem o usuário precisar dar zoom no browser. */
+    font-size: clamp(16px, 0.4vw + 8.32px, 22px);
   }
 
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -1126,7 +1133,7 @@
     <div class="text-center" style="margin-bottom:150px">
       <p class="h-display text-[color:var(--text)] max-w-6xl mx-auto leading-[1.15]" style="font-size:clamp(1.9rem,3.4vw,3rem)">
         <span class="block reveal">10 anos de atuação. 21 turmas concluídas.</span>
-        <span class="block reveal" style="--reveal-delay:200ms">Milhares de pacientes atendidos.</span>
+        <span class="block reveal" style="--reveal-delay:200ms">Mais de 6k de clientes atendidos.</span>
         <span class="block reveal" style="--reveal-delay:400ms">Centenas de profissionais supervisionados.</span>
       </p>
     </div>
@@ -1141,8 +1148,8 @@
         <div class="text-[0.78rem] uppercase tracking-[0.18em] text-[color:var(--text-muted)] mt-2">turmas concluídas</div>
       </div>
       <div class="md:px-8 reveal text-center">
-        <div class="stat-num text-[color:var(--text)] text-[clamp(3rem,6vw,5.4rem)]">1.2k<span class="text-[color:var(--accent)]">+</span></div>
-        <div class="text-[0.78rem] uppercase tracking-[0.18em] text-[color:var(--text-muted)] mt-2">pacientes atendidos</div>
+        <div class="stat-num text-[color:var(--text)] text-[clamp(3rem,6vw,5.4rem)]">6k<span class="text-[color:var(--accent)]">+</span></div>
+        <div class="text-[0.78rem] uppercase tracking-[0.18em] text-[color:var(--text-muted)] mt-2">clientes atendidos</div>
       </div>
       <div class="md:px-8 reveal text-center">
         <div class="stat-num text-[color:var(--text)] text-[clamp(3rem,6vw,5.4rem)]">300<span class="text-[color:var(--accent)]">+</span></div>
@@ -1166,10 +1173,10 @@
       </div>
       <div class="lg:col-span-6 lg:col-start-7 reveal text-left">
         <p class="body-text-dark text-[1.05rem]">
-          Fundado em outubro de 2016 pelo professor Marcelo Gomes, o IMGT é uma clínica-escola dedicada ao ensino e à prática da Gestalt-Terapia em Minas Gerais.
+          Fundado em outubro de 2016 pelo professor Marcelo Gomes, o IMGT é uma clínica-escola dedicada ao ensino e à prática da Gestalt-Terapia.
         </p>
         <p class="mt-5 body-text-dark text-[1.05rem]">
-          Formamos psicoterapeutas com embasamento teórico sólido, oferecemos supervisão contínua aos profissionais em formação e mantemos uma clínica social e particular com atendimento presencial e online.
+          Formamos psicoterapeutas com embasamento teórico sólido, oferecemos supervisão contínua aos profissionais em formação e mantemos uma clínica social e particular com atendimento online.
         </p>
         <p class="mt-5 body-text-dark text-[1.05rem]">
           Nossa missão é difundir a Gestalt-Terapia por meio do ensino e do cuidado clínico de excelência.
@@ -1207,14 +1214,14 @@
           <div class="flex items-start justify-between">
             <div class="flex flex-wrap gap-1.5">
               <span class="pill pill-accent" style="background:var(--accent);color:#FFFFFF;border-color:transparent;">Formação completa</span>
-              <span class="pill pill-on-dark">100h+ · Certificado</span>
+              <span class="pill pill-on-dark">110h+ · Certificado</span>
             </div>
             <span class="text-[color:var(--text-muted-on-dark)] text-xs uppercase tracking-[0.18em]">01</span>
           </div>
           <div>
             <h3 class="h-display text-[#F5F4F0] text-[clamp(1.6rem,2.4vw,2.2rem)] max-w-md leading-[1.05]">Gestalt-Terapia: Fundamentos e Técnicas</h3>
             <p class="text-[color:var(--text-secondary-on-dark)] text-sm mt-3 max-w-md">
-              Fenomenologia, ciclo de contato, teoria do self e intervenções clínicas. Curso completo de formação para psicólogos.
+              Fenomenologia, ciclo de contato, teoria do self e intervenções clínicas. Curso completo de formação para profissionais.
             </p>
             <div class="mt-6 flex items-center justify-end">
               <a href="#" class="btn-primary spring text-[0.88rem]">Ver curso
@@ -1496,7 +1503,7 @@
                   <span class="font-display text-[color:var(--text-muted-on-dark)] text-sm">03</span>
                   <span class="text-xs uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)]">Para quem é</span>
                 </div>
-                <h3 class="font-display text-[#F5F4F0] text-[1.4rem] leading-tight">Pessoas em sofrimento, transição ou autoconhecimento</h3>
+                <h3 class="font-display text-[#F5F4F0] text-[1.4rem] leading-tight">Adultos e adolescentes em sofrimento, transição ou autoconhecimento</h3>
               </div>
               <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(245,244,240,0.06);color:#F5F4F0;border:1px solid rgba(245,244,240,0.14);">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
@@ -1531,11 +1538,11 @@
           <div class="flex items-center gap-3 mb-7">
             <span class="font-display text-[color:var(--text-muted-on-dark)] text-sm">01</span>
             <span class="w-10 h-px bg-[color:var(--line-on-dark)]"></span>
-            <span class="text-xs uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)]">Para psicólogos</span>
+            <span class="text-xs uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)]">Para profissionais</span>
           </div>
           <h3 class="h-display text-[#F5F4F0] text-[clamp(1.5rem,2.2vw,2rem)] leading-[1.05]">Formação em Gestalt-Terapia</h3>
           <p class="body-text-dark mt-4 text-[0.95rem]">
-            Para psicólogos e profissionais que querem se tornar gestalt-terapeutas. Curso completo de 100h+, minicursos temáticos e supervisão clínica.
+            Para psicólogos e profissionais que querem se tornar gestalt-terapeutas. Curso completo de 110h+, minicursos temáticos e supervisão clínica.
           </p>
           <a href="#cursos" class="inline-flex items-center gap-2 mt-auto pt-7 text-[#8752ef] font-medium hover:gap-3 spring text-sm">
             Ver cursos
@@ -1554,7 +1561,7 @@
           </div>
           <h3 class="h-display text-[#F5F4F0] text-[clamp(1.5rem,2.2vw,2rem)] leading-[1.05]">Atendimento na clínica</h3>
           <p class="body-text-dark mt-4 text-[0.95rem]">
-            Para quem busca terapia. Psicoterapia com profissionais formados pelo IMGT, em supervisão contínua. Presencial em BH e online.
+            Para quem busca terapia. Psicoterapia com profissionais formados pelo IMGT, em supervisão contínua. Atendimento online.
           </p>
           <a href="#contato" class="inline-flex items-center gap-2 mt-auto pt-7 text-[#8752ef] font-medium hover:gap-3 spring text-sm">
             Agendar sessão
@@ -1606,13 +1613,13 @@
           <span class="absolute top-4 left-4 pill pill-on-dark">Etapa 01</span>
         </div>
         <div class="p-6 md:p-7">
-          <p class="text-[0.74rem] uppercase tracking-[0.22em]" style="color:#8cc63f">Fundamentos · 100h+</p>
+          <p class="text-[0.74rem] uppercase tracking-[0.22em]" style="color:#8cc63f">Fundamentos · 110h+</p>
           <h3 class="h-display text-[color:var(--text)] text-[1.5rem] mt-2 leading-[1.1]">Fundamentos teóricos e técnicas</h3>
           <p class="body-text mt-3 text-[0.93rem]">Fenomenologia, Existencialismo, Humanismo, formação da personalidade, Teoria do Self, Ciclo de Contato e mecanismos de defesa.</p>
           <ul class="mt-5 space-y-2 text-sm text-[color:var(--text-secondary)]">
             <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Aulas ao vivo + gravadas</li>
             <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Materiais de apoio</li>
-            <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Certificado de 100h+</li>
+            <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Certificado de 110h+</li>
           </ul>
         </div>
       </article>
@@ -1626,7 +1633,7 @@
         <div class="p-6 md:p-7">
           <p class="text-[0.74rem] uppercase tracking-[0.22em]" style="color:#8cc63f">Prática clínica · contínua</p>
           <h3 class="h-display text-[color:var(--text)] text-[1.5rem] mt-2 leading-[1.1]">Início da prática psicoterápica</h3>
-          <p class="body-text mt-3 text-[0.93rem]">Atendimento na clínica social do IMGT, sublocação de salas e espaços de convivência para profissionais em formação.</p>
+          <p class="body-text mt-3 text-[0.93rem]">Atendimento na clínica social do IMGT e espaços de convivência online para profissionais em formação.</p>
           <ul class="mt-5 space-y-2 text-sm text-[color:var(--text-secondary)]">
             <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Atendimento real, supervisionado</li>
             <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Encontros entre supervisionandos</li>
@@ -1647,7 +1654,7 @@
           <p class="body-text-dark mt-3 text-[0.93rem]">Onde teoria e prática se encontram. Grupos para ampliar recursos terapêuticos e segurança clínica.</p>
           <ul class="mt-5 space-y-2 text-sm text-[color:var(--text-secondary-on-dark)]">
             <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#8752ef"></span> Discussão de casos clínicos</li>
-            <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#8752ef"></span> 50+ profissionais ativos hoje</li>
+            <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#8752ef"></span> 60+ profissionais ativos hoje</li>
             <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#8752ef"></span> Acompanhamento contínuo</li>
           </ul>
         </div>
@@ -1885,7 +1892,7 @@
             </span>
           </summary>
           <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
-            <p class="body-text text-[0.96rem]">Sim. O IMGT é registrado no CRP04 sob o número PJ-2830 e o curso "Gestalt-Terapia: Fundamentos e Técnicas" emite certificado de 100+ horas.</p>
+            <p class="body-text text-[0.96rem]">O curso de formação "Gestalt-Terapia: Fundamentos e Técnicas" emite certificado de curso de extensão universitária reconhecido pelo MEC de 110+ horas.</p>
           </div>
         </details>
 
@@ -1897,7 +1904,7 @@
             </span>
           </summary>
           <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
-            <p class="body-text text-[0.96rem]">O curso é voltado a psicólogos e profissionais da saúde mental. Para quem está começando, oferecemos minicursos e o curso gratuito "Por dentro da Gestalt-Terapia".</p>
+            <p class="body-text text-[0.96rem]">Não, o curso é voltado a psicólogos e profissionais da saúde mental e pessoas interessadas em processos terapêuticos.</p>
           </div>
         </details>
 
@@ -1909,7 +1916,7 @@
             </span>
           </summary>
           <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
-            <p class="body-text text-[0.96rem]">Sim. Atendemos presencialmente em Belo Horizonte e online para todo o Brasil— com profissionais formados pelo IMGT em supervisão contínua.</p>
+            <p class="body-text text-[0.96rem]">Sim. Atendemos online com profissionais formados pelo IMGT, com Psicologia e CRP ativo, em supervisão contínua.</p>
           </div>
         </details>
 
@@ -1921,7 +1928,7 @@
             </span>
           </summary>
           <div class="px-5 md:px-6 pb-6 -mt-1">
-            <p class="body-text text-[0.96rem]">A clínica social oferece atendimento por valor acessível, conduzido por psicólogos em supervisão. A particular segue valores de mercado com profissionais já formados.</p>
+            <p class="body-text text-[0.96rem]">A clínica social oferece atendimento por valor acessível, conduzido por psicólogos em supervisão. A particular segue valores de mercado com profissionais mais experientes.</p>
           </div>
         </details>
 
@@ -2007,7 +2014,7 @@
         <p class="footer-col__tagline">Formação, clínica e supervisão em Gestalt-Terapia.</p>
         <p class="footer-col__meta">
           <strong>Belo Horizonte · MG</strong><br>
-          Atendimento presencial e online<br>
+          Atendimento online<br>
           <strong>CRP 04/PJ-2830</strong> · Desde 2016
         </p>
       </div>
@@ -2101,10 +2108,10 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"O curso de formação é reconhecido?","acceptedAnswer":{"@type":"Answer","text":"Sim. O IMGT é registrado no CRP04 sob o número PJ-2830 e o curso 'Gestalt-Terapia: Fundamentos e Técnicas' emite certificado de 100+ horas."}},
-    {"@type":"Question","name":"Preciso ser psicólogo para fazer o curso de formação?","acceptedAnswer":{"@type":"Answer","text":"O curso é voltado a psicólogos e profissionais da saúde mental. Para quem está começando, oferecemos minicursos e o curso gratuito 'Por dentro da Gestalt-Terapia'."}},
-    {"@type":"Question","name":"A clínica atende online?","acceptedAnswer":{"@type":"Answer","text":"Sim. Atendemos presencialmente em Belo Horizonte e online para todo o Brasil — com profissionais formados pelo IMGT em supervisão contínua."}},
-    {"@type":"Question","name":"Qual a diferença entre clínica social e particular?","acceptedAnswer":{"@type":"Answer","text":"A clínica social oferece atendimento por valor acessível, conduzido por psicólogos em supervisão. A particular segue valores de mercado com profissionais já formados."}},
+    {"@type":"Question","name":"O curso de formação é reconhecido?","acceptedAnswer":{"@type":"Answer","text":"O curso de formação 'Gestalt-Terapia: Fundamentos e Técnicas' emite certificado de curso de extensão universitária reconhecido pelo MEC de 110+ horas."}},
+    {"@type":"Question","name":"Preciso ser psicólogo para fazer o curso de formação?","acceptedAnswer":{"@type":"Answer","text":"Não, o curso é voltado a psicólogos e profissionais da saúde mental e pessoas interessadas em processos terapêuticos."}},
+    {"@type":"Question","name":"A clínica atende online?","acceptedAnswer":{"@type":"Answer","text":"Sim. Atendemos online com profissionais formados pelo IMGT, com Psicologia e CRP ativo, em supervisão contínua."}},
+    {"@type":"Question","name":"Qual a diferença entre clínica social e particular?","acceptedAnswer":{"@type":"Answer","text":"A clínica social oferece atendimento por valor acessível, conduzido por psicólogos em supervisão. A particular segue valores de mercado com profissionais mais experientes."}},
     {"@type":"Question","name":"Como faço para começar a terapia no IMGT?","acceptedAnswer":{"@type":"Answer","text":"Basta preencher o formulário inicial. Em alguns dias úteis, entramos em contato para agendar a primeira sessão."}}
   ]
 }

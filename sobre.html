@@ -54,7 +54,10 @@
     --accent-glow: rgba(135, 82, 239, 0.35);
     --line: rgba(26, 26, 26, 0.08);
     --line-on-dark: rgba(245, 244, 240, 0.10);
-    --fade-h: clamp(120px, 14vh, 200px);
+    --fade-h: clamp(120px, 14vh, 200px);
+
+    /* Escala root font-size 16->22px entre 1920 e 3440 viewports (escala fluida 4K-ready) */
+    font-size: clamp(16px, 0.4vw + 8.32px, 22px);
   }
 
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -1059,11 +1062,11 @@
           <div class="text-[0.74rem] uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)] mt-2">fundação do IMGT</div>
         </div>
         <div class="md:px-8 reveal text-center">
-          <div class="stat-num text-[color:var(--text)] text-[clamp(2.4rem,4.8vw,4.4rem)]">19<span class="text-[color:var(--accent)]">+</span></div>
+          <div class="stat-num text-[color:var(--text)] text-[clamp(2.4rem,4.8vw,4.4rem)]">21<span class="text-[color:var(--accent)]">+</span></div>
           <div class="text-[0.74rem] uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)] mt-2">turmas formadas</div>
         </div>
         <div class="md:px-8 reveal text-center">
-          <div class="stat-num text-[color:var(--text)] text-[clamp(2.4rem,4.8vw,4.4rem)]">50<span class="text-[color:var(--accent)]">+</span></div>
+          <div class="stat-num text-[color:var(--text)] text-[clamp(2.4rem,4.8vw,4.4rem)]">300<span class="text-[color:var(--accent)]">+</span></div>
           <div class="text-[0.74rem] uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)] mt-2">profissionais supervisionados</div>
         </div>
       </div>
@@ -1318,7 +1321,7 @@
           Naquele mesmo ano, estabeleci sociedade com colegas e alugamos um imóvel com <strong style="color:#fff;font-weight:500">seis consultórios, sala de cursos e sala de supervisão</strong>. A sede do IMGT foi inaugurada em <strong style="color:#fff;font-weight:500">outubro de 2016</strong>, concretizando uma aspiração de nove anos.
         </p>
         <p class="mt-5 body-text-dark text-[1.05rem]">
-          A missão ia além de oferecer cursos e supervisão. O Instituto nasceu para apoiar o psicólogo recém-formado: sublocação de salas, clínica social atendida pelos supervisionandos, espaços de convivência para troca profissional. Eu sempre reconheci o caráter solitário da clínica, e idealizei o IMGT como <strong style="color:#fff;font-weight:500">"um espaço de encontro"</strong>.
+          A missão ia além de oferecer cursos e supervisão. O Instituto nasceu para apoiar o psicólogo recém-formado: clínica social atendida pelos supervisionandos, espaços de convivência para troca profissional. Eu sempre reconheci o caráter solitário da clínica, e idealizei o IMGT como <strong style="color:#fff;font-weight:500">"um espaço de encontro"</strong>.
         </p>
 
         <!-- Timeline segmento Ato III -->
@@ -1359,7 +1362,7 @@
             <div class="tl-card tl-card-accent">
               <span class="tl-year">mar · 2020</span>
               <h3 class="tl-title">A 10ª turma é pausada</h3>
-              <p class="tl-desc">As turmas continuaram crescendo até março de 2020, quando a 10ª turma foi pausada pelas restrições sanitárias. Eu nunca havia desejado atuar online — mas, diante do meio desafiador, percebi a necessidade de um ajustamento criativo.</p>
+              <p class="tl-desc">As turmas continuaram crescendo até março de 2020, quando a 10ª turma foi pausada pelas restrições relacionadas à pandemia. Eu nunca havia desejado atuar online — mas, diante do meio desafiador, percebi a necessidade de um ajustamento criativo.</p>
             </div>
           </div>
 
@@ -1387,8 +1390,8 @@
             <span class="tl-node"></span>
             <div class="tl-card tl-card-accent">
               <span class="tl-year">2022 — 2026</span>
-              <h3 class="tl-title">Turmas 14, 15, 16, 17 e 18 concluídas</h3>
-              <p class="tl-desc">Hoje supervisionamos cerca de 50 profissionais, e a clínica social atende pessoas de todos os estados brasileiros e de vários países. Espaços virtuais foram criados para fortalecer a troca entre supervisionandos.</p>
+              <h3 class="tl-title">Turmas 14 a 21 concluídas</h3>
+              <p class="tl-desc">Cerca de 60 profissionais, e a clínica social atende pessoas de todos os estados brasileiros e de vários países. Espaços virtuais foram criados para fortalecer a troca entre supervisionandos.</p>
               <details class="mt-4 group">
                 <summary class="flex items-center justify-between gap-3 cursor-pointer text-[color:var(--text-muted-on-dark)] text-sm">
                   <span class="uppercase tracking-[0.18em]">Ver marcos da expansão online</span>
@@ -1399,8 +1402,7 @@
                 <ul class="mt-4 space-y-2 text-sm text-[color:var(--text-secondary-on-dark)] pl-1">
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Turmas 11, 12 e 13 realizadas online durante a pandemia</li>
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Sede física desocupada em 2021 — operação 100% online</li>
-                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Turmas 14, 15, 16, 17 e 18 concluídas</li>
-                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Turma 19 em breve</li>
+                  <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Turmas 14 a 21 concluídas</li>
                   <li class="flex items-start gap-2.5"><span class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:var(--accent)"></span> Espaços virtuais criados para fortalecer a troca entre supervisionandos</li>
                 </ul>
               </details>
@@ -1428,7 +1430,7 @@
           A Gestalt-Terapia é uma modalidade de psicoterapia fundamentada na <em style="color:#8752ef;font-style:normal">Fenomenologia</em>, no <em style="color:#8752ef;font-style:normal">Existencialismo</em> e no <em style="color:#8752ef;font-style:normal">Humanismo</em>, que busca facilitar uma compreensão mais profunda do sujeito sobre si mesmo e suas relações.
         </p>
         <p class="body-text-dark mt-4 text-[1.02rem]">
-          Promove maior abertura existencial e capacidade de enfrentamento dos desafios da vida, na busca por seus objetivos.
+          Promove maior abertura existencial e capacidade de enfrentamento dos desafios da vida, na busca por seus desejos e objetivos.
         </p>
       </div>
 
@@ -1477,7 +1479,7 @@
                   <span class="font-display text-[color:var(--text-muted-on-dark)] text-sm">03</span>
                   <span class="text-xs uppercase tracking-[0.18em] text-[color:var(--text-muted-on-dark)]">Para quem é</span>
                 </div>
-                <h3 class="font-display text-[#F5F4F0] text-[1.4rem] leading-tight">Pessoas em sofrimento, transição ou autoconhecimento</h3>
+                <h3 class="font-display text-[#F5F4F0] text-[1.4rem] leading-tight">Adultos e adolescentes em sofrimento, transição ou autoconhecimento</h3>
               </div>
               <span class="faq-icon w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0" style="background:rgba(245,244,240,0.06);color:#F5F4F0;border:1px solid rgba(245,244,240,0.14);">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg>
@@ -1573,7 +1575,7 @@
         <p class="footer-col__tagline">Formação, clínica e supervisão em Gestalt-Terapia.</p>
         <p class="footer-col__meta">
           <strong>Belo Horizonte · MG</strong><br>
-          Atendimento presencial e online<br>
+          Atendimento online<br>
           <strong>CRP 04/PJ-2830</strong> · Desde 2016
         </p>
       </div>

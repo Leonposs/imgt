@@ -65,7 +65,10 @@
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
+
+      /* Escala root font-size 16->22px entre 1920 e 3440 viewports (escala fluida 4K-ready) */
+      font-size: clamp(16px, 0.4vw + 8.32px, 22px);
+  }
 
     /* Page-specific palette — LP Ansiedade */
     body {
@@ -2323,7 +2326,7 @@
         <span class="hero-tag hero-anim">Minicurso</span>
         <h1 class="hero-anim">Compreensão e Manejo Clínico da <em>Ansiedade</em></h1>
         <p class="hero-subtitle hero-anim">na Psicoterapia</p>
-        <p class="hero-lead hero-anim">Uma leitura aprofundada da ansiedade integrando Gestalt-Terapia, TCC e Psicanálise — diagnóstico, teoria da personalidade, fenomenologia e manejo clínico.</p>
+        <p class="hero-lead hero-anim">Uma leitura aprofundada da ansiedade integrando psicoterapia, diagnóstico, teoria da personalidade e manejo clínico.</p>
         <div class="hero-actions hero-anim">
           <a href="#" class="btn-primary magnetic" data-strength="0.3">Quero me inscrever</a>
           <a href="#sobre" class="btn-secondary magnetic" data-strength="0.2">Saiba mais</a>
@@ -2363,7 +2366,7 @@
         <span class="section-label" data-anim="fade-up" data-scramble>Sobre o minicurso</span>
         <h2 data-letter-stagger>Compreensão e manejo clínico da ansiedade na psicoterapia</h2>
         <div class="section-divider" data-anim="clip-left" data-delay="2"></div>
-        <p data-anim="fade-up" data-delay="2">A ansiedade é a principal demanda da clínica contemporânea — amplamente medicada, mas nem sempre verdadeiramente compreendida. Este minicurso propõe uma leitura aprofundada integrando Gestalt-Terapia, TCC e Psicanálise para ir além dos manuais diagnósticos.</p>
+        <p data-anim="fade-up" data-delay="2">A ansiedade é a principal demanda da clínica contemporânea — amplamente medicada, mas nem sempre verdadeiramente compreendida. Este minicurso propõe uma leitura aprofundada integrando intervenções psicoterapêuticas para ir além dos manuais diagnósticos.</p>
         <p data-anim="fade-up" data-delay="3">O que é ansiedade? Emoção, sintoma, transtorno, ajustamento? Exploraremos os critérios do DSM-5, a diferenciação entre ansiedade normal e patológica, medo e angústia — e as estratégias clínicas para um manejo que respeite a singularidade de cada sujeito.</p>
         <a href="#" class="btn-primary magnetic" data-anim="fade-up" data-delay="4" data-strength="0.3">Garantir minha vaga</a>
       </div>

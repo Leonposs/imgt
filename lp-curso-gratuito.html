@@ -65,7 +65,10 @@
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
+
+      /* Escala root font-size 16->22px entre 1920 e 3440 viewports (escala fluida 4K-ready) */
+      font-size: clamp(16px, 0.4vw + 8.32px, 22px);
+  }
 
     /* Page-specific palette — LP Gratuito DARK MODE */
     body {
@@ -2376,16 +2379,12 @@
         <div class="stat-label">Alunos formados</div>
       </div>
       <div class="stat-item" data-anim="fade-up" data-delay="1">
-        <div class="stat-number"><span data-target="12" data-suffix=" anos">0</span></div>
-        <div class="stat-label">De experiência</div>
+        <div class="stat-number"><span data-target="5">0</span></div>
+        <div class="stat-label">Aulas disponíveis</div>
       </div>
       <div class="stat-item" data-anim="fade-up" data-delay="2">
-        <div class="stat-number"><span data-target="8" data-suffix=" cursos">0</span></div>
-        <div class="stat-label">Disponíveis</div>
-      </div>
-      <div class="stat-item" data-anim="fade-up" data-delay="3">
-        <div class="stat-number"><span data-target="97" data-suffix="%">0</span></div>
-        <div class="stat-label">Satisfação dos alunos</div>
+        <div class="stat-number"><span data-target="5" data-suffix="h">0</span></div>
+        <div class="stat-label">Certificado de carga horária</div>
       </div>
     </div>
   </section>
@@ -2491,7 +2490,7 @@
           <div class="check">
             <svg><use href="#icon-check"/></svg>
           </div>
-          <p><strong>Estudantes de Psicologia</strong> que querem conhecer a Gestalt-Terapia além do que o currículo oferece</p>
+          <p><strong>Estudantes de Psicologia e Gestalt-terapeutas</strong> que querem conhecer a Gestalt-Terapia com mais profundidade</p>
         </div>
         <div class="para-quem-item" data-anim="slide-right" data-delay="1">
           <div class="check">

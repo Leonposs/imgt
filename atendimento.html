@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Atendimento — IMGT | Psicoterapia em Gestalt-Terapia, online e em BH</title>
-<meta name="description" content="Atendimento psicológico profissional, ético e fundamentado na Gestalt-Terapia. Clínica Social e Clínica Particular para adolescentes, adultos e idosos — online e presencial em Belo Horizonte.">
+<title>Atendimento — IMGT | Psicoterapia em Gestalt-Terapia online</title>
+<meta name="description" content="Atendimento psicológico profissional, ético e fundamentado na Gestalt-Terapia. Clínica Social e Clínica Particular para adolescentes, adultos e idosos — online.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,10 @@
     --accent-glow: rgba(135, 82, 239, 0.35);
     --line: rgba(26, 26, 26, 0.08);
     --line-on-dark: rgba(245, 244, 240, 0.10);
-    --fade-h: clamp(120px, 14vh, 200px);
+    --fade-h: clamp(120px, 14vh, 200px);
+
+    /* Escala root font-size 16->22px entre 1920 e 3440 viewports (escala fluida 4K-ready) */
+    font-size: clamp(16px, 0.4vw + 8.32px, 22px);
   }
 
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -783,13 +786,12 @@
           Adolescentes a partir de 13 anos, adultos e idosos.
         </h2>
         <p class="body-text mt-7 text-[1.02rem]">
-          Não atendemos crianças. As sessões acontecem predominantemente online, com opção presencial disponível na região de Belo Horizonte.
+          Não atendemos crianças. Atendimento clínico online em Gestalt-Terapia para adolescentes a partir de 13 anos, adultos e idosos.
         </p>
 
         <div class="mt-8 flex flex-wrap gap-2">
           <span class="pill" style="background:rgba(135,82,239,0.10);color:var(--accent);border:1px solid rgba(135,82,239,0.22)">13+</span>
           <span class="pill" style="background:rgba(135,82,239,0.10);color:var(--accent);border:1px solid rgba(135,82,239,0.22)">Online · todo o Brasil</span>
-          <span class="pill" style="background:rgba(135,82,239,0.10);color:var(--accent);border:1px solid rgba(135,82,239,0.22)">Presencial · BH</span>
         </div>
       </div>
 
@@ -803,7 +805,7 @@
             </div>
 
             <p class="h-display text-[#F5F4F0] text-[clamp(1.4rem,2.2vw,1.95rem)] leading-[1.22]">
-              Todos os clínicos têm formação em Psicologia, registro <span style="color:var(--accent)">CRP</span>, concluíram o curso de formação em Gestalt-Terapia do IMGT e mantêm supervisão clínica contínua.
+              Todos os psicoterapeutas têm formação em Psicologia, registro <span style="color:var(--accent)">CRP</span>, concluíram o curso de formação em Gestalt-Terapia do IMGT e mantêm supervisão clínica contínua.
             </p>
 
             <div class="mt-9 grid grid-cols-3 gap-4 md:gap-6 border-t border-[color:var(--line-on-dark)] pt-7">
@@ -812,7 +814,7 @@
                 <div class="text-xs uppercase tracking-[0.14em] text-[color:var(--text-muted-on-dark)] mt-1.5">Registro ativo</div>
               </div>
               <div>
-                <div class="stat-num text-[#F5F4F0] text-[clamp(1.6rem,2.4vw,2.2rem)]">100h<span style="color:var(--accent)">+</span></div>
+                <div class="stat-num text-[#F5F4F0] text-[clamp(1.6rem,2.4vw,2.2rem)]">110h<span style="color:var(--accent)">+</span></div>
                 <div class="text-xs uppercase tracking-[0.14em] text-[color:var(--text-muted-on-dark)] mt-1.5">Formação IMGT concluída</div>
               </div>
               <div>
@@ -945,7 +947,7 @@
         </div>
         <div class="p-7 md:p-8">
           <span class="step-num">02</span>
-          <h3 class="h-display text-[#F5F4F0] text-[1.45rem] mt-5 leading-[1.15]">Um clínico entra em contato</h3>
+          <h3 class="h-display text-[#F5F4F0] text-[1.45rem] mt-5 leading-[1.15]">Um psicoterapeuta entra em contato</h3>
           <p class="body-text-dark mt-3 text-[0.95rem]">
             Um dos profissionais da clínica entra em contato diretamente com você.
           </p>
@@ -992,7 +994,7 @@
             </span>
           </summary>
           <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
-            <p class="body-text text-[0.96rem]">Escolha entre Clínica Social ou Particular, preencha o formulário e aguarde o contato do clínico.</p>
+            <p class="body-text text-[0.96rem]">Escolha entre Clínica Social ou Particular, preencha o formulário e aguarde o contato do psicoterapeuta.</p>
           </div>
         </details>
 
@@ -1004,7 +1006,7 @@
             </span>
           </summary>
           <div class="px-6 md:px-8 pb-7 md:pb-8 -mt-1">
-            <p class="body-text text-[0.96rem]">Os valores são definidos diretamente entre cliente e clínico.</p>
+            <p class="body-text text-[0.96rem]">Os valores são definidos diretamente entre cliente e psicoterapeuta.</p>
           </div>
         </details>
 
@@ -1059,7 +1061,7 @@
         Pronto para dar o <span style="color:#8752ef">primeiro passo</span>?
       </h2>
       <p class="body-text-dark mt-7 max-w-2xl mx-auto">
-        Escolha o caminho que faz sentido para você e preencha o formulário. Em seguida, um dos clínicos da casa entra em contato.
+        Escolha o caminho que faz sentido para você e preencha o formulário. Em seguida, um dos psicoterapeutas da casa entra em contato.
       </p>
       <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
         <a href="#caminhos" class="btn-primary spring">
@@ -1092,8 +1094,8 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Como me cadastro?","acceptedAnswer":{"@type":"Answer","text":"Escolha entre Clínica Social ou Particular, preencha o formulário e aguarde o contato do clínico."}},
-    {"@type":"Question","name":"Quanto custa a Clínica Social?","acceptedAnswer":{"@type":"Answer","text":"Os valores são definidos diretamente entre cliente e clínico."}},
+    {"@type":"Question","name":"Como me cadastro?","acceptedAnswer":{"@type":"Answer","text":"Escolha entre Clínica Social ou Particular, preencha o formulário e aguarde o contato do psicoterapeuta."}},
+    {"@type":"Question","name":"Quanto custa a Clínica Social?","acceptedAnswer":{"@type":"Answer","text":"Os valores são definidos diretamente entre cliente e psicoterapeuta."}},
     {"@type":"Question","name":"Tem opção online?","acceptedAnswer":{"@type":"Answer","text":"Sim, disponível para os dois tipos de clínica."}},
     {"@type":"Question","name":"Quem tem direito à Clínica Social?","acceptedAnswer":{"@type":"Answer","text":"Qualquer pessoa que não consiga arcar com valores padrão de terapia (avaliação por questionário)."}},
     {"@type":"Question","name":"Sessões para casais?","acceptedAnswer":{"@type":"Answer","text":"Disponíveis apenas na Clínica Particular."}}
@@ -1143,7 +1145,7 @@
         <p class="footer-col__tagline">Formação, clínica e supervisão em Gestalt-Terapia.</p>
         <p class="footer-col__meta">
           <strong>Belo Horizonte · MG</strong><br>
-          Atendimento presencial e online<br>
+          Atendimento online<br>
           <strong>CRP 04/PJ-2830</strong> · Desde 2016
         </p>
       </div>
