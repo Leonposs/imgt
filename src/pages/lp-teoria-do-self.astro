@@ -37,6 +37,53 @@ import LpLayout from '../layouts/LpLayout.astro';
     }
     .hero-bg { background-image: url('/imagens/minicurso-teoria-do-self-gestalt-terapia.webp'); }
     /* === End per-page surface tokens === */
+    /* === Per-page surface tokens (injected) === */
+    body {
+      --color-bg: #19030E;
+      --color-bg-elevated: #2E1823;
+      --color-bg-dark: #100208;
+      --color-text-inverted: #19030E;
+    }
+    .hero-bg { background-image: url('/imagens/minicurso-teoria-do-self-gestalt-terapia.webp'); }
+    body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+    repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 80px
+    ),
+    repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 80px
+    ),
+    radial-gradient(
+    ellipse at 30% 20%,
+    rgba(211, 17, 96, 0.10) 0%,
+    transparent 55%
+    ),
+    radial-gradient(
+    ellipse at 70% 80%,
+    rgba(211, 17, 96, 0.08) 0%,
+    transparent 50%
+    ),
+    radial-gradient(
+    ellipse at 50% 50%,
+    rgba(211, 17, 96, 0.05) 0%,
+    transparent 60%
+    );
+    will-change: transform;
+    }
+    /* === End per-page surface tokens === */
   </style>
 
   <!-- SVG SYMBOLS -->

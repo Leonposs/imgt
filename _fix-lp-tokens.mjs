@@ -49,6 +49,14 @@ for (const lp of lps) {
   const heroMatch = srcHtml.match(/\.hero-bg\s*\{[^}]*?background-image:\s*url\(['"]?([^'")]+)['"]?\)/);
   const heroUrl = heroMatch ? heroMatch[1].replace(/^\//, '') : null;
 
+  // Extract the entire body::before rule (background gradient tinted with page accent)
+  const beforeMatch = srcHtml.match(/body::before\s*\{[\s\S]*?\n\s*\}/);
+  let beforeBlock = beforeMatch ? beforeMatch[0] : null;
+  if (beforeBlock) {
+    // Indent for injection
+    beforeBlock = beforeBlock.split('\n').map(l => '    ' + l.replace(/^\s+/, '')).join('\n');
+  }
+
   // Build injection block
   const injection = [
     `    ${SENTINEL_START}`,
@@ -56,6 +64,7 @@ for (const lp of lps) {
     ...tokenLines,
     `    }`,
     heroUrl ? `    .hero-bg { background-image: url('/${heroUrl}'); }` : null,
+    beforeBlock || null,
     `    ${SENTINEL_END}`
   ].filter(Boolean).join('\n');
 
